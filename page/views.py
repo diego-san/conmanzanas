@@ -153,8 +153,8 @@ def inicio(request,monto,categoria):
 
                 resultado = algoritmo.inicio(c, float(variable), cantidad_productos)
 
-                historial
-                insertar(resultado, variable)
+                if len(resultado)!=0:
+                    insertar(resultado, variable)
 
                 monton_ingresado = str(variable)
                 if monton_ingresado[len(monton_ingresado) - 2] == '.' and monton_ingresado[
@@ -177,7 +177,7 @@ def insertar(h, variable):
         guardar(dat,id)
 
 def guardar(dat, id):
-    registro = Registro(None, float(dat['producto']['suma_aproximada']), dat['producto']['cantidad_veces'], float(dat['producto']['suma_aproximada']), id['idh'])
+    registro = Registro(None, float(dat['producto']['suma_aproximada']), dat['producto']['cantidad_veces'], float(dat['producto']['idbs']), id['idh'])
     registro.save()
 
 
