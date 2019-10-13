@@ -1,0 +1,991 @@
+[{
+    "Pais": "Afganistán",
+    "Continente": "Kabul", 
+    "Capital": "Asia"
+
+},
+{
+    "Pais": "Albania", 
+    "Continente": "Tirana", 
+    "Capital": "Europa"
+},
+{
+    "Pais": "Alemania", 
+    "Continente": "Berlín", 
+    "Capital": "Europa"
+},
+{
+    "Pais": "Andorra", 
+    "Continente": "Andorra la Vieja", 
+    "Capital": "Europa"
+},
+{
+    "Pais": "Angola", 
+    "Continente": "Luanda", 
+    "Capital": "África"
+},
+{
+    "Pais": "Antigua y Barbuda", 
+    "Continente": "Saint John", 
+    "Capital": "América"
+},
+{
+    "Pais": "Arabia Saudita", 
+    "Continente": "Riad", 
+    "Capital": "Asia"
+},
+{
+    "Pais": "Argelia", 
+    "Continente": "Argel", 
+    "Capital": "África"
+},
+{
+    "Pais": "Argentina", 
+    "Continente": "Buenos Aires", 
+    "Capital": "América"
+},
+{
+    "Pais": "Armenia", 
+    "Continente": "Ereván", 
+    "Capital": "Asia"
+},
+{
+    "Pais": "Australia", 
+    "Continente": "Canberra", 
+    "Capital": "Oceanía"
+},
+{
+    "Pais": "Austria", 
+    "Continente": "Viena", 
+    "Capital": "Europa"
+},
+{
+    "Pais": "Azerbaiyán", 
+    "Continente": "Bakú", 
+    "Capital": "Asia"
+},
+{
+    "Pais": "Bahamas", 
+    "Continente": "Nasáu", 
+    "Capital": "América"
+},
+{
+    "Pais": "bangladesh",
+    "Continente": "Daca", 
+    "Capital": "Asia"
+},
+{
+    "Pais": "Barbados", 
+    "Continente": "Bridgetown", 
+    "Capital": "América"
+},
+{
+    "Pais": "bahrein",
+    "Continente": "Manama", 
+    "Capital": "Asia"
+},
+{
+    "Pais": "Bélgica", 
+    "Continente": "Bruselas", 
+    "Capital": "Europa"
+},
+{
+    "Pais": "Belice", 
+    "Continente": "Belmopán", 
+    "Capital": "América"
+},
+{
+    "Pais": "Benín", 
+    "Continente": "Porto-Novo", 
+    "Capital": "África"
+},
+{
+    "Pais": "Bielorrusia", 
+    "Continente": "Minsk", 
+    "Capital": "Europa"
+},
+{
+    "Pais": "Birmania", 
+    "Continente": "Naipyidó", 
+    "Capital": "Asia"
+},
+{
+    "Pais": "Bolivia", 
+    "Continente": "Sucre", 
+    "Capital": "América"
+},
+{
+    "Pais": "Bosnia y Herzegovina", 
+    "Continente": "Sarajevo", 
+    "Capital": "Europa"
+},
+{
+    "Pais": "Botsuana", 
+    "Continente": "Gaborone", 
+    "Capital": "África"
+},
+{
+    "Pais": "Brasil", 
+    "Continente": "Brasilia", 
+    "Capital": "América"
+},
+{
+    "Pais": "Brunéi", 
+    "Continente": "Bandar Seri Begawan", 
+    "Capital": "Asia"
+},
+{
+    "Pais": "Bulgaria", 
+    "Continente": "Sofía", 
+    "Capital": "Europa"
+},
+{
+    "Pais": "Burkina Faso", 
+    "Continente": "Uagadugú", 
+    "Capital": "África"
+},
+{
+    "Pais": "Burundi", 
+    "Continente": "Buyumbura", 
+    "Capital": "África"
+},
+{
+    "Pais": "Bután", 
+    "Continente": "Thimphu", 
+    "Capital": "Asia"
+},
+{
+    "Pais": "Cabo Verde", 
+    "Continente": "Praia", 
+    "Capital": "África"
+},
+{
+    "Pais": "Camboya", 
+    "Continente": "Nom Pen", 
+    "Capital": "Asia"
+},
+{
+    "Pais": "Camerún", 
+    "Continente": "Yaundé", 
+    "Capital": "África"
+},
+{
+    "Pais": "Canadá", 
+    "Continente": "Ottawa", 
+    "Capital": "América"
+},
+{
+    "Pais": "Catar", 
+    "Continente": "Doha", 
+    "Capital": "Asia"
+},
+{
+    "Pais": "Chad", 
+    "Continente": "Yamena", 
+    "Capital": "África"
+},
+{
+    "Pais": "China", 
+    "Continente": "Pekín", 
+    "Capital": "Asia"
+},
+{
+    "Pais": "Chipre", 
+    "Continente": "Nicosia", 
+    "Capital": "Europa"
+},
+{
+    "Pais": "Colombia", 
+    "Continente": "Bogotá", 
+    "Capital": "América"
+},
+{
+    "Pais": "Chile", 
+    "Continente": "santiago",
+    "Capital": "America"
+},
+{
+    "Pais": "Comoras", 
+    "Continente": "Moroni", 
+    "Capital": "África"
+},
+{
+    "Pais": "Congo", 
+    "Continente": "Brazzaville", 
+    "Capital": "África"
+},
+{
+    "Pais": "Corea del Norte", 
+    "Continente": "Pionyang", 
+    "Capital": "Asia"
+},
+{
+    "Pais": "Corea del Sur", 
+    "Continente": "Seúl", 
+    "Capital": "Asia"
+},
+{
+    "Pais": "Costa de Marfil", 
+    "Continente": "Yamusukro", 
+    "Capital": "África"
+},
+{
+    "Pais": "Costa Rica", 
+    "Continente": "San José", 
+    "Capital": "América"
+},
+{
+    "Pais": "Croacia", 
+    "Continente": "Zagreb", 
+    "Capital": "Europa"
+},
+{
+    "Pais": "Cuba", 
+    "Continente": "La Habana", 
+    "Capital": "América"
+},
+{
+    "Pais": "Dinamarca", 
+    "Continente": "Copenhague", 
+    "Capital": "Europa"
+},
+{
+    "Pais": "Dominica", 
+    "Continente": "Roseau", 
+    "Capital": "América"
+},
+{
+    "Pais": "Ecuador", 
+    "Continente": "Quito", 
+    "Capital": "América"
+},
+{
+    "Pais": "Egipto", 
+    "Continente": "El Cairo", 
+    "Capital": "África"
+},
+{
+    "Pais": "El Salvador", 
+    "Continente": "San Salvador", 
+    "Capital": "América"
+},
+{
+    "Pais": "Emiratos Árabes Unidos", 
+    "Continente": "Abu Dabi", 
+    "Capital": "Asia"
+},
+{
+    "Pais": "Eritrea", 
+    "Continente": "Asmara", 
+    "Capital": "África"
+},
+{
+    "Pais": "Eslovaquia", 
+    "Continente": "Bratislava", 
+    "Capital": "Europa"
+},
+{
+    "Pais": "Eslovenia", 
+    "Continente": "Liubliana", 
+    "Capital": "Europa"
+},
+{
+    "Pais": "Espana",
+    "Continente": "Madrid", 
+    "Capital": "Europa"
+},
+{
+    "Pais": "Estados Unidos", 
+    "Continente": "Washington D. C.", 
+    "Capital": "América"
+},
+{
+    "Pais": "Estonia", 
+    "Continente": "Tallin", 
+    "Capital": "Europa"
+},
+{
+    "Pais": "Etiopía", 
+    "Continente": "Adís Abeba", 
+    "Capital": "África"
+},
+{
+    "Pais": "Filipinas", 
+    "Continente": "Manila", 
+    "Capital": "Asia"
+},
+{
+    "Pais": "Finlandia", 
+    "Continente": "Helsinki", 
+    "Capital": "Europa"
+},
+{
+    "Pais": "Fiyi", 
+    "Continente": "Suva", 
+    "Capital": "Oceanía"
+},
+{
+    "Pais": "Francia", 
+    "Continente": "París", 
+    "Capital": "Europa"
+},
+{
+    "Pais": "Gabón", 
+    "Continente": "Libreville", 
+    "Capital": "África"
+},
+{
+    "Pais": "Gambia", 
+    "Continente": "Banjul", 
+    "Capital": "África"
+},
+{
+    "Pais": "Georgia", 
+    "Continente": "Tiflis", 
+    "Capital": "Asia"
+},
+{
+    "Pais": "Ghana", 
+    "Continente": "Accra", 
+    "Capital": "África"
+},
+{
+    "Pais": "Granada", 
+    "Continente": "Saint George", 
+    "Capital": "América"
+},
+{
+    "Pais": "Grecia", 
+    "Continente": "Atenas", 
+    "Capital": "Europa"
+},
+{
+    "Pais": "Guatemala", 
+    "Continente": "Guatemala", 
+    "Capital": "América"
+},
+{
+    "Pais": "Guinea Ecuatorial", 
+    "Continente": "Conakri", 
+    "Capital": "África"
+},
+{
+    "Pais": "Guinea Ecuatorial", 
+    "Continente": "Malabo", 
+    "Capital": "África"
+},
+{
+    "Pais": "Guinea-Bisáu", 
+    "Continente": "Bisáu", 
+    "Capital": "África"
+},
+{
+    "Pais": "Guyana", 
+    "Continente": "Georgetown", 
+    "Capital": "América"
+},
+{
+    "Pais": "Haití", 
+    "Continente": "Puerto Príncipe", 
+    "Capital": "América"
+},
+{
+    "Pais": "Honduras", 
+    "Continente": "Tegucigalpa", 
+    "Capital": "América"
+},
+{
+    "Pais": "Hungría", 
+    "Continente": "Budapest", 
+    "Capital": "Europa"
+},
+{
+    "Pais": "India", 
+    "Continente": "Nueva Delhi", 
+    "Capital": "Asia"
+},
+{
+    "Pais": "Indonesia", 
+    "Continente": "Yakarta", 
+    "Capital": "Asia"
+},
+{
+    "Pais": "Irak", 
+    "Continente": "Bagdad", 
+    "Capital": "Asia"
+},
+{
+    "Pais": "Irán", 
+    "Continente": "Teherán", 
+    "Capital": "Asia"
+},
+{
+    "Pais": "Irlanda", 
+    "Continente": "Dublín", 
+    "Capital": "Europa"
+},
+{
+    "Pais": "Islandia", 
+    "Continente": "Reikiavik", 
+    "Capital": "Europa"
+},
+{
+    "Pais": "Islas Marshall", 
+    "Continente": "Majuro", 
+    "Capital": "Oceanía"
+},
+{
+    "Pais": "Islas Salomón", 
+    "Continente": "Honiara", 
+    "Capital": "Oceanía"
+},
+{
+    "Pais": "Israel", 
+    "Continente": "Jerusalén", 
+    "Capital": "Asia"
+},
+{
+    "Pais": "Italia", 
+    "Continente": "Roma", 
+    "Capital": "Europa"
+},
+{
+    "Pais": "Jamaica", 
+    "Continente": "Kingston", 
+    "Capital": "América"
+},
+{
+    "Pais": "Japón", 
+    "Continente": "Tokio", 
+    "Capital": "Asia"
+},
+{
+    "Pais": "Jordania", 
+    "Continente": "Amán", 
+    "Capital": "Asia"
+},
+{
+    "Pais": "kazajstan", 
+    "Continente": "Astaná", 
+    "Capital": "Asia"
+},
+{
+    "Pais": "Kenia", 
+    "Continente": "Nairobi", 
+    "Capital": "África"
+},
+{
+    "Pais": "Kirguistán", 
+    "Continente": "Biskek", 
+    "Capital": "Asia"
+},
+{
+    "Pais": "Kiribati", 
+    "Continente": "Tarawa", 
+    "Capital": "Oceanía"
+},
+{
+    "Pais": "Kosovo", 
+    "Continente": "Pristina", 
+    "Capital": "Europa"
+},
+{
+    "Pais": "Kuwait", 
+    "Continente": "Kuwait City", 
+    "Capital": "Asia"
+},
+{
+    "Pais": "Laos", 
+    "Continente": "Vientián", 
+    "Capital": "Asia"
+},
+{
+    "Pais": "Lesoto", 
+    "Continente": "Maseru", 
+    "Capital": "África"
+},
+{
+    "Pais": "Letonia", 
+    "Continente": "Riga", 
+    "Capital": "Europa"
+},
+{
+    "Pais": "Líbano", 
+    "Continente": "Beirut", 
+    "Capital": "Asia"
+},
+{
+    "Pais": "Liberia", 
+    "Continente": "Monrovia", 
+    "Capital": "África"
+},
+{
+    "Pais": "Libia", 
+    "Continente": "Trípoli", 
+    "Capital": "África"
+},
+{
+    "Pais": "Liechtenstein", 
+    "Continente": "Vaduz", 
+    "Capital": "Europa"
+},
+{
+    "Pais": "Lituania", 
+    "Continente": "Vilna", 
+    "Capital": "Europa"
+},
+{
+    "Pais": "Luxemburgo", 
+    "Continente": "Luxemburgo", 
+    "Capital": "Europa"
+},
+{
+    "Pais": "Macedonia", 
+    "Continente": "Skopie", 
+    "Capital": "Europa"
+},
+{
+    "Pais": "Madagascar", 
+    "Continente": "Antananarivo", 
+    "Capital": "África"
+},
+{
+    "Pais": "Malasia", 
+    "Continente": "Kuala Lumpur", 
+    "Capital": "Asia"
+},
+{
+    "Pais": "Malaui", 
+    "Continente": "Lilongüe", 
+    "Capital": "África"
+},
+{
+    "Pais": "Maldivas", 
+    "Continente": "Malé", 
+    "Capital": "Asia"
+},
+{
+    "Pais": "Malí", 
+    "Continente": "Bamako", 
+    "Capital": "África"
+},
+{
+    "Pais": "Malta", 
+    "Continente": "La Valeta", 
+    "Capital": "Europa"
+},
+{
+    "Pais": "Marruecos", 
+    "Continente": "Rabat", 
+    "Capital": "África"
+},
+{
+    "Pais": "Mauricio", 
+    "Continente": "Port Louis", 
+    "Capital": "África"
+},
+{
+    "Pais": "Mauritania", 
+    "Continente": "Nuakchot", 
+    "Capital": "África"
+},
+{
+    "Pais": "México", 
+    "Continente": "México", 
+    "Capital": "América"
+},
+{
+    "Pais": "Micronesia", 
+    "Continente": "Palikir", 
+    "Capital": "Oceanía"
+},
+{
+    "Pais": "Moldavia", 
+    "Continente": "Chisináu", 
+    "Capital": "Europa"
+},
+{
+    "Pais": "Mónaco", 
+    "Continente": "Mónaco", 
+    "Capital": "Europa"
+},
+{
+    "Pais": "Mongolia", 
+    "Continente": "Ulán Bator", 
+    "Capital": "Asia"
+},
+{
+    "Pais": "Montenegro", 
+    "Continente": "Podgorica", 
+    "Capital": "Europa"
+},
+{
+    "Pais": "Mozambique", 
+    "Continente": "Maputo", 
+    "Capital": "África"
+},
+{
+    "Pais": "Namibia", 
+    "Continente": "Windhoek", 
+    "Capital": "África"
+},
+{
+    "Pais": "Nauru", 
+    "Continente": "Yaren", 
+    "Capital": "Oceanía"
+},
+{
+    "Pais": "Nepal", 
+    "Continente": "Katmandú", 
+    "Capital": "Asia"
+},
+{
+    "Pais": "Nicaragua", 
+    "Continente": "Managua", 
+    "Capital": "América"
+},
+{
+    "Pais": "Níger", 
+    "Continente": "Niamey", 
+    "Capital": "África"
+},
+{
+    "Pais": "Nigeria", 
+    "Continente": "Abuya", 
+    "Capital": "África"
+},
+{
+    "Pais": "Noruega", 
+    "Continente": "Oslo", 
+    "Capital": "Europa"
+},
+{
+    "Pais": "Nueva Zelandia",
+    "Continente": "Wellington", 
+    "Capital": "Oceanía"
+},
+{
+    "Pais": "Omán", 
+    "Continente": "Mascate", 
+    "Capital": "Asia"
+},
+{
+    "Pais": "Países Bajos", 
+    "Continente": "Ámsterdam", 
+    "Capital": "Europa"
+},
+{
+    "Pais": "Pakistán", 
+    "Continente": "Islamabad", 
+    "Capital": "Asia"
+},
+{
+    "Pais": "Palaos", 
+    "Continente": "Melekeok", 
+    "Capital": "Oceanía"
+},
+{
+    "Pais": "Palestina", 
+    "Continente": "Jerusalén Este", 
+    "Capital": "Asia"
+},
+{
+    "Pais": "Panamá", 
+    "Continente": "Panamá", 
+    "Capital": "América"
+},
+{
+    "Pais": "Papúa Nueva Guinea", 
+    "Continente": "Puerto Moresby", 
+    "Capital": "Oceanía"
+},
+{
+    "Pais": "Paraguay", 
+    "Continente": "Asunción", 
+    "Capital": "América"
+},
+{
+    "Pais": "Perú", 
+    "Continente": "Lima", 
+    "Capital": "América"
+},
+{
+    "Pais": "Polonia", 
+    "Continente": "Varsovia", 
+    "Capital": "Europa"
+},
+{
+    "Pais": "Portugal", 
+    "Continente": "Lisboa", 
+    "Capital": "Europa"
+},
+{
+    "Pais": "Reino Unido", 
+    "Continente": "Londres", 
+    "Capital": "Europa"
+},
+{
+    "Pais": "República Centroafricana", 
+    "Continente": "Bangui", 
+    "Capital": "África"
+},
+{
+    "Pais": "República Checa", 
+    "Continente": "Praga", 
+    "Capital": "Europa"
+},
+{
+    "Pais": "República Democrática del Congo", 
+    "Continente": "Kinsasa", 
+    "Capital": "África"
+},
+{
+    "Pais": "República Dominicana", 
+    "Continente": "Santo Domingo", 
+    "Capital": "América"
+},
+{
+    "Pais": "Ruanda", 
+    "Continente": "Kigali", 
+    "Capital": "África"
+},
+{
+    "Pais": "Rumania", 
+    "Continente": "Bucarest", 
+    "Capital": "Europa"
+},
+{
+    "Pais": "Rusia", 
+    "Continente": "Moscú", 
+    "Capital": "Europa"
+},
+{
+    "Pais": "Samoa", 
+    "Continente": "Apia", 
+    "Capital": "Oceanía"
+},
+{
+    "Pais": "San Cristóbal y Nieves", 
+    "Continente": "Basseterre", 
+    "Capital": "América"
+},
+{
+    "Pais": "San Marino", 
+    "Continente": "San Marino", 
+    "Capital": "Europa"
+},
+{
+    "Pais": "San Vicente y las Granadinas", 
+    "Continente": "Kingstown", 
+    "Capital": "América"
+},
+{
+    "Pais": "Santa Lucía", 
+    "Continente": "Castries", 
+    "Capital": "América"
+},
+{
+    "Pais": "Santo Tomé y Príncipe", 
+    "Continente": "Santo Tomé", 
+    "Capital": "África"
+},
+{
+    "Pais": "Senegal", 
+    "Continente": "Dakar", 
+    "Capital": "África"
+},
+{
+    "Pais": "Serbia", 
+    "Continente": "Belgrado", 
+    "Capital": "Europa"
+},
+{
+    "Pais": "Seychelles", 
+    "Continente": "Victoria", 
+    "Capital": "África"
+},
+{
+    "Pais": "Sierra Leona", 
+    "Continente": "Freetown", 
+    "Capital": "África"
+},
+{
+    "Pais": "Singapur", 
+    "Continente": "Singapur", 
+    "Capital": "Asia"
+},
+{
+    "Pais": "Siria", 
+    "Continente": "Damasco", 
+    "Capital": "Asia"
+},
+{
+    "Pais": "Somalia", 
+    "Continente": "Mogadiscio", 
+    "Capital": "África"
+},
+{
+    "Pais": "Sri Lanka", 
+    "Continente": "Sri Jayawardenapura Kotte", 
+    "Capital": "Asia"
+},
+{
+    "Pais": "Suazilandia", 
+    "Continente": "Mbabane", 
+    "Capital": "África"
+},
+{
+    "Pais": "Sudáfrica", 
+    "Continente": "Pretoria", 
+    "Capital": "África"
+},
+{
+    "Pais": "Sudán", 
+    "Continente": "Jartum", 
+    "Capital": "África"
+},
+{
+    "Pais": "Sudán del Sur", 
+    "Continente": "Yuba", 
+    "Capital": "África"
+},
+{
+    "Pais": "Suecia", 
+    "Continente": "Estocolmo", 
+    "Capital": "Europa"
+},
+{
+    "Pais": "Suiza", 
+    "Continente": "Berna", 
+    "Capital": "Europa"
+},
+{
+    "Pais": "Surinam", 
+    "Continente": "Paramaribo", 
+    "Capital": "América"
+},
+{
+    "Pais": "Tailandia", 
+    "Continente": "Bangkok", 
+    "Capital": "Asia"
+},
+{
+    "Pais": "Taiwán", 
+    "Continente": "Taipéi", 
+    "Capital": "Asia"
+},
+{
+    "Pais": "Tanzania", 
+    "Continente": "Dodoma", 
+    "Capital": "África"
+},
+{
+    "Pais": "Tayikistán", 
+    "Continente": "Dusambé", 
+    "Capital": "Asia"
+},
+{
+    "Pais": "Timor Oriental", 
+    "Continente": "Dili", 
+    "Capital": "Oceanía"
+},
+{
+    "Pais": "Togo", 
+    "Continente": "Lomé", 
+    "Capital": "África"
+},
+{
+    "Pais": "Tonga", 
+    "Continente": "Nukualofa", 
+    "Capital": "Oceanía"
+},
+{
+    "Pais": "Trinidad y Tobago", 
+    "Continente": "Puerto España", 
+    "Capital": "América"
+},
+{
+    "Pais": "puerto rico", 
+    "Continente": "san juan", 
+    "Capital": "América"
+},
+{
+    "Pais": "Túnez", 
+    "Continente": "Túnez", 
+    "Capital": "África"
+},
+{
+    "Pais": "Turkmenistán", 
+    "Continente": "Asjabad", 
+    "Capital": "Asia"
+},
+{
+    "Pais": "Turquía", 
+    "Continente": "Ankara", 
+    "Capital": "Asia"
+},
+{
+    "Pais": "Tuvalu", 
+    "Continente": "Funafuti", 
+    "Capital": "Oceanía"
+},
+{
+    "Pais": "Ucrania", 
+    "Continente": "Kiev", 
+    "Capital": "Europa"
+},
+{
+    "Pais": "Uganda", 
+    "Continente": "Kampala", 
+    "Capital": "África"
+},
+{
+    "Pais": "Uruguay", 
+    "Continente": "Montevideo", 
+    "Capital": "América"
+},
+{
+    "Pais": "Uzbekistán", 
+    "Continente": "Taskent", 
+    "Capital": "Asia"
+},
+{
+    "Pais": "Vanuatu", 
+    "Continente": "Port Vila", 
+    "Capital": "Oceanía"
+},
+{
+    "Pais": "Vaticano", 
+    "Continente": "Vaticano", 
+    "Capital": "Europa"
+},
+{
+    "Pais": "Venezuela", 
+    "Continente": "Caracas", 
+    "Capital": "América"
+},
+{
+    "Pais": "Vietnam", 
+    "Continente": "Hanói", 
+    "Capital": "Asia"
+},
+{
+    "Pais": "Yemen", 
+    "Continente": "Saná", 
+    "Capital": "Asia"
+},
+{
+    "Pais": "Yibuti", 
+    "Continente": "Yibuti", 
+    "Capital": "África"
+},
+{
+    "Pais": "Zambia", 
+    "Continente": "Lusaka", 
+    "Capital": "África"
+},
+{
+    "Pais": "Zimbabue", 
+    "Continente": "Harare", 
+    "Capital": "África"
+}]

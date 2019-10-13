@@ -1,0 +1,213 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Con Manzanas</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href=" {% static 'vendor/bootstrap/css/bootstrap.min.css' %}  " rel="stylesheet">
+   <link href=" {% static 'css/estilos.css' %}  " rel="stylesheet">
+
+  <!-- Custom fonts for this template -->
+  <link href="{% static 'vendor/fontawesome-free/css/all.min.css' %} " rel="stylesheet">
+  <link href="{% static 'vendor/simple-line-icons/css/simple-line-icons.css' %} " rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
+
+  <!-- Custom styles for this template -->
+  <link href="{% static 'css/landing-page.min.css' %} " rel="stylesheet">
+
+</head>
+
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar navbar-light bg-light static-top">
+    <div class="container">
+      <a class="navbar-brand" href="#">ConManzanas</a>
+       <a class="btn btn-primary" href="/vista">Prueba de Prototipo</a>
+      
+    </div>
+  </nav>
+
+  <!-- Masthead -->
+  <header class="masthead text-white text-center">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-xl-9 mx-auto">
+          <h1 class="mb-5">ConManzanas</h1>
+        </div>
+        <div class="col-md-10 col-lg-8 col-xl-7 mx-auto">
+          <img src="{% static 'img/apple.png'%}" alt="" class="rounded mx-auto d-block">
+        </div>
+      </div>
+    </div>
+  </header>
+
+ 
+
+  <!-- Image Showcases -->
+  <section class="showcase">
+    <div class="container-fluid p-0">
+      <div class="row no-gutters">
+
+        <div class="col-lg-6 order-lg-2 text-white showcase-img" style="background-image: url(' {% static 'img/bg-showcase-3.jpg' %} ');"></div>
+        <div class="col-lg-6 order-lg-1 my-auto showcase-text">
+          <h2>¿Qué es? ConManzanas</h2>
+          <p class="lead mb-0">Plataforma Web de apoyo a la Educación Cívico-Económica de niñas, niños y público general</p>
+        </div>
+      </div>
+       <!-- Icons Grid -->
+  <section class="features-icons bg-light text-center">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3"></div>
+        <div class="col-6 "><h1 class="text-center">¿Cómo funciona el sistema?</h1></div>
+        <div class="col-md-3"></div>
+        <div class="col-lg-4">
+          <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
+              <img src="{% static 'img/computer.png'%}" class="img-rounded" alt="web" width="170" height="170" >
+              <h3>Obtencíon de datos</h3>
+              <p class="lead mb-0">Algoritmos de WebScrapping capturan y descargan información de productos o bienes públicos.</p>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
+              <img src="{% static 'img/database.png'%}" class="img-rounded" alt="base de datos" width="170" height="170" >
+              <h3>Almacenamos los datos</h3>
+              <p class="lead mb-0">Los datos son procesado y almacenados para su utilización posteriormente.</p>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
+              <img src="{% static 'img/page.png'%}" class="img-rounded" alt="web final" width="170" height="170" >
+              <h3>Obtención de resultados</h3>
+              <p class="lead mb-0">Se muestran los resultados según la cifra ingresada con promedios de valores reales.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+      <div class="row no-gutters">
+        <div class="col-lg-6 text-white showcase-img" style="background-image: url(' {% static 'img/bg-showcase-1.jpg' %} ');"></div>
+        <div class="col-lg-6 my-auto showcase-text">
+          <h2>¿Quiénes se benefician?</h2>
+          <p class="lead mb-0">Estudiantes y profesores del sistema de Educación Pública. Convenio a través del Municipio de Viña del Mar, para difusión y realización de talleres.</p>
+          <p class="lead mb-0">Público General que accede a la plataforma y genera infografías de cifras propias.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="testimonials text-center bg-light">
+    <div class="container">
+      <h2 class="mb-5">Nuestro Equipo</h2>
+      <div class="row">
+          <div class="col-md-3"></div>
+          <div class="col-md-6"><img class="img-fluid " src="{% static 'img/collaboration.png' %}" alt="equipo" width="170" height="170"></div>
+          <div class="col-md-3"></div>
+      </div>
+      <div class="row mt-3">
+        <div class="col-lg-4">
+          <div class="testimonial-item mx-auto mb-5 mb-lg-0">
+            <h5>Macelo Ibarra</h5>
+            <p class="font-weight-light mb-0">Desarrollador</p>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="testimonial-item mx-auto mb-5 mb-lg-0">
+            <h5>Jaime Morales</h5>
+            <p class="font-weight-light mb-0">Desarrollador</p>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="testimonial-item mx-auto mb-5 mb-lg-0">
+            <h5>Diego Sánchez</h5>
+            <p class="font-weight-light mb-0">Desarrollador</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Call to Action -->
+  <section class="call-to-action text-white text-center">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-xl-9 mx-auto">
+          <div id="contenedor"><iframe width="560" height="315" src="https://www.youtube.com/embed/yJaP_5UtTp0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+        </div>
+        <div class="col-md-10 col-lg-8 col-xl-7 mx-auto">
+         
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer bg-light">
+    <div class="container">
+      <div class="row">
+       <!--
+        <div class="col-lg-6 h-100 text-center text-lg-left my-auto">
+          <ul class="list-inline mb-2">
+            <li class="list-inline-item">
+              <a href="#">About</a>
+            </li>
+            <li class="list-inline-item">&sdot;</li>
+            <li class="list-inline-item">
+              <a href="#">Contact</a>
+            </li>
+            <li class="list-inline-item">&sdot;</li>
+            <li class="list-inline-item">
+              <a href="#">Terms of Use</a>
+            </li>
+            <li class="list-inline-item">&sdot;</li>
+            <li class="list-inline-item">
+              <a href="#">Privacy Policy</a>
+            </li>
+          </ul>
+          <p class="text-muted small mb-4 mb-lg-0">&copy; Your Website 2019. All Rights Reserved.</p>
+        </div>
+        <div class="col-lg-6 h-100 text-center text-lg-right my-auto">
+          <ul class="list-inline mb-0">
+            <li class="list-inline-item mr-3">
+              <a href="#">
+                <i class="fab fa-facebook fa-2x fa-fw"></i>
+              </a>
+            </li>
+            <li class="list-inline-item mr-3">
+              <a href="#">
+                <i class="fab fa-twitter-square fa-2x fa-fw"></i>
+              </a>
+            </li>
+            <li class="list-inline-item">
+              <a href="#">
+                <i class="fab fa-instagram fa-2x fa-fw"></i>
+              </a>
+            </li>
+          </ul>
+        </div>
+      -->
+      <p class="text-muted small mb-4 mb-lg-0">&copy; Todos lo derechos reservados</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="{% static 'vendor/jquery/jquery.min.js' %} "></script>
+  <script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js' %} "></script>
+
+</body>
+
+</html>

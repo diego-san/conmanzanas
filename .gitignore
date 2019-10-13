@@ -1,0 +1,8 @@
+db.sqlite3
+.idea/*
+basedatos/__pycache__/*
+basedatos/migrations/*
+noticias/migrations/*
+noticias/__pycache__/*
+page/migrations/*
+Scrap/__pycache__/*

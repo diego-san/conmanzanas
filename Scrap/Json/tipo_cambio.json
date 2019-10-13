@@ -1,0 +1,512 @@
+{
+    "paises": [
+        {
+            "nombre": "albania",
+            "tipo cambio": "lek"
+        },
+        {
+            "nombre": "alemania",
+            "tipo cambio": "dólar"
+        },
+        {
+            "nombre": "andorra",
+            "tipo cambio": "dólar"
+        },
+        {
+            "nombre": "armenia",
+            "tipo cambio": "dram"
+        },
+        {
+            "nombre": "austria",
+            "tipo cambio": "dólar"
+        },
+        {
+            "nombre": "belgica",
+            "tipo cambio": "dólar"
+        },
+        {
+            "nombre": "bielorrusia",
+            "tipo cambio": "rublo bielorruso"
+        },
+        {
+            "nombre": "bosnia y herzegovina",
+            "tipo cambio": "marco bosnioherzegovino (km, bam)"
+        },
+        {
+            "nombre": "bulgaria",
+            "tipo cambio": "lev = 100 stotinki"
+        },
+        {
+            "nombre": "chipre",
+            "tipo cambio": "dólar"
+        },
+        {
+            "nombre": "croacia",
+            "tipo cambio": "kuna"
+        },
+        {
+            "nombre": "dinamarca",
+            "tipo cambio": "corona danesa = 100 øre"
+        },
+        {
+            "nombre": "eslovaquia",
+            "tipo cambio": "dólar"
+        },
+        {
+            "nombre": "eslovenia",
+            "tipo cambio": "dólar"
+        },
+        {
+            "nombre": "espana",
+            "tipo cambio": "dólar"
+        },
+        {
+            "nombre": "estonia",
+            "tipo cambio": "dólar"
+        },
+        {
+            "nombre": "finlandia",
+            "tipo cambio": "dólar"
+        },
+        {
+            "nombre": "francia",
+            "tipo cambio": "dólar"
+        },
+        {
+            "nombre": "georgia",
+            "tipo cambio": "lari"
+        },
+        {
+            "nombre": "grecia",
+            "tipo cambio": "dólar"
+        },
+        {
+            "nombre": "hungria",
+            "tipo cambio": "forinto húngaro"
+        },
+        {
+            "nombre": "irlanda",
+            "tipo cambio": "dólar"
+        },
+        {
+            "nombre": "islandia",
+            "tipo cambio": "corona islandesa"
+        },
+        {
+            "nombre": "italia",
+            "tipo cambio": "dólar"
+        },
+        {
+            "nombre": "letonia",
+            "tipo cambio": "dólar"
+        },
+        {
+            "nombre": "lituania",
+            "tipo cambio": "litas"
+        },
+        {
+            "nombre": "luxemburgo",
+            "tipo cambio": "dólar"
+        },
+        {
+            "nombre": "malta",
+            "tipo cambio": "dólar"
+        },
+        {
+            "nombre": "moldavia",
+            "tipo cambio": "leu moldavo"
+        },
+        {
+            "nombre": "monaco",
+            "tipo cambio": "dólar"
+        },
+        {
+            "nombre": "montenegro",
+            "tipo cambio": "dólar"
+        },
+        {
+            "nombre": "noruega",
+            "tipo cambio": "corona = 100 øre"
+        },
+        {
+            "nombre": "paises bajos",
+            "tipo cambio": "dólar"
+        },
+        {
+            "nombre": "polonia",
+            "tipo cambio": "złoty = 100 groszy"
+        },
+        {
+            "nombre": "portugal",
+            "tipo cambio": "dólar"
+        },
+        {
+            "nombre": "reino unido",
+            "tipo cambio": "libra esterlina"
+        },
+        {
+            "nombre": "republica checa",
+            "tipo cambio": "corona checa («koruna česká»)"
+        },
+        {
+            "nombre": "rumania",
+            "tipo cambio": "leu"
+        },
+        {
+            "nombre": "rusia",
+            "tipo cambio": "rublo ruso"
+        },
+        {
+            "nombre": "serbia",
+            "tipo cambio": "dinar"
+        },
+        {
+            "nombre": "suecia",
+            "tipo cambio": "corona sueca = 100 öre"
+        },
+        {
+            "nombre": "suiza",
+            "tipo cambio": "franco suizo"
+        },
+        {
+            "nombre": "turquia",
+            "tipo cambio": "lira turca"
+        },
+        {
+            "nombre": "ucrania",
+            "tipo cambio": "grivna"
+        },
+        {
+            "nombre": "argentina",
+            "tipo cambio": "peso argentino"
+        },
+        {
+            "nombre": "bolivia",
+            "tipo cambio": "boliviano"
+        },
+        {
+            "nombre": "brasil",
+            "tipo cambio": "real"
+        },
+        {
+            "nombre": "canada",
+            "tipo cambio": "dólar canadiense"
+        },
+        {
+            "nombre": "chile",
+            "tipo cambio": "peso chileno"
+        },
+        {
+            "nombre": "colombia",
+            "tipo cambio": "peso colombiano"
+        },
+        {
+            "nombre": "costa rica",
+            "tipo cambio": "colón costarricense"
+        },
+        {
+            "nombre": "ecuador",
+            "tipo cambio": "dólar"
+        },
+        {
+            "nombre": "el salvador",
+            "tipo cambio": "dólar"
+        },
+        {
+            "nombre": "estados unidos",
+            "tipo cambio": "dólar"
+        },
+        {
+            "nombre": "guatemala",
+            "tipo cambio": "quetzal"
+        },
+        {
+            "nombre": "haiti",
+            "tipo cambio": "gourde haitiano"
+        },
+        {
+            "nombre": "honduras",
+            "tipo cambio": "lempira"
+        },
+        {
+            "nombre": "jamaica",
+            "tipo cambio": "dólar jamaiquino"
+        },
+        {
+            "nombre": "mexico",
+            "tipo cambio": "peso mexicano"
+        },
+        {
+            "nombre": "nicaragua",
+            "tipo cambio": "córdoba"
+        },
+        {
+            "nombre": "panama",
+            "tipo cambio": "dólar"
+        },
+        {
+            "nombre": "paraguay",
+            "tipo cambio": "guaraní"
+        },
+        {
+            "nombre": "peru",
+            "tipo cambio": "nuevo sol"
+        },
+        {
+            "nombre": "puerto rico",
+            "tipo cambio": "dólar"
+        },
+        {
+            "nombre": "republica dominicana",
+            "tipo cambio": "peso dominicano"
+        },
+        {
+            "nombre": "uruguay",
+            "tipo cambio": "peso uruguayo"
+        },
+        {
+            "nombre": "afganistan",
+            "tipo cambio": "afgani"
+        },
+        {
+            "nombre": "arabia saudita",
+            "tipo cambio": "riyal saudí"
+        },
+        {
+            "nombre": "bahrein",
+            "tipo cambio": "dinar"
+        },
+        {
+            "nombre": "bangladesh",
+            "tipo cambio": "taka"
+        },
+        {
+            "nombre": "butan",
+            "tipo cambio": "ngultrum"
+        },
+        {
+            "nombre": "camboya",
+            "tipo cambio": "riel camboyano"
+        },
+        {
+            "nombre": "catar",
+            "tipo cambio": "riyal catarí"
+        },
+        {
+            "nombre": "china",
+            "tipo cambio": "yuan"
+        },
+        {
+            "nombre": "corea del sur",
+            "tipo cambio": "wŏn surcoreano"
+        },
+        {
+            "nombre": "egipto",
+            "tipo cambio": "libra egipcia"
+        },
+        {
+            "nombre": "emiratos arabes unidos",
+            "tipo cambio": "dírham"
+        },
+        {
+            "nombre": "filipinas",
+            "tipo cambio": "peso filipino"
+        },
+        {
+            "nombre": "hong kong",
+            "tipo cambio": "dolar de hong kong"
+        },
+        {
+            "nombre": "india",
+            "tipo cambio": "rupia india"
+        },
+        {
+            "nombre": "indonesia",
+            "tipo cambio": "rupia indonesia"
+        },
+        {
+            "nombre": "irak",
+            "tipo cambio": "dinar"
+        },
+        {
+            "nombre": "iran",
+            "tipo cambio": "rial iraní"
+        },
+        {
+            "nombre": "israel",
+            "tipo cambio": "nuevo shéquel"
+        },
+        {
+            "nombre": "japon",
+            "tipo cambio": "yen"
+        },
+        {
+            "nombre": "jordania",
+            "tipo cambio": "dinar jordano"
+        },
+        {
+            "nombre": "kazajstan",
+            "tipo cambio": "tenge"
+        },
+        {
+            "nombre": "kuwait",
+            "tipo cambio": "dinar kuwaití"
+        },
+        {
+            "nombre": "laos",
+            "tipo cambio": "kip"
+        },
+        {
+            "nombre": "libano",
+            "tipo cambio": "libra libanesa"
+        },
+        {
+            "nombre": "malasia",
+            "tipo cambio": "ringgit"
+        },
+        {
+            "nombre": "mongolia",
+            "tipo cambio": "tugrik"
+        },
+        {
+            "nombre": "nepal",
+            "tipo cambio": "rupia nepalí"
+        },
+        {
+            "nombre": "oman",
+            "tipo cambio": "rial omaní (omr)"
+        },
+        {
+            "nombre": "pakistan",
+            "tipo cambio": "rupia pakistaní"
+        },
+        {
+            "nombre": "singapur",
+            "tipo cambio": "dólar de singapur (s$, sgd)"
+        },
+        {
+            "nombre": "siria",
+            "tipo cambio": "libra siria"
+        },
+        {
+            "nombre": "sri lanka",
+            "tipo cambio": "rupia de sri lanka"
+        },
+        {
+            "nombre": "tailandia",
+            "tipo cambio": "baht tailandés"
+        },
+        {
+            "nombre": "taiwan",
+            "tipo cambio": "nuevo dólar taiwanés"
+        },
+        {
+            "nombre": "uzbekistan",
+            "tipo cambio": "sum uzbeko"
+        },
+        {
+            "nombre": "vietnam",
+            "tipo cambio": "đồng vietnamita"
+        },
+        {
+            "nombre": "yemen",
+            "tipo cambio": "rial yemení"
+        },
+        {
+            "nombre": "angola",
+            "tipo cambio": "kwanza"
+        },
+        {
+            "nombre": "argelia",
+            "tipo cambio": "dinar argelino"
+        },
+        {
+            "nombre": "cabo verde",
+            "tipo cambio": "escudo caboverdiano"
+        },
+        {
+            "nombre": "camerun",
+            "tipo cambio": "franco cfa"
+        },
+        {
+            "nombre": "ghana",
+            "tipo cambio": "cedi"
+        },
+        {
+            "nombre": "kenia",
+            "tipo cambio": "chelín keniano"
+        },
+        {
+            "nombre": "libia",
+            "tipo cambio": "dinar libio"
+        },
+        {
+            "nombre": "madagascar",
+            "tipo cambio": "ariary"
+        },
+        {
+            "nombre": "marruecos",
+            "tipo cambio": "dirham marroquí"
+        },
+        {
+            "nombre": "mauricio",
+            "tipo cambio": "rupia de mauricio"
+        },
+        {
+            "nombre": "namibia",
+            "tipo cambio": "dólar namibio"
+        },
+        {
+            "nombre": "niger",
+            "tipo cambio": "franco cfa"
+        },
+        {
+            "nombre": "nigeria",
+            "tipo cambio": "naira"
+        },
+        {
+            "nombre": "ruanda",
+            "tipo cambio": "franco ruandés"
+        },
+        {
+            "nombre": "senegal",
+            "tipo cambio": "franco cfa"
+        },
+        {
+            "nombre": "sudafrica",
+            "tipo cambio": "rand"
+        },
+        {
+            "nombre": "sudan",
+            "tipo cambio": "libra sudanesa"
+        },
+        {
+            "nombre": "tanzania",
+            "tipo cambio": "chelín tanzano"
+        },
+        {
+            "nombre": "tunez",
+            "tipo cambio": "dinar tunecino"
+        },
+        {
+            "nombre": "uganda",
+            "tipo cambio": "chelín ugandés"
+        },
+        {
+            "nombre": "zambia",
+            "tipo cambio": "kwacha zambiano"
+        },
+        {
+            "nombre": "zimbabue",
+            "tipo cambio": "rand"
+        },
+        {
+            "nombre": "australia",
+            "tipo cambio": "dólar australiano"
+        },
+        {
+            "nombre": "nueva zelandia",
+            "tipo cambio": "dólar neozelandés"
+        }
+    ]
+}

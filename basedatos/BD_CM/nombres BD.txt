@@ -1,0 +1,62 @@
+DESCRIPCION DE DONBRES BD
+modificacion prueba
+
+
+bienesyservicios=bienes y servicios de consumo y publicos
+
+idbs=id bien y servicio
+nomc=nombre bien y servicio  
+precio= precio bien y servicio 
+imgc= url imagen bien y servicio 
+fuente= fuente bien y servicio 
+fechas= fecha scrapy bien y servicio 
+fechapu=fecha sitio web bien y servicio
+umed = unidad de medida del producto
+cant_u= cantidad de unidad de medida por producto
+
+
+
+subcategoria
+
+idsubc=id sub categoria
+nomsc=nombre subcategoria
+
+categoria
+
+idcat=id categoria
+nomcat=nombre categoria
+
+region
+
+idreg= id region
+nomreg= nombre region
+
+
+pais
+
+idpais= id pais
+nompais= nombre pais
+
+
+TIPOCAMBIO
+
+id_cambio= identificador tipo cambio
+nombrecam = nombre de tipo cambio
+
+
+historial
+
+idh = id historial
+monto = monto obtenido desde la pagina (ingresado por el usuario)
+fechh = fecha obtenida desde el computador (cuando se hace la consulta)
+
+
+
+registro
+idr = id de registro
+monp = monto calculado segun producto
+cant = cantidad de producto
+
+
+
+
