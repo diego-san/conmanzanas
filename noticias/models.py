@@ -13,7 +13,8 @@ class Noticia(models.Model):
     fec_moneda = models.DateField(verbose_name='Fecha de moneda')
     idreg = models.ForeignKey(basedatos.models.Region, on_delete=models.PROTECT, null=True)
     id_t = models.ForeignKey('Tema', on_delete=models.PROTECT)
-    id_m = models.ForeignKey('Tipomoneda', on_delete=models.PROTECT)
+    id_m = models.ForeignKey(basedatos.models.Tipocambio, on_delete=models.PROTECT)
+    imagen= models.ImageField(upload_to='imagen_noticias ', null=True, default=None)
 
     class Meta:
         verbose_name = "Noticias"
@@ -36,16 +37,6 @@ class Tema (models.Model):
         return self.nom_tema
 
 
-class Tipomoneda(models.Model):
-    nomb_moneda= models.CharField(max_length=200, verbose_name='Nombre de moneda')
-
-    class Meta:
-        verbose_name = "Tipo de moneda"
-        verbose_name_plural = 'Tipos de monedas'
-        ordering = ["nomb_moneda"]
-
-    def __str__(self):
-        return self.nomb_moneda
 
 
 
