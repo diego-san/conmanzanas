@@ -24,7 +24,7 @@ def index(request):
     contador = 0
 
     for h in histo:
-        lista_r = []
+
         datos.append({'historial':{'monto': int(h['monto']), 'titulo': h['titulo'], 'fecha': h['fechh']}})
         regi = Registro.objects.filter(idh_id = h['idh'] ).values()
         canti_producto = len(regi)
