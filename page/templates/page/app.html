@@ -46,7 +46,36 @@ img {
   margin: 7px 5px 5px 5px;
   border-radius: 5px;
 }
-
+input[id^="spoiler"]{
+display: none;
+}
+/* Estilo botón clicable */
+input[id^="spoiler"] + label {
+display: block;
+width: 200px;
+margin: 0 auto;
+padding: 5px 20px;
+background: #4ad1e5;
+cursor: pointer;
+}
+/* Estilo botón cuando su INPUT está seleccionado */
+input[id^="spoiler"]:checked + label {
+color: #333;
+background: #ccc;
+}
+/* Estilo caja SPOILER (inicialmente oculto) */
+input[id^="spoiler"] ~ .spoiler {
+width: 90%;
+height: 0;
+overflow: hidden;
+opacity: 0;
+margin: 10px auto 0;
+}
+/* Estilo caja SPOILER cuando su INPUT está seleccionado */
+input[id^="spoiler"]:checked + label + .spoiler{
+height: auto;
+opacity: 1;
+}
 }
 
 	</style>
@@ -264,6 +293,12 @@ jQuery(function ($) {
                                     </div>
 									</div>
 
+									<input type="checkbox" id="spoiler1"></input>
+									<label for="spoiler1">Más Opciones</label>
+									<div class="spoiler">
+										<input type="text" placeholder="Ingresar Titulo" class="form-control">
+
+									</div>
 									
 									<input type="submit" name="" Class="btn btn-primary btn-lg btn-block" value="Calcular">
 									
