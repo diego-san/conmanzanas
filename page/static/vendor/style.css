@@ -239,7 +239,7 @@ li > a:only-child:after { content: ''; }
 .btn-flotante {
    width:auto ;
   height:40px;
-  
+  padding: 2px;
   -webkit-border-top-right-radius: 10px;
   -webkit-border-bottom-right-radius: 10px;
   -moz-border-radius-topright: 10px;

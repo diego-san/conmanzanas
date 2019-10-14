@@ -7,7 +7,7 @@ class algoritmo:
     def inicio(data, monto, numero_produc):
 
         f = algoritmo.lista_random(data, numero_produc)
-        #f[0]['producto']['ccc'] = 3
+
 
         if len(f) > 0:
             return algoritmo.calcula_cuanto(f,monto)
