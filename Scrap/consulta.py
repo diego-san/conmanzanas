@@ -79,3 +79,5 @@ def get_id_reg(nombre):
     conn.close()
     return rows
     pass
+
+

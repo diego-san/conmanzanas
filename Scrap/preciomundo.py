@@ -124,7 +124,7 @@ for pais in paises:
                         print(precio)
 
         sub_categoria = sub_categoria + 1
-        print(fuente)
+
         print(str(contador_pais) + ' de 126 paises')
     time.sleep(1)
     validador = 0

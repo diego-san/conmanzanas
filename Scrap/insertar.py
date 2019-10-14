@@ -13,39 +13,51 @@ def in_datos_productos(precio, fuente, fechas, fechapub, id_cambio_id, id_reg_id
     conn.close()
 
 
-def iconos(id):
 
-    if id == 1:
+def iconos(ids):
+    id = nombre_subc(ids)[0][0]
+
+
+    if id == 'medicamento':
         return 'medicamento.png'
-    elif id == 2:
+    elif id == 'infraestructura salud':
         return 'infraestructura.png'
-    elif id == 3:
+    elif id == 'servicios':
         return 'servicio.png'
-    elif id == 4:
+    elif id == 'insumos':
         return 'insumo.png'
-    elif id == 17:
+    elif id == 'precios en supermercados':
         return 'supermercado.png'
-    elif id == 7:
+    elif id == 'infraestructura educacion':
         return 'infraestructura_educacion.png'
-    elif id == 8:
+    elif id == 'costo educacion':
         return 'costoeducacion.png'
-    elif id == 11:
+    elif id == 'vivienda y salario':
         return 'vivienda_y_salario.png'
-    elif id == 12:
+    elif id == 'articulos para el hogar':
         return 'articulos_para_el_hogar.png'
-    elif id == 13:
+    elif id == 'gastos de vivienda':
         return 'gasto_de_vivienda.png'
-    elif id == 14:
+    elif id == 'ropa y calazado':
         return 'ropa_y_calzado.png'
-    elif id == 15:
+    elif id == 'ocio y deportes':
         return 'ocio_y_deporte.png'
-    elif id == 16:
+    elif id == 'recreacion y cultura':
         return 'recreacion_y_cultura.png'
-    elif id == 5:
+    elif id == 'transporte y servicio':
         return 'transporte_y_servicio.png'
-    elif id == 6:
+    elif id == 'medios de transporte':
         return 'medio_de_trasnporte.png'
-    elif id == 9:
+    elif id == 'precio restaurant':
         return 'precio_restaurant.png'
-    elif id == 10:
+    elif id == 'precio hoteles':
         return 'preciohoteles.png'
+
+def nombre_subc(id):
+    conn = sqlite3.connect(dir+'/../db.sqlite3')
+    c = conn.cursor()
+    c.execute("SELECT nomsc from basedatos_subcategoria WHERE idsubc=?", [str(id)],)
+    rows = c.fetchall()
+    conn.commit()
+    conn.close()
+    return rows

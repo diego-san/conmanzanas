@@ -6,6 +6,8 @@ from .calculo import calculo
 from .algoritmo import algoritmo
 from datetime import datetime
 from django.urls import reverse
+import random
+
 
 def index(request):
     lista_categoria = ['salud', 'supermercado', 'educacion','vivienda', 'otros', 'transporte', 'restaurant y hoteles']
@@ -15,17 +17,35 @@ def index(request):
     if request.method == 'POST':
         monto = request.POST.get('monto')
         categoria = request.POST.get('categoria')
-        return HttpResponseRedirect('inicio/'+monto+'/'+categoria+'#monto')
+        return HttpResponseRedirect('app/'+monto+'/'+categoria+'#monto')
+
+
+    histo = select()
+    contador = 0
+
+    for h in histo:
+        lista_r = []
+        datos.append({'historial':{'monto': int(h['monto']), 'titulo': h['titulo'], 'fecha': h['fechh']}})
+        regi = Registro.objects.filter(idh_id = h['idh'] ).values()
+        canti_producto = len(regi)
+        bien= Bienesyservicios.objects.filter(idbs= regi[0]['idbs_id']).values()
+        nom_categoria = Categoria.objects.filter(idcat=Subcategoria.objects.filter(idsubc = bien[0]['idsubc_id']).values()[0]['idcat_id']).values()[0]['nomcat']
+        datos[contador]['historial']['link'] = 'historial/'+str(h['idh'])+'#monto'
+        datos[contador]['historial']['categoria'] = nom_categoria
+        datos[contador]['historial']['cantidad'] = canti_producto
+        datos[contador]['historial']['img'] = bien[0]['imgc']
+
+
+        contador= 1+ contador
+
+
 
     context = {'datos': datos}
-    #select()
-
     return render(request, 'page/inicio.html', context)
 
-def vista2(request):
-    context = {}
 
-    return render(request, 'page/vista2.html', context)
+
+
 def historial(request,id):
     prueba_form = PruebaForm()
 
@@ -42,7 +62,7 @@ def historial(request,id):
                     len(monton_ingresado) - 1] == '0':
                     variable = int(variable)
 
-                return HttpResponseRedirect(reverse('index')+'inicio/'+str(variable) + '/' + seleccion)
+                return HttpResponseRedirect(reverse('index')+'app/'+str(variable) + '/' + seleccion)
 
                 pass
 
@@ -97,7 +117,7 @@ def vista(request):
                     len(monton_ingresado) - 1] == '0':
                     variable = int(variable)
 
-                return HttpResponseRedirect(reverse('index')+'inicio/'+str(variable) + '/' + seleccion+'#monto')
+                return HttpResponseRedirect(reverse('index')+'app/'+str(variable) + '/' + seleccion+'#monto')
 
                 pass
 
@@ -115,7 +135,7 @@ def inicio(request,monto,categoria):
     if request.method =='POST':
         monto = request.POST.get('monto')
         categoria = request.POST.get('categoria')
-        return HttpResponseRedirect(reverse('index')+'inicio/'+monto + '/' + categoria+'#monto')
+        return HttpResponseRedirect(reverse('index')+'app/'+monto + '/' + categoria+'#monto')
 
     else:
         if monto != ' ':
@@ -166,6 +186,11 @@ def inicio(request,monto,categoria):
         return render(request, 'page/app.html', context)
 
 
+def categoria_random(request,monto):
+    lista_categoria = ['salud', 'supermercado', 'educacion', 'vivienda', 'otros', 'transporte', 'restaurant y hoteles']
+    eleccion = random.randint(0,6)
+    return HttpResponseRedirect(reverse('index') + 'app/' + str(monto) + '/' + lista_categoria[eleccion] + '#monto')
+
 def insertar(h, variable):
     fecha = datetime.today().strftime("%Y-%m-%d")
     titulo = 'titulo'
@@ -188,7 +213,7 @@ def guardar(dat, id):
 def select():
     ultimo = Historial.objects.count()
     menos_tres = ultimo-3
-    ultimos_3 =Historial.objects.filter()[menos_tres:ultimo].values()
+    return Historial.objects.filter()[menos_tres:ultimo].values()
 
 
 

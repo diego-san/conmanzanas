@@ -7,9 +7,10 @@ from . import views
 
 urlpatterns = [
     path('', views.index, name='index'),
-    path('inicio/<int:monto>/<categoria>', views.inicio, name='inicio'),
-    path('inicio/',views.vista, name="vista2"),
-    path('vista/', views.vista, name='vista'),
+    path('<int:monto>',views.categoria_random, name='iniciocategoria_random'),
+    path('app/<int:monto>/<categoria>', views.inicio, name='inicio'),
+    path('app/<int:monto>', views.categoria_random, name='categoria_random'),
+    path('app/',views.vista, name="vista"),
     path('historial/<int:id>', views.historial, name='historial'),
 
 ]
