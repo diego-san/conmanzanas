@@ -30,7 +30,7 @@ for marcas in product:
             id_sub = consulta.get_id_sub_nombre('medios de transporte')
             ahora = datetime.now()
             img = insertar.iconos(id_sub[0][0])
-            fecha_obtencion = ahora.strftime('%d/%m/%Y')
+            fecha_obtencion = ahora.strftime('%Y-%m-%d')
             nombre = str(marcas) + " " + str(nom)
             unidad = 'unidad'
             cant = 1
