@@ -4,6 +4,7 @@ import basedatos
 
 # Create your models here.
 class Noticia(models.Model):
+    id = models.AutoField(primary_key=True)
     titulo= models.CharField(max_length=200)
     descrip = models.TextField(verbose_name='Descripción')
     cifra = models.DecimalField(max_digits=25, decimal_places=4)
@@ -26,6 +27,7 @@ class Noticia(models.Model):
 
 
 class Tema (models.Model):
+    id = models.AutoField(primary_key=True)
     nom_tema = models.CharField(max_length=200, verbose_name='Nombre del tema')
 
     class Meta:
