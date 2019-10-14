@@ -68,7 +68,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 }
 
 .banner-img img {
-	width: 65%;
+	width: 40%;
 	border-radius: 5px;
 }
 
@@ -388,7 +388,7 @@ jQuery(function ($) {
 	</div>
 </div>
 <!-- //banner -->
-<section class="services py-5" id="des">
+<section class="services py-5" >
 	<div class="container">
 		<h3 class="heading mb-5">¿Cómo funciona el sistema?</h3>
 		<div class="row ml-sm-5">
@@ -442,6 +442,7 @@ jQuery(function ($) {
 		<div class="row p-2">
 			<div class="col-md-4">
 				<img src="{% static 'img/mini-ico-manzanas.png'%}" alt="" class="img-fluid" >
+
 			</div>
 			<div class="col-md-4"></div>
 			<div class="col-md-4" >
@@ -450,6 +451,7 @@ jQuery(function ($) {
 			</div>
 
 		</div>
+		<h1 class="heading text-white noticias-title ">Noticias</h1>
 		<img src="{% static 'img/col-3detalle-manzanas.png'%}" alt="" class="img-fluid historial-img" >
 	</div>
 	
@@ -495,8 +497,8 @@ jQuery(function ($) {
 	
 	<!-- other services -->
 <section class="other_services " style="background: #003366;">
-	<div class="container p-2" >
-		<h3 class="heading mb-sm-5 mb-4 text-white">Ultimas cifras</h3>
+	<div class="container" >
+		<h3 class="heading mb-sm-5  text-white ">Ultimas cifras</h3>
         <div class="row">
         	{% for dato in datos%}
             <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12" >
@@ -510,18 +512,19 @@ jQuery(function ($) {
                     </div>
 
                         <div class="banner-img">
-                            <img src="{% static 'img/iconos/' %}{{dato.historial.img}}" alt="Image 1">
+                            <img src="{% static 'img/iconos/' %}{{dato.historial.img}}" alt="">
                         </div>
 
                         <div class="dates">
                             <div class="start">
-                                <strong>Monto</strong><h3>${{dato.historial.monto}}</h3>
+                                <strong>Monto</strong><h3 class="timer count-title count-number list-inline-item" data-to="{{dato.historial.monto}}"  data-speed="5000"></h3>
+                                
                                 
                             </div>
                             
                         </div>
 
-                        <div class="stats"  style="min-height: 150px;" >
+                        <div class="stats"  style="min-height: 110px;" >
 
                             <div>
                                 <strong>Categoria</strong><h4>{{dato.historial.categoria}}</h4>
@@ -538,7 +541,7 @@ jQuery(function ($) {
                       
 
                         <div class="footer" >
-                            <a href="{{dato.historial.link}}" class="Cbtn Cbtn-primary" target="_blank">Ver</a>
+                            <a href="{{dato.historial.link}}" class="btn btn-primary btn-lg  " target="_blank">Ver</a>
                         </div>
                     </div>
                 </div> 
@@ -549,6 +552,7 @@ jQuery(function ($) {
 
             
         </div>
+        <div style="height: 50px;"></div>
     </div>
 </section>
 <!-- //other services -->
@@ -632,12 +636,6 @@ jQuery(function ($) {
 		<span class="fa fa-arrow-up   mb-3" aria-hidden="true"></span>
 	</a>
 </div>
-<!-- move top -->
-
-
-
-
-
 
 
 

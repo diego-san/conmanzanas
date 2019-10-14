@@ -1,5 +1,6 @@
 import datetime
 import random
+from basedatos.models import  Subcategoria
 
 class algoritmo:
 
@@ -33,7 +34,7 @@ class algoritmo:
                         if  algoritmo.comprobar_lista_nombre(list_elegido,data[numero_random]) ==0:
                             elegidos.append(numero_random)
                             list_elegido.append({'producto': {'idbs': data[numero_random]['idbs'],
-                                                                'nombrebs': data[numero_random]['nombrebs'],
+                                                                'nombrebs': data[numero_random]['nombrebs'].capitalize(),
                                                                 'precio': float(data[numero_random]['precio']),
                                                                 'fuente': data[numero_random]['fuente'],
                                                                 'fechas': data[numero_random]['fechas'],
@@ -41,6 +42,7 @@ class algoritmo:
                                                                 'img': data[numero_random]['imgc'],
                                                               'unidad':data[numero_random]['umed'],
                                                               'cantidad':data[numero_random]['cant_u'],
+                                                              'subcate': data[numero_random]['idsubc_id'],
                                                               }})
 
 
@@ -54,7 +56,7 @@ class algoritmo:
 
             elif cantidad == 1:
                 list_elegido.append({'producto': {'idbs': data[0]['idbs'],
-                                                  'nombrebs': data[0]['nombrebs'],
+                                                  'nombrebs': data[0]['nombrebs'].capitalize(),
                                                   'precio': float(data[0]['precio']),
                                                   'fuente': data[0]['fuente'],
                                                   'fechas': data[0]['fechas'],
@@ -62,6 +64,7 @@ class algoritmo:
                                                   'img': data[0]['imgc'],
                                                   'unidad': data[0]['umed'],
                                                   'cantidad': data[0]['cant_u'],
+                                                  'subcate':data[0]['idsubc_id'],
                                                   }})
 
         return list_elegido
@@ -109,9 +112,10 @@ class algoritmo:
             suma = float(data[0]['producto']['precio'])* contador
             resto= float(monto)%float(data[0]['producto']['precio'])
 
-            data[0]['producto']['suma_aproximada'] = suma
-            data[0]['producto']['cantidad_veces'] = int(contador)
-
+            data[0]['producto']['precio'] = int(data[0]['producto']['precio'])
+            data[0]['producto']['suma_aproximada'] = int(suma)
+            data[0]['producto']['cantidad_veces'] = contador*float(data[0]['producto']['cantidad'])
+            data[0]['producto']['nomcate'] = Subcategoria.objects.filter(idsubc=data[0]['producto']['subcate']).values()[0]['nomsc'].capitalize()
 
             return algoritmo.calcula_resto(data, resto)
         elif cantidad > 1 :
@@ -120,9 +124,12 @@ class algoritmo:
                 contador = (float(monto)/cantidad) / float(data[x]['producto']['precio'])
                 suma = data[x]['producto']['precio'] * int(contador)
                 resto = float(monto) % float(data[x]['producto']['precio'])
-
+                data[x]['producto']['precio'] = int(data[x]['producto']['precio'])
                 data[x]['producto']['suma_aproximada'] = int(suma)
-                data[x]['producto']['cantidad_veces'] = int(contador)
+                data[x]['producto']['cantidad_veces'] = contador*float(data[x]['producto']['cantidad'])
+                data[x]['producto']['nomcate'] = Subcategoria.objects.filter(idsubc = data[0]['producto']['subcate']).values()[0]['nomsc'].capitalize()
+
+
 
             return algoritmo.calcula_resto(data, resto)
 
@@ -137,14 +144,15 @@ class algoritmo:
             veces = resto/ 200
             suma = veces * 200
             data.append({'producto': {'idbs': 1,
-                                                'nombrebs': 'manzana',
+                                                'nombrebs': 'Manzana',
                                                 'precio': 200,
                                                 'fuente': 'https://www.google.com/search?client=firefox-b-d&q=precio+manzana+chile',
                                                 'fechas': datetime.date(2019, 9, 1),
                                                 'fechapub': datetime.date(2019, 9, 1),
-                                                'suma_aproximada': suma,
+                                                'suma_aproximada': int(suma),
                                                 'cantidad_veces': int(veces),
-                                                'img':'apple.png'}})
+                                                'img':'apple.png',
+                                                'nomcate': 'Precios en supermercados'}})
 
             return data
 
