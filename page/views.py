@@ -16,6 +16,7 @@ def index(request):
 
     if request.method == 'POST':
         monto = request.POST.get('monto')
+        numero_a_letras(int(monto))
         categoria = request.POST.get('categoria')
         return HttpResponseRedirect('app/'+monto+'/'+categoria+'#monto')
 
@@ -106,6 +107,7 @@ def vista(request):
     context = {'form': prueba_form}
     if request.method =='POST':
         variable = request.POST.get('monto')
+
         seleccion = request.POST.get('categoria').lower()
 
         if str(str(variable).replace('.', '').isdigit()) == 'True' and str(variable).count(".") <= 1:
@@ -176,6 +178,7 @@ def inicio(request,monto,categoria):
                 if len(resultado)!=0:
                     insertar(resultado, variable)
 
+
                 monton_ingresado = str(variable)
                 if monton_ingresado[len(monton_ingresado) - 2] == '.' and monton_ingresado[
                     len(monton_ingresado) - 1] == '0':
@@ -229,3 +232,158 @@ def error_404_view(request, exception):
 def error_500_view(request, exception):
     data = { }
     return render(request,'page/error500.html', data)
+
+MAX_NUMERO = 999999999999
+
+UNIDADES = (
+    'cero',
+    'uno',
+    'dos',
+    'tres',
+    'cuatro',
+    'cinco',
+    'seis',
+    'siete',
+    'ocho',
+    'nueve'
+)
+
+DECENAS = (
+    'diez',
+    'once',
+    'doce',
+    'trece',
+    'catorce',
+    'quince',
+    'dieciseis',
+    'diecisiete',
+    'dieciocho',
+    'diecinueve'
+)
+
+DIEZ_DIEZ = (
+    'cero',
+    'diez',
+    'veinte',
+    'treinta',
+    'cuarenta',
+    'cincuenta',
+    'sesenta',
+    'setenta',
+    'ochenta',
+    'noventa'
+)
+
+CIENTOS = (
+    '_',
+    'ciento',
+    'doscientos',
+    'trescientos',
+    'cuatroscientos',
+    'quinientos',
+    'seiscientos',
+    'setecientos',
+    'ochocientos',
+    'novecientos'
+)
+
+def numero_a_letras(variable):
+    numero_entero = int(variable)
+    if numero_entero > MAX_NUMERO:
+        raise OverflowError('Número demasiado alto')
+    if numero_entero < 0:
+        return 'menos %s' % numero_a_letras(abs(variable))
+    letras_decimal = ''
+    parte_decimal = int(round((abs(variable) - abs(numero_entero)) * 100))
+    if parte_decimal > 9:
+        letras_decimal = 'punto %s' % numero_a_letras(parte_decimal)
+    elif parte_decimal > 0:
+        letras_decimal = 'punto cero %s' % numero_a_letras(parte_decimal)
+    if (numero_entero <= 99):
+        resultado = leer_decenas(numero_entero)
+    elif (numero_entero <= 999):
+        resultado = leer_centenas(numero_entero)
+    elif (numero_entero <= 999999):
+        resultado = leer_miles(numero_entero)
+    elif (numero_entero <= 999999999):
+        resultado = leer_millones(numero_entero)
+    else:
+        resultado = leer_millardos(numero_entero)
+    resultado = resultado.replace('uno mil', 'un mil')
+    resultado = resultado.strip()
+    resultado = resultado.replace(' _ ', ' ')
+    resultado = resultado.replace('  ', ' ')
+    if parte_decimal > 0:
+        resultado = '%s %s' % (resultado, letras_decimal)
+    print(resultado)
+    return resultado
+
+
+def leer_decenas(variable):
+    if variable < 10:
+        return UNIDADES[variable]
+    decena, unidad = divmod(variable, 10)
+    if variable <= 19:
+        resultado = DECENAS[unidad]
+    elif variable <= 29:
+        resultado = 'veinti%s' % UNIDADES[unidad]
+    else:
+        resultado = DIEZ_DIEZ[decena]
+        if unidad > 0:
+            resultado = '%s y %s' % (resultado, UNIDADES[unidad])
+    return resultado
+
+def leer_centenas(variable):
+    centena, decena = divmod(variable, 100)
+    if variable == 100:
+        resultado = 'cien'
+
+
+    else:
+        resultado = CIENTOS[centena]
+        if decena > 0:
+            resultado = '%s %s' % (resultado, leer_decenas(decena))
+
+    return resultado
+
+def leer_miles(variable):
+    millar, centena = divmod(variable, 1000)
+    resultado = ''
+    if (millar == 1):
+        resultado = ''
+    if (millar >= 2) and (millar <= 9):
+        resultado = UNIDADES[millar]
+    elif (millar >= 10) and (millar <= 99):
+        resultado = leer_decenas(millar)
+    elif (millar >= 100) and (millar <= 999):
+        resultado = leer_centenas(millar)
+    resultado = '%s mil' % resultado
+
+    if centena > 0:
+        resultado = '%s %s' % (resultado, leer_centenas(centena))
+
+    return resultado
+
+def leer_millones(variable):
+    millon, millar = divmod(variable, 1000000)
+    resultado = ''
+    if (millon == 1):
+        resultado = ' un millon '
+    if (millon >= 2) and (millon <= 9):
+        resultado = UNIDADES[millon]
+    elif (millon >= 10) and (millon <= 99):
+        resultado = leer_decenas(millon)
+    elif (millon >= 100) and (millon <= 999):
+        resultado = leer_centenas(millon)
+    if millon > 1:
+        resultado = '%s millones' % resultado
+    if (millar > 0) and (millar <= 999):
+        resultado = '%s %s' % (resultado, leer_centenas(millar))
+    elif (millar >= 1000) and (millar <= 999999):
+        resultado = '%s %s' % (resultado, leer_miles(millar))
+
+    return resultado
+
+def leer_millardos(variable):
+    millardo, millon = divmod(variable, 1000000)
+    return '%s millones %s' % (leer_miles(millardo), leer_millones(millon))

@@ -46,7 +46,36 @@ img {
   margin: 7px 5px 5px 5px;
   border-radius: 5px;
 }
-
+input[id^="spoiler"]{
+display: none;
+}
+/* Estilo botón clicable */
+input[id^="spoiler"] + label {
+display: block;
+width: 200px;
+margin: 0 auto;
+padding: 5px 20px;
+background: #4ad1e5;
+cursor: pointer;
+}
+/* Estilo botón cuando su INPUT está seleccionado */
+input[id^="spoiler"]:checked + label {
+color: #333;
+background: #ccc;
+}
+/* Estilo caja SPOILER (inicialmente oculto) */
+input[id^="spoiler"] ~ .spoiler {
+width: 90%;
+height: 0;
+overflow: hidden;
+opacity: 0;
+margin: 10px auto 0;
+}
+/* Estilo caja SPOILER cuando su INPUT está seleccionado */
+input[id^="spoiler"]:checked + label + .spoiler{
+height: auto;
+opacity: 1;
+}
 }
 
 	</style>
@@ -264,6 +293,12 @@ jQuery(function ($) {
                                     </div>
 									</div>
 
+									<input type="checkbox" id="spoiler1"></input>
+									<label for="spoiler1">Más Opciones</label>
+									<div class="spoiler">
+										<input type="text" placeholder="Ingresar Titulo" class="form-control">
+
+									</div>
 									
 									<input type="submit" name="" Class="btn btn-primary btn-lg btn-block" value="Calcular">
 									
@@ -303,46 +338,80 @@ jQuery(function ($) {
 		</div>
 	</div>
 </section>
-<!-- //stats section -->
-<div class="container-fluid p-2" style="background: #01669C;">
-  <ul>
-    {% for producto in consulta%}
-    <li class="list">
-      <!-- Profile Section -->
-      <div class="list__profile">
-        <div> <img src="{% static 'img/iconos/' %}{{producto.producto.img}}"> </div>
-        <div class="list__label">
-          <div class="list__label--value">Alcanza para {{ producto.producto.cantidad_veces}} {{ producto.producto.nombrebs}}</div>
-          <div class="list__label--header">Fecha de publicacion: {{ producto.producto.fechapub}}</div>
-          <div class="list__label--value">Precio: {{ producto.producto.precio}}</div>
-          
-          
-        </div>
-      </div> 
-      <!-- Photo Thumbnail Section -->
-      <div class="list__photos">
-        <span class="p-2"> 
-        		<div class="list__label--value " >
-        			<ul class="list-inline">
- 							 <li class="list-inline-item list__label--value">Precio total: $</li>
- 							 <li class="timer count-title list__label--value list-inline-item" data-to="{{ producto.producto.suma_aproximada }}" data-speed="5000"></li>
+
+
+
+
+
+
+<div class="container-fluid">
+	 <div class="row ">
+        <div class="col-12  mx-auto">
+        	{% for producto in consulta%}
+            <div class="card">
+                <div class="card-body">
+                    <div class="row align-items-center">
+                        <div class="col-lg-2 col-4 mx-auto text-nowrap text-center px-2">
+                            <a href="">
+                                <img class="d-block mx-auto  img-fluid" src="{% static 'img/iconos/' %}{{producto.producto.img}}">
+                            </a>
+                        </div>
+                        <div class="col-lg-6 text-center text-lg-left">
+                            <h2 class="d-inline">{{ producto.producto.nombrebs}}</h2><span class="badge badge-pill badge-primary sup small align-top">{{ producto.producto.nomcate}}</span>
+                            <h6>{{ producto.producto.fechapub}}</h6>
+                            <ul class="list-inline mt-3">
+                                <li class="list-inline-item">
+                                    <a class="btn btn-secondary rounded-circle" href="{{ producto.producto.fuente }}" target="_blank">
+                                        <i class="fa fa-rss align-middle"></i>
+                                    </a>
+                                </li>
+                                
+                                
+                                <li class="list-inline-item">
+                                    <a class="btn btn-primary rounded" href="../../{{ producto.producto.suma_aproximada }}" target="_blank">Calcular cifra</a>
+
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-lg-4 col-6 mx-auto">
+                            <div class="row no-gutters text-center justify-content-end align-items-end">
+                                <div class="col-md-12">
+                                    <span class="badge badge-pill badge-dark font-weight-normal">Precio total</span>
+                                    <ul class="list-inline">
+ 							 <li class="list-inline-item list__label--value">$</li>
+ 							 <h1 class="timer count-title list__label--value list-inline-item" data-to="{{ producto.producto.suma_aproximada }}" data-speed="3000"></h1>
  							
  							 
  							 
 						</ul>
-        		</div>
-        </span>
-        <span class="p-2 mt-2"> <a href="{{ producto.producto.fuente }}" type="button" class="btn btn-primary btn-sm" target="_blank">Fuente</a> </span>
-      </div>
-    </li>
-  {% endfor %}
-  </ul>
-  
+                                </div>
+                                <div class="col-md-12">
+                                	<span class="badge badge-pill badge-dark font-weight-normal">Cantidad</span>
+                                    <h2 class="timer count-title "
+                                     data-to="{{ producto.producto.cantidad_veces}}" data-speed="3000"></h2>
+                                     {% if producto.producto.unidad != 'unidad' %}
+                                    <h2 >{{ producto.producto.unidad}}</h2>
+                                     {% endif %}
+                                </div>
+                                <div class="col-md-12">
+                                	<span class="badge badge-pill badge-dark font-weight-normal">Precio</span>
+                                	
+                                    <h2>${{ producto.producto.precio}}</h2>
+                                   
+                                     
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+	</div>
+
 </div>
-
-
-
 {% endif %}
+
 
 
 
