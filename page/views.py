@@ -229,9 +229,13 @@ def error_404_view(request, exception):
     return render(request,'page/error404.html', data)
 
 
-def error_500_view(request, exception):
-    data = { }
+def error_500_view(request):
+    data = {}
     return render(request,'page/error500.html', data)
+
+
+
+
 
 MAX_NUMERO = 999999999999
 

@@ -25,7 +25,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'go6g65uxkq2sdw&jysuzs=qhkhuhj3h^(k5%$zjj$7d)%yvgu0'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 
 ALLOWED_HOSTS = ["conmanzanas.datoslab.cl", "142.93.206.11",'localhost', '127.0.0.1']
