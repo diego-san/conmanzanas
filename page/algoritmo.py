@@ -141,8 +141,8 @@ class algoritmo:
     def calcula_resto(data, resto):
 
         if resto >= 200:
-            veces = resto/ 200
-            suma = veces * 200
+            veces = int(resto/ 200)
+            suma = int(veces) * 200
             data.append({'producto': {'idbs': 1,
                                                 'nombrebs': 'Manzana',
                                                 'precio': 200,
