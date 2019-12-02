@@ -364,7 +364,7 @@ jQuery(function ($) {
 									<input type="checkbox" id="spoiler1"></input>
 									<label for="spoiler1">Más Opciones</label>
 									<div class="spoiler">
-										<input type="text" placeholder="Ingresar Titulo" class="form-control">
+										<input type="text" placeholder="Ingresar Titulo" class="form-control" name="titulo">
 
 									</div>
 									
@@ -389,7 +389,10 @@ jQuery(function ($) {
 			<div class="row text-center">
 				<div class="col-lg-12 col-12">
 					<div class="w3layouts_stats_left bg-light ">
-						<p class="para-text-w3ls text-dark">Monto Ingresado</p>
+                        {% if titulo != '0' %}
+						<h1>{{ titulo }}</h1>
+                        {%  endif %}
+
 						<div class="stats-icon">
 							<span class="fa fa-usd"></span>
 						</div>
@@ -423,21 +426,18 @@ jQuery(function ($) {
                         <div class="col-lg-2 col-4 mx-auto text-nowrap text-center px-2">
                             <a href="">
                                 <img class="d-block mx-auto  img-fluid" src="{% static 'img/iconos/' %}{{producto.producto.img}}">
+								<span class="badge badge-pill badge-primary sup small align-top">{{ producto.producto.nomcate}}</span>
                             </a>
                         </div>
                         <div class="col-lg-6 text-center text-lg-left">
-                            <h2 class="d-inline">{{ producto.producto.nombrebs}}</h2><span class="badge badge-pill badge-primary sup small align-top">{{ producto.producto.nomcate}}</span>
+                            <h2 class="d-inline">{{ producto.producto.cantidad_veces}} {% if producto.producto.unidad != 'unidad' %} {{ producto.producto.unidad}} {% endif %} {{ producto.producto.nombrebs}}</h2>
                             <h6>{{ producto.producto.fechapub}}</h6>
                             <ul class="list-inline mt-3">
+
+
+
                                 <li class="list-inline-item">
-                                    <a class="btn btn-secondary rounded-circle" href="{{ producto.producto.fuente }}" target="_blank">
-                                        <i class="fa fa-rss align-middle"></i>
-                                    </a>
-                                </li>
-                                
-                                
-                                <li class="list-inline-item">
-                                    <a class="btn btn-primary rounded" href="../../{{ producto.producto.suma_aproximada }}" target="_blank">Calcular cifra</a>
+                                    <a class="btn btn-primary rounded" href="../../{{ producto.producto.suma_aproximada }}" target="_blank">Conmanzanas</a>
 
                                 </li>
                             </ul>
@@ -445,28 +445,18 @@ jQuery(function ($) {
                         <div class="col-lg-4 col-6 mx-auto">
                             <div class="row no-gutters text-center justify-content-end align-items-end">
                                 <div class="col-md-12">
-                                    <span class="badge badge-pill badge-dark font-weight-normal">Precio total</span>
-                                    <ul class="list-inline">
- 							 <li class="list-inline-item list__label--value">$</li>
- 							 <h1 class="timer count-title list__label--value list-inline-item" data-to="{{ producto.producto.suma_aproximada }}" data-speed="3000"></h1>
- 							
- 							 
- 							 
-						</ul>
+                                    <span class="badge badge-pill badge-dark font-weight-normal">Precio Unitario</span>
+                                   	 <h4>${{ producto.producto.precio}}</h4>
                                 </div>
+								<div class="col-md-12">
+									<span class="badge badge-pill badge-dark font-weight-normal">Precio Total</span>
+								</div>
                                 <div class="col-md-12">
-                                	<span class="badge badge-pill badge-dark font-weight-normal">Cantidad</span>
-                                    <h2 class="timer count-title "
-                                     data-to="{{ producto.producto.cantidad_veces}}" data-speed="3000"></h2>
-                                     {% if producto.producto.unidad != 'unidad' %}
-                                    <h2 >{{ producto.producto.unidad}}</h2>
-                                     {% endif %}
-                                </div>
-                                <div class="col-md-12">
-                                	<span class="badge badge-pill badge-dark font-weight-normal">Precio</span>
-                                	
-                                    <h2>${{ producto.producto.precio}}</h2>
-                                   
+
+                                   <h1 class="d-inline">${{ producto.producto.suma_aproximada }}</h1>
+									<a class="btn  badge badge-pill badge-primary sup small align-top" href="{{ producto.producto.fuente }}" target="_blank">
+                                        <i class="fa fa-rss align-middle"></i>
+                                    </a>
                                      
                                 </div>
                             </div>
@@ -491,7 +481,7 @@ jQuery(function ($) {
       </div>
       <div class="modal-body text-center" >
 
-                  <a id="textoACopiar"  href="https://{{ request.get_host }}/historial/34#monto" target="_blank"><code>https://{{ request.get_host }}/historial/34#monto </code>
+                  <a id="textoACopiar"  href="https://{{ request.get_host }}/historial/{{ historial }}#monto" target="_blank"><code>https://{{ request.get_host }}/historial/{{  historial }}#monto</code>
                   </a>
 
 
