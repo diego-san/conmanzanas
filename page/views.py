@@ -349,6 +349,8 @@ def leer_decenas(variable):
     decena, unidad = divmod(variable, 10)
     if variable <= 19:
         resultado = DECENAS[unidad]
+    elif variable == 20:
+        resultado = 'veinte'
     elif variable <= 29:
         resultado = 'veinti%s' % UNIDADES[unidad]
     else:
