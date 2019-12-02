@@ -126,7 +126,7 @@ class algoritmo:
                 resto = resto+(float(monto) % float(data[x]['producto']['precio']))
                 data[x]['producto']['precio'] = int(data[x]['producto']['precio'])
                 data[x]['producto']['suma_aproximada'] = int(suma)
-                data[x]['producto']['cantidad_veces'] = contador*float(data[x]['producto']['cantidad'])
+                data[x]['producto']['cantidad_veces'] = int(contador*float(data[x]['producto']['cantidad']))
                 data[x]['producto']['nomcate'] = Subcategoria.objects.filter(idsubc = data[0]['producto']['subcate']).values()[0]['nomsc'].capitalize()
 
 
