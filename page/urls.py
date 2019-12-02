@@ -12,6 +12,7 @@ urlpatterns = [
     path('app/<int:monto>', views.categoria_random, name='categoria_random'),
     path('app/',views.vista, name="vista"),
     path('historial/<int:id>', views.historial, name='historial'),
+    path('Acerca_De/', views.acerca_de, name='acerca_de'),
 
 ]
 
