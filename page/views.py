@@ -8,6 +8,15 @@ from django.urls import reverse
 import random
 
 
+
+def acerca_de(request):
+
+    context = {}
+    return render(request, 'page/acerca_de.html', context)
+
+
+
+
 def index(request):
     lista_categoria = ['salud', 'supermercado', 'educacion','vivienda', 'otros', 'transporte', 'restaurant y hoteles']
     datos= []

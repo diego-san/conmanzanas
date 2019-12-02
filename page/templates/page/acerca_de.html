@@ -1,0 +1,428 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Con Manzanas</title>
+<!-- for-mobile-apps -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="Child Learn Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+
+ 
+	<style>
+	.counter {
+    background-color:#f5f5f5;
+    padding: 20px 0;
+    border-radius: 5px;
+}
+
+.count-title {
+    font-size: 40px;
+    font-weight: normal;
+    margin-top: 10px;
+    margin-bottom: 0;
+    text-align: center;
+}
+
+.count-text {
+    font-size: 13px;
+    font-weight: normal;
+    margin-top: 10px;
+    margin-bottom: 0;
+    text-align: center;
+}
+
+.fa-2x {
+    margin: 0 auto;
+    float: none;
+    display: table;
+    color: #4ad1e5;
+}
+
+
+img {
+  width: 75px;
+  margin: 7px 5px 5px 5px;
+  border-radius: 5px;
+}
+input[id^="spoiler"]{
+display: none;
+}
+/* Estilo botón clicable */
+input[id^="spoiler"] + label {
+display: block;
+width: 200px;
+margin: 0 auto;
+padding: 5px 20px;
+background: #4ad1e5;
+cursor: pointer;
+}
+/* Estilo botón cuando su INPUT está seleccionado */
+input[id^="spoiler"]:checked + label {
+color: #333;
+background: #ccc;
+}
+/* Estilo caja SPOILER (inicialmente oculto) */
+input[id^="spoiler"] ~ .spoiler {
+width: 90%;
+height: 0;
+overflow: hidden;
+opacity: 0;
+margin: 10px auto 0;
+}
+/* Estilo caja SPOILER cuando su INPUT está seleccionado */
+input[id^="spoiler"]:checked + label + .spoiler{
+height: auto;
+opacity: 1;
+}
+}
+.contenedor-boton-compartir{
+  right:0;
+  bottom:0;
+  position:absolute;
+
+ 
+}
+.btn-compartir{
+   width:auto ;
+  height:40px;
+  
+  -webkit-border-top-left-radius: 10px;
+  -webkit-border-bottom-left-radius: 10px;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: : 10px;
+  background:#de0d1d;
+  right: 0;
+  bottom:0;
+  position:absolute;
+  margin-left: :16px;
+  margin-bottom:16px;
+  border:none;
+  outline:none;
+  color:#FFF;
+  font-size:30px;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+  transition:.3s;  
+}
+.btn-compartir:hover,
+.btn-compartir:focus,
+.btn-compartir:active,
+.btn-compartir.active {
+    background-color: #81c200;
+    border-color: #b60000;
+    color:#FFFFFF;
+    text-decoration: none;
+}
+.btn-compartir.disabled:hover,
+.btn-compartir.disabled:focus,
+.btn-compartir.disabled:active,
+.btn-compartir.disabled.active,
+.btn-compartir[disabled]:hover,
+.btn-compartir[disabled]:focus,
+.btn-compartir[disabled]:active,
+.btn-compartir[disabled].active,
+fieldset[disabled] .btn-compartir:hover,
+fieldset[disabled] .btn-compartir:focus,
+fieldset[disabled] .btn-compartir:active,
+fieldset[disabled] .btn-compartir.active {
+    background-color: #de0d1d;
+    border-color: #d10010;
+    color:#FFFFFF;
+}
+
+	</style>
+	<!-- css files -->
+    <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel='stylesheet' type='text/css' id="bootstrap-css"/><!-- bootstrap css -->
+    <link href="{% static 'vendor/style.css' %} " rel='stylesheet' type='text/css' /><!-- custom css -->
+	<link href="{% static 'vendor/css_slider.css' %} " type="text/css" rel="stylesheet" media="all">
+    <link href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet"><!-- fontawesome css -->
+	<!-- //css files -->
+	<script src="{% static 'vendor/jquery/jquery.min.js' %}"></script>
+	<script src="{% static 'vendor/bootstrap/js/bootstrap.js' %}"></script>
+	<!-- google fonts -->
+	<link href="//fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i&amp;subset=latin-ext" rel="stylesheet">
+	<!-- //google fonts -->
+
+	<script type="text/javascript">
+		
+
+
+		(function ($) {
+	$.fn.countTo = function (options) {
+		options = options || {};
+		
+		return $(this).each(function () {
+			// set options for current element
+			var settings = $.extend({}, $.fn.countTo.defaults, {
+				from:            $(this).data('from'),
+				to:              $(this).data('to'),
+				speed:           $(this).data('speed'),
+				refreshInterval: $(this).data('refresh-interval'),
+				decimals:        $(this).data('decimals')
+			}, options);
+			
+			// how many times to update the value, and how much to increment the value on each update
+			var loops = Math.ceil(settings.speed / settings.refreshInterval),
+				increment = (settings.to - settings.from) / loops;
+			
+			// references & variables that will change with each update
+			var self = this,
+				$self = $(this),
+				loopCount = 0,
+				value = settings.from,
+				data = $self.data('countTo') || {};
+			
+			$self.data('countTo', data);
+			
+			// if an existing interval can be found, clear it first
+			if (data.interval) {
+				clearInterval(data.interval);
+			}
+			data.interval = setInterval(updateTimer, settings.refreshInterval);
+			
+			// initialize the element with the starting value
+			render(value);
+			
+			function updateTimer() {
+				value += increment;
+				loopCount++;
+				
+				render(value);
+				
+				if (typeof(settings.onUpdate) == 'function') {
+					settings.onUpdate.call(self, value);
+				}
+				
+				if (loopCount >= loops) {
+					// remove the interval
+					$self.removeData('countTo');
+					clearInterval(data.interval);
+					value = settings.to;
+					
+					if (typeof(settings.onComplete) == 'function') {
+						settings.onComplete.call(self, value);
+					}
+				}
+			}
+			
+			function render(value) {
+				var formattedValue = settings.formatter.call(self, value, settings);
+				$self.html(formattedValue);
+			}
+		});
+	};
+	
+	$.fn.countTo.defaults = {
+		from: 0,               // the number the element should start at
+		to: 0,                 // the number the element should end at
+		speed: 1000,           // how long it should take to count between the target numbers
+		refreshInterval: 100,  // how often the element should be updated
+		decimals: 0,           // the number of decimal places to show
+		formatter: formatter,  // handler for formatting the value before rendering
+		onUpdate: null,        // callback method for every time the element is updated
+		onComplete: null       // callback method for when the element finishes updating
+	};
+	
+	function formatter(value, settings) {
+		return value.toFixed(settings.decimals);
+	}
+}(jQuery));
+
+jQuery(function ($) {
+  // custom formatting example
+  $('.count-number').data('countToOptions', {
+	formatter: function (value, options) {
+	  return value.toFixed(options.decimals).replace(/\B(?=(?:\d{3})+(?!\d))/g, ',');
+	}
+  });
+  
+  // start all the timers
+  $('.timer').each(count);  
+  
+  function count(options) {
+	var $this = $(this);
+	options = $.extend({}, options || {}, $this.data('countToOptions') || {});
+	$this.countTo(options);
+  }
+});
+
+
+
+	</script>
+
+
+	
+</head>
+<body>
+
+	<!-- header -->
+
+	
+	<div class="container-fluid" style="background: #003366;"id="home">
+		<!-- nav -->
+		<nav class="py-3 d-lg-flex">
+			<div id="logo">
+				<h1> <a href="/"><img src="{% static 'img/col-3-logo-conManzanas.png'%}" alt=""> Conmanzanas</a></h1>
+			</div>
+			<label for="drop" class="toggle"><span class="fa fa-bars"></span></label>
+			<input type="checkbox" id="drop" />
+			<ul class="menu ml-auto mt-1">
+				<li class="active"><a href="/">Inicio</a></li>
+				<li class=""><a href="/app">Aplicación</a></li>
+				<li class=""><a href="{% url 'acerca_de'%}">Acerca_de</a></li>
+			</ul>
+		</nav>
+		<!-- //nav -->
+	</div>
+
+	<!-- INFO ACERCA DE-->
+<div class="container">
+
+<div class="col-lg-12 col-md-12 px-lg-12 px-0">
+
+<p> <h4>Qué es ConManzanas:</h4>
+ConManzanas es una aplicación que tiene por objetivo... (sacar descripción de presentaciones anteriores)
+	Plataforma Web de apoyo a la Educación Cívico-Económica de niñas, niños y público general.
+	</p>
+
+
+	<p>
+<h4> Cómo se desarrolló: </h4>
+La idea surje en el ramo de Taller Integrado de la Carrera de Ingeniería Informática, de la Facultad de Ingeniería, en la Universidad de Playa Ancha UPLA. Son desarrolladores principales, y estudiantes del ramo, Diego Sánchez, Marcelo Ibarra y Jaime Morales. Bajo el alero del laboratorio de DataScience (datosLab.cl), dirigido por Miguel Guevara, quien también es profesor del ramo, se consigue financiamiento para incubar la idea, en vinculación con varias comunidades educativas. El proyecto se financia con fondos del programa VinculaT, de la Dirección General de Vinculación con el Medio UPLA, convocatoria 2019.
+Se incorporan al equipo, el diseñador Cristián Parra, de la Facultad de Arte UPLA. Ezequiel Lagos, ayudante de datosLab a cargo de los servidores y Valentina Ruiz, como asesora pedagógica. También colaboraron con el proyecto, Melanie Suárez, estudiante de periodismo UPLA y los estudiantes del Campus San Felipe, Mario Tapia y Joaquín Salinas.
+</p>
+
+
+	<p>
+
+<h4>Origen de los Datos: </h4>
+ConManzanas obtiene sus datos de diversas fuentes de información, de manera automática y también de forma manual. Se consultan principalmente sitios del Gobierno de Chile o sitios que monitorean los precios promedio en varios países, como PreciosMundi.
+Cada dato, indica su fuente al ser utilizado.
+</p>
+
+</div>
+</div>
+
+
+
+			<script type="text/javascript">
+function activar() {
+  frm = document.forms[0];
+  for (i=0; ele = frm.getElementsByTagName('select')[i]; i++)
+    ele.style.display = 'none';
+  for (i=0; ele = arguments[i]; i++)
+    frm[ele].style.display = 'block';
+}
+</script>
+
+<script type="text/javascript">
+function activar() {
+  frm = document.forms[0];
+  for (i=0; ele = frm.getElementsByTagName('select')[i]; i++)
+    ele.style.display = 'none';
+  for (i=0; ele = arguments[i]; i++)
+    frm[ele].style.display = 'block';
+}
+</script>
+
+				<div class="container">
+				<div class="col-lg-5 col-md-8 px-lg-3 px-0">
+					<div class="banner-form-w3 ml-lg-5">
+						<div class="padding">
+							<!-- banner form -->
+							  <form method="POST"  name="form">
+							  	{% csrf_token %}
+								<h5 class="mb-3">¿Cuál es la cifra que deseas comprender?</h5>
+								<div class="form-style-w3ls " >
+									<h6 class="mb-12">Categoría</h6>
+
+									<input type="radio" name="rad" onclick="activar('supermercado')" /> Supermercado
+									<input type="radio" name="rad" onclick="activar('educacion')" /> Educación
+									<input type="radio" name="rad" onclick="activar('transporte')" /> Transporte
+									<input type="radio" name="rad" onclick="activar('restaurant')" /> Restaurant y Hoteles
+									<input type="radio" name="rad" onclick="activar('vivienda')" /> Vivienda
+									<input type="radio" name="rad" onclick="activar('otros')" /> Otros
+
+
+
+									<select name="supermercado" required="" class="form-control" style="display:none">
+									<option>Seleccionar Todo</option>
+									<option>Precio en supermercados</option>
+									</select>
+
+									<select name="educacion" required="" class="form-control" style="display:none">
+									<option>Seleccionar Todo</option>
+									<option>Infraestructura educación</option>
+									<option>Costo educación</option>
+									</select>
+
+									<select name="transporte" required="" class="form-control" style="display:none">
+									<option>Seleccionar Todo</option>
+									<option>Transprte y servicio</option>
+									<option>Medios de transporte</option>
+									</select>
+
+									<select name="restaurant" required="" class="form-control" style="display:none">
+									<option>Seleccionar Todo</option>
+									<option>Precio restaurant</option>
+									<option>Precio hoteles</option>
+									</select>
+
+									<select name="vivienda" required="" class="form-control" style="display:none">
+									<option>Seleccionar Todo</option>
+									<option>Vivienda y salari</option>
+									<option>Articulos para el hogar</option>
+									<option>Gastos de vivienda</option>
+									</select>
+
+									<select name="otros" required="" class="form-control" style="display:none">
+									<option>Seleccionar Todo</option>
+									<option>Ropa y calazado</option>
+									<option>Ocio y deportes</option>
+									<option>Recreacion y cultura</option>
+									</select>
+
+
+									<input type="submit" name="" Class="btn btn-primary btn-lg btn-block" value="Calcular">
+								</div>
+
+							</form>
+							<!-- //banner form -->
+						</div>
+					</div>
+				</div>
+			</div>
+
+
+
+
+
+
+<!-- copyright -->
+<section class="copyright">
+	<div class="container py-4">
+		<div class="row bottom">
+			
+			<div class="col-lg-6 copy-right p-0">
+				<p class="text-center">© 2019 Conmanznas 
+				</p>
+			</div>
+		</div>
+	</div>
+</section>
+<!-- //copyright -->
+
+<!-- move top -->
+<div class="move-top text-right">
+	<a href="#home" class="move-top"> 
+		<span class="fa fa-arrow-up   mb-3" aria-hidden="true"></span>
+	</a>
+</div>
+
+
+
+
+
+</body>
+</html>
