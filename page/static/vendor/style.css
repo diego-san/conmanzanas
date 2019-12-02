@@ -238,8 +238,8 @@ li > a:only-child:after { content: ''; }
 
 .btn-flotante {
    width:auto ;
-  height:60px;
-  padding: 10PX;
+  height:40px;
+  padding: 2px;
   -webkit-border-top-right-radius: 10px;
   -webkit-border-bottom-right-radius: 10px;
   -moz-border-radius-topright: 10px;
@@ -255,7 +255,7 @@ li > a:only-child:after { content: ''; }
   border:none;
   outline:none;
   color:#FFF;
-  font-size:40px;
+  font-size:20px;
   box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
   transition:.3s;  
 }

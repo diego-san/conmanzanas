@@ -7,7 +7,7 @@ class algoritmo:
     def inicio(data, monto, numero_produc):
 
         f = algoritmo.lista_random(data, numero_produc)
-        #f[0]['producto']['ccc'] = 3
+
 
         if len(f) > 0:
             return algoritmo.calcula_cuanto(f,monto)
@@ -109,12 +109,12 @@ class algoritmo:
         resto= 0
         if cantidad == 1:
             contador = float(monto)/float(data[0]['producto']['precio'])
-            suma = float(data[0]['producto']['precio'])* contador
+            suma = float(data[0]['producto']['precio'])* int(contador)
             resto= float(monto)%float(data[0]['producto']['precio'])
 
             data[0]['producto']['precio'] = int(data[0]['producto']['precio'])
             data[0]['producto']['suma_aproximada'] = int(suma)
-            data[0]['producto']['cantidad_veces'] = contador*float(data[0]['producto']['cantidad'])
+            data[0]['producto']['cantidad_veces'] = int(int(contador)*float(data[0]['producto']['cantidad']))
             data[0]['producto']['nomcate'] = Subcategoria.objects.filter(idsubc=data[0]['producto']['subcate']).values()[0]['nomsc'].capitalize()
 
             return algoritmo.calcula_resto(data, resto)
@@ -123,7 +123,7 @@ class algoritmo:
             for x in range(0, cantidad):
                 contador = (float(monto)/cantidad) / float(data[x]['producto']['precio'])
                 suma = data[x]['producto']['precio'] * int(contador)
-                resto = float(monto) % float(data[x]['producto']['precio'])
+                resto = resto+(float(monto) % float(data[x]['producto']['precio']))
                 data[x]['producto']['precio'] = int(data[x]['producto']['precio'])
                 data[x]['producto']['suma_aproximada'] = int(suma)
                 data[x]['producto']['cantidad_veces'] = contador*float(data[x]['producto']['cantidad'])
@@ -141,8 +141,8 @@ class algoritmo:
     def calcula_resto(data, resto):
 
         if resto >= 200:
-            veces = resto/ 200
-            suma = veces * 200
+            veces = int(resto/ 200)
+            suma = int(veces) * 200
             data.append({'producto': {'idbs': 1,
                                                 'nombrebs': 'Manzana',
                                                 'precio': 200,
@@ -152,7 +152,10 @@ class algoritmo:
                                                 'suma_aproximada': int(suma),
                                                 'cantidad_veces': int(veces),
                                                 'img':'apple.png',
-                                                'nomcate': 'Precios en supermercados'}})
+                                                'nomcate': 'Precios en supermercados',
+                                      'unidad': 'unidad',
+                                      'cantidad': 1,
+                                      }})
 
             return data
 
