@@ -319,63 +319,30 @@ jQuery(function ($) {
 
 						<div class="padding">
 							<!-- banner form -->
-							  <form method="POST"  name="form" class="text-center">
+							  <form method="POST"  name="formulario1" class="text-center">
 							  	{% csrf_token %}
 								<h5 class="mb-3">¿Cuál es la cifra que deseas comprender?</h5>
 								<div class="form-style-w3ls ">
 									<input placeholder="Ingresar Monto" name="monto" type="text" required="Monto requerid" class="form-control">
 									<div class="p-3">
-										<input type="radio" name="rad" onclick="activar('supermercado')" /> Supermercado
-									<input type="radio" name="rad" onclick="activar('educacion')" /> Educación
-									<input type="radio" name="rad" onclick="activar('transporte')" /> Transporte
-									<input type="radio" name="rad" onclick="activar('restaurant')" /> Restaurant y Hoteles
-									<input type="radio" name="rad" onclick="activar('vivienda')" /> Vivienda
-									<input type="radio" name="rad" onclick="activar('otros')" /> Otros
-									<input type="radio" name="rad" onclick="activar('salud')" /> Salud
+
+								<select name="cosa" onchange="cambia()" class="form-control">
+									<option value="0">Selecionar
+									<option value="1">Salud
+									<option value="2">Supermercado
+									<option value="3">Educacion
+									<option value="4">Vivienda
+									<option value="5">Otros
+									<option value="6">Transporte
+									<option value="7">Restaurant y hoteles
+								</select>
+
+									<select  name="opt" class="form-control">
+									<option value="-">-
+								</select>
 
 
-									<select name="supermercado" required="" class="form-control" style="display:none">
-									<option>Precio en supermercados</option>
-									</select>
 
-									<select name="educacion" required="" class="form-control" style="display:none">
-									<option>Seleccionar Todo</option>
-									<option>Infraestructura educación</option>
-									<option>Costo educación</option>
-									</select>
-
-									<select name="transporte" required="" class="form-control" style="display:none">
-									<option>Seleccionar Todo</option>
-									<option>Transprte y servicio</option>
-									<option>Medios de transporte</option>
-									</select>
-
-									<select name="restaurant" required="" class="form-control" style="display:none">
-									<option>Seleccionar Todo</option>
-									<option>Precio restaurant</option>
-									<option>Precio hoteles</option>
-									</select>
-
-									<select name="vivienda" required="" class="form-control" style="display:none">
-									<option>Seleccionar Todo</option>
-									<option>Vivienda y salario</option>
-									<option>Articulos para el hogar</option>
-									<option>Gastos de vivienda</option>
-									</select>
-
-									<select name="otros" required="" class="form-control" style="display:none">
-									<option>Seleccionar Todo</option>
-									<option>Ropa y calazado</option>
-									<option>Ocio y deportes</option>
-									<option>Recreacion y cultura</option>
-									</select>
-
-										<select name="salud" required="" class="form-control" style="display:none">
-									<option>Medicamento</option>
-									<option>Infraestructura salud</option>
-									<option>Servicios</option>
-									<option>Insumos</option>
-									</select>
 
 									</div>
 
@@ -403,15 +370,51 @@ jQuery(function ($) {
 
 		<!-- script para select on input -->
 <script type="text/javascript">
-function activar() {
-  frm = document.forms[0];
-  for (i=0; ele = frm.getElementsByTagName('select')[i]; i++)
-    ele.style.display = 'none';
-  for (i=0; ele = arguments[i]; i++)
-    frm[ele].style.display = 'block';
-}
-</script>
-<!-- //script para select on input -->
+			//1) Definir Las Variables Correspondintes
+
+			var opt_1 = new Array ("Seleccionar Todo", "Medicamento", "Infraestructura salud", "Servicios","Insumos");
+			var opt_2 = new Array ("Precio en supermercados");
+			var opt_3 = new Array ("Seleccionar Todo", "Infraestructura educación", "Costo educación");
+			var opt_4 = new Array ("Seleccionar Todo", "Vivienda y salario", "Articulos para el hogar", "Gastos de vivienda");
+			var opt_5 = new Array ("Seleccionar Todo", "Ropa y calazado", "Ocio y deportes", "Recreacion y cultura");
+			var opt_6 = new Array ("Seleccionar Todo", "Transprte y servicio", "Medios de transporte");
+			var opt_7 = new Array ("Seleccionar Todo", "Precio restaurant", "Precio hoteles");
+
+
+
+			// 2) crear una funcion que permita ejecutar el cambio dinamico
+
+			function cambia(){
+				var cosa;
+				//Se toma el vamor de la "cosa seleccionada"
+				cosa = document.formulario1.cosa[document.formulario1.cosa.selectedIndex].value;
+				//se chequea si la "cosa" esta definida
+				if(cosa!=0){
+					//selecionamos las cosas Correctas
+					mis_opts=eval("opt_" + cosa);
+					//se calcula el numero de cosas
+					num_opts=mis_opts.length;
+					//marco el numero de opt en el select
+					document.formulario1.opt.length = num_opts;
+					//para cada opt del array, la pongo en el select
+					for(i=0; i<num_opts; i++){
+						document.formulario1.opt.options[i].value=mis_opts[i];
+						document.formulario1.opt.options[i].text=mis_opts[i];
+					}
+					}else{
+						//si no habia ninguna opt seleccionada, elimino las cosas del select
+						document.formulario1.opt.length = 1;
+						//ponemos un guion en la unica opt que he dejado
+						document.formulario1.opt.options[0].value="-";
+						document.formulario1.opt.options[0].text="-";
+					}
+					//hacer un reset de las opts
+					document.formulario1.opt.options[0].selected = true;
+
+				}
+
+		</script>
+<!-- //script select on select-->
 
 
 
