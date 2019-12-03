@@ -275,206 +275,68 @@ jQuery(function ($) {
 		</nav>
 		<!-- //nav -->
 	</div>
-
 	<!-- INFO ACERCA DE-->
+
 <div class="container">
 
-<div class="col-lg-12 col-md-12 px-lg-12 px-0">
+<div class="col-lg-12 col-md-12 px-lg-12 px-0" style="padding-top:50px;">
 
-<p> <h4>Qué es ConManzanas:</h4>
-ConManzanas es una aplicación que tiene por objetivo... (sacar descripción de presentaciones anteriores)
-	Plataforma Web de apoyo a la Educación Cívico-Económica de niñas, niños y público general.
+<h2 class="section-title" >Acerca de ConMnazanas</h2>
+	<hr/>
+
+	<div class="container" style="padding-top:10px;">
+ <h5>Qué es ConManzanas:</h5>
+		<p>
+ConManzanas es una plataforma web de apoyo a la educación cívico-económica de niñas, niños y público general.
 	</p>
 
 
-	<p>
-<h4> Cómo se desarrolló: </h4>
-La idea surje en el ramo de Taller Integrado de la Carrera de Ingeniería Informática, de la Facultad de Ingeniería, en la Universidad de Playa Ancha UPLA. Son desarrolladores principales, y estudiantes del ramo, Diego Sánchez, Marcelo Ibarra y Jaime Morales. Bajo el alero del laboratorio de DataScience (datosLab.cl), dirigido por Miguel Guevara, quien también es profesor del ramo, se consigue financiamiento para incubar la idea, en vinculación con varias comunidades educativas. El proyecto se financia con fondos del programa VinculaT, de la Dirección General de Vinculación con el Medio UPLA, convocatoria 2019.
-Se incorporan al equipo, el diseñador Cristián Parra, de la Facultad de Arte UPLA. Ezequiel Lagos, ayudante de datosLab a cargo de los servidores y Valentina Ruiz, como asesora pedagógica. También colaboraron con el proyecto, Melanie Suárez, estudiante de periodismo UPLA y los estudiantes del Campus San Felipe, Mario Tapia y Joaquín Salinas.
+<h5> Cómo se desarrolló: </h5>
+		<p>
+La idea surje en el ramo de Taller Integrado de la Carrera de Ingeniería Informática,
+	de la <a href="https://www.upla.cl/facultad/ingenieria/" target="_blank">Facultad de Ingeniería</a>,
+	en la <a href="https://www.upla.cl/portada/" target="_blank"> Universidad de Playa Ancha UPLA</a>.
+	Sus desarrolladores principales,
+	y estudiantes del ramo, Diego Sánchez, Marcelo Ibarra y Jaime Morales.
+	Bajo el alero del laboratorio de <a href="https://datoslab.cl/" target="_blank">DataScience (datosLab.cl)</a>,
+	dirigido por<a href="http://orcid.org/0000-0002-2319-5184" target="_blank">Miguel Guevara</a>,
+	quien también es profesor del ramo, se consigue financiamiento para incubar la idea,
+	en vinculación con varias comunidades educativas.
+	El proyecto se financia con fondos del programa <a href="https://www.upla.cl/vinculate/convocatoria-procesos-de-incubacion-2019/" target="_blank">VinculaT</a> ,
+	de la <a href="https://upla.cl/vinculacion/" target="_blank">Dirección General de Vinculación con el Medio UPLA</a> , convocatoria 2019.
+Se incorporan al equipo Ezequiel Lagos, ayudante de datosLab a cargo de los servidores y Valentina Ruiz,
+	como asesora pedagógica.
+
 </p>
 
 
 
-	<p>
-<h4>Origen de los Datos: </h4>
+<h5>Origen de los Datos: </h5>
+		<p>
 ConManzanas obtiene sus datos de diversas fuentes de información, de manera automática y también de forma manual. Se consultan principalmente sitios del Gobierno de Chile o sitios que monitorean los precios promedio en varios países, como PreciosMundi.
 Cada dato, indica su fuente al ser utilizado.
 </p>
 
+
 </div>
-</div>
 
 
 
 
 
-<script type="text/javascript">
-function activar() {
-  frm = document.forms[0];
-  for (i=0; ele = frm.getElementsByTagName('select')[i]; i++)
-    ele.style.display = 'none';
-  for (i=0; ele = arguments[i]; i++)
-    frm[ele].style.display = 'block';
-}
-</script>
-
-
-            <div class="container">
-				<div class="col-lg-5 col-md-8 px-lg-3 px-0">
-					<div class="banner-form-w3 ml-lg-5">
-						<div class="padding">
-							<!-- banner form -->
-							  <form method="POST"  name="form">
-							  	{% csrf_token %}
-								<h5 class="mb-3">¿Cuál es la cifra que deseas comprender?</h5>
-								<div class="form-style-w3ls " >
-									imput a select
-									<h6 class="mb-12">Categoría</h6>
 
 
 
-									<input type="radio" name="rad" onclick="activar('supermercado')" /> Supermercado
-									<input type="radio" name="rad" onclick="activar('educacion')" /> Educación
-									<input type="radio" name="rad" onclick="activar('transporte')" /> Transporte
-									<input type="radio" name="rad" onclick="activar('restaurant')" /> Restaurant y Hoteles
-									<input type="radio" name="rad" onclick="activar('vivienda')" /> Vivienda
-									<input type="radio" name="rad" onclick="activar('otros')" /> Otros
-									<input type="radio" name="rad" onclick="activar('salud')" /> Salud
 
-
-									<select name="supermercado" required="" class="form-control" style="display:none">
-									<option>Precio en supermercados</option>
-									</select>
-
-									<select name="educacion" required="" class="form-control" style="display:none">
-									<option>Seleccionar Todo</option>
-									<option>Infraestructura educación</option>
-									<option>Costo educación</option>
-									</select>
-
-									<select name="transporte" required="" class="form-control" style="display:none">
-									<option>Seleccionar Todo</option>
-									<option>Transprte y servicio</option>
-									<option>Medios de transporte</option>
-									</select>
-
-									<select name="restaurant" required="" class="form-control" style="display:none">
-									<option>Seleccionar Todo</option>
-									<option>Precio restaurant</option>
-									<option>Precio hoteles</option>
-									</select>
-
-									<select name="vivienda" required="" class="form-control" style="display:none">
-									<option>Seleccionar Todo</option>
-									<option>Vivienda y salario</option>
-									<option>Articulos para el hogar</option>
-									<option>Gastos de vivienda</option>
-									</select>
-
-									<select name="otros" required="" class="form-control" style="display:none">
-									<option>Seleccionar Todo</option>
-									<option>Ropa y calazado</option>
-									<option>Ocio y deportes</option>
-									<option>Recreacion y cultura</option>
-									</select>
-
-										<select name="salud" required="" class="form-control" style="display:none">
-									<option>Medicamento</option>
-									<option>Infraestructura salud</option>
-									<option>Servicios</option>
-									<option>Insumos</option>
-									</select>
-
-
-									<input type="submit" name="" Class="btn btn-primary btn-lg btn-block" value="Calcular">
-								</div>
-
-							</form>
-							<!-- //banner form -->
-
-
-select a otro select
-<form name="formulario1" action="#">
-			<select class="seleccion" name="cosa" onchange="cambia()">
-				<option value="0">Selecionar
-				<option value="1">Salud
-				<option value="2">Supermercado
-				<option value="3">Educacion
-				<option value="4">Vivienda
-				<option value="5">Otros
-				<option value="6">Transporte
-				<option value="7">Restaurant y hoteles
-			</select>
-
-
-			<select class="seleccion" name="opt" style="display:none">
-				<option value="-">-
-			</select>
-
-		</form>
-
-		<script type="text/javascript">
-			//1) Definir Las Variables Correspondintes
-
-			var opt_1 = new Array ("Seleccionar Todo", "Medicamento", "Infraestructura salud", "Servicios","Insumos");
-			var opt_2 = new Array ("Precio en supermercados");
-			var opt_3 = new Array ("Seleccionar Todo", "Infraestructura educación", "Costo educación");
-			var opt_4 = new Array ("Seleccionar Todo", "Vivienda y salario", "Articulos para el hogar", "Gastos de vivienda");
-			var opt_5 = new Array ("Seleccionar Todo", "Ropa y calazado", "Ocio y deportes", "Recreacion y cultura");
-			var opt_6 = new Array ("Seleccionar Todo", "Transprte y servicio", "Medios de transporte");
-			var opt_7 = new Array ("Seleccionar Todo", "Precio restaurant", "Precio hoteles");
-
-
-
-			// 2) crear una funcion que permita ejecutar el cambio dinamico
-
-			function cambia(){
-				var cosa;
-				//Se toma el vamor de la "cosa seleccionada"
-				cosa = document.formulario1.cosa[document.formulario1.cosa.selectedIndex].value;
-				//se chequea si la "cosa" esta definida
-				if(cosa!=0){
-					//selecionamos las cosas Correctas
-					mis_opts=eval("opt_" + cosa);
-					//se calcula el numero de cosas
-					num_opts=mis_opts.length;
-					//marco el numero de opt en el select
-					document.formulario1.opt.length = num_opts;
-					//para cada opt del array, la pongo en el select
-					for(i=0; i<num_opts; i++){
-						document.formulario1.opt.options[i].value=mis_opts[i];
-						document.formulario1.opt.options[i].text=mis_opts[i];
-					}
-					}else{
-						//si no habia ninguna opt seleccionada, elimino las cosas del select
-						document.formulario1.opt.length = 1;
-						//ponemos un guion en la unica opt que he dejado
-						document.formulario1.opt.options[0].value="-";
-						document.formulario1.opt.options[0].text="-";
-					}
-					//hacer un reset de las opts
-					document.formulario1.opt.options[0].selected = true;
-
-				}
-
-
-
-		</script>
-
-
-	</div>
-					</div>
-				</div>
-			</div>
 
 
 <!-- copyright -->
 <section class="copyright">
 	<div class="container py-4">
 		<div class="row bottom">
-			
+
 			<div class="col-lg-6 copy-right p-0">
-				<p class="text-center">© 2019 Conmanznas 
+				<p class="text-center">© 2019 Conmanznas
 				</p>
 			</div>
 		</div>
@@ -492,7 +354,7 @@ select a otro select
 
 <!-- move top -->
 <div class="move-top text-right">
-	<a href="#home" class="move-top"> 
+	<a href="#home" class="move-top">
 		<span class="fa fa-arrow-up   mb-3" aria-hidden="true"></span>
 	</a>
 </div>
