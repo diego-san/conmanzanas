@@ -325,7 +325,10 @@ function activar() {
 							  	{% csrf_token %}
 								<h5 class="mb-3">¿Cuál es la cifra que deseas comprender?</h5>
 								<div class="form-style-w3ls " >
+									imput a select
 									<h6 class="mb-12">Categoría</h6>
+
+
 
 									<input type="radio" name="rad" onclick="activar('supermercado')" /> Supermercado
 									<input type="radio" name="rad" onclick="activar('educacion')" /> Educación
@@ -333,11 +336,10 @@ function activar() {
 									<input type="radio" name="rad" onclick="activar('restaurant')" /> Restaurant y Hoteles
 									<input type="radio" name="rad" onclick="activar('vivienda')" /> Vivienda
 									<input type="radio" name="rad" onclick="activar('otros')" /> Otros
-
+									<input type="radio" name="rad" onclick="activar('salud')" /> Salud
 
 
 									<select name="supermercado" required="" class="form-control" style="display:none">
-									<option>Seleccionar Todo</option>
 									<option>Precio en supermercados</option>
 									</select>
 
@@ -361,7 +363,7 @@ function activar() {
 
 									<select name="vivienda" required="" class="form-control" style="display:none">
 									<option>Seleccionar Todo</option>
-									<option>Vivienda y salari</option>
+									<option>Vivienda y salario</option>
 									<option>Articulos para el hogar</option>
 									<option>Gastos de vivienda</option>
 									</select>
@@ -373,20 +375,94 @@ function activar() {
 									<option>Recreacion y cultura</option>
 									</select>
 
+										<select name="salud" required="" class="form-control" style="display:none">
+									<option>Medicamento</option>
+									<option>Infraestructura salud</option>
+									<option>Servicios</option>
+									<option>Insumos</option>
+									</select>
+
 
 									<input type="submit" name="" Class="btn btn-primary btn-lg btn-block" value="Calcular">
 								</div>
 
 							</form>
 							<!-- //banner form -->
-						</div>
+
+
+select a otro select
+<form name="formulario1" action="#">
+			<select class="seleccion" name="cosa" onchange="cambia()">
+				<option value="0">Selecionar
+				<option value="1">Salud
+				<option value="2">Supermercado
+				<option value="3">Educacion
+				<option value="4">Vivienda
+				<option value="5">Otros
+				<option value="6">Transporte
+				<option value="7">Restaurant y hoteles
+			</select>
+
+
+			<select class="seleccion" name="opt" style="display:">
+				<option value="-">-
+			</select>
+
+		</form>
+
+		<script type="text/javascript">
+			//1) Definir Las Variables Correspondintes
+
+			var opt_1 = new Array ("Seleccionar Todo", "Medicamento", "Infraestructura salud", "Servicios","Insumos");
+			var opt_2 = new Array ("Precio en supermercados");
+			var opt_3 = new Array ("Seleccionar Todo", "Infraestructura educación", "Costo educación");
+			var opt_4 = new Array ("Seleccionar Todo", "Vivienda y salario", "Articulos para el hogar", "Gastos de vivienda");
+			var opt_5 = new Array ("Seleccionar Todo", "Ropa y calazado", "Ocio y deportes", "Recreacion y cultura");
+			var opt_6 = new Array ("Seleccionar Todo", "Transprte y servicio", "Medios de transporte");
+			var opt_7 = new Array ("Seleccionar Todo", "Precio restaurant", "Precio hoteles");
+
+
+
+			// 2) crear una funcion que permita ejecutar el cambio dinamico
+
+			function cambia(){
+				var cosa;
+				//Se toma el vamor de la "cosa seleccionada"
+				cosa = document.formulario1.cosa[document.formulario1.cosa.selectedIndex].value;
+				//se chequea si la "cosa" esta definida
+				if(cosa!=0){
+					//selecionamos las cosas Correctas
+					mis_opts=eval("opt_" + cosa);
+					//se calcula el numero de cosas
+					num_opts=mis_opts.length;
+					//marco el numero de opt en el select
+					document.formulario1.opt.length = num_opts;
+					//para cada opt del array, la pongo en el select
+					for(i=0; i<num_opts; i++){
+						document.formulario1.opt.options[i].value=mis_opts[i];
+						document.formulario1.opt.options[i].text=mis_opts[i];
+					}
+					}else{
+						//si no habia ninguna opt seleccionada, elimino las cosas del select
+						document.formulario1.opt.length = 1;
+						//ponemos un guion en la unica opt que he dejado
+						document.formulario1.opt.options[0].value="-";
+						document.formulario1.opt.options[0].text="-";
+					}
+					//hacer un reset de las opts
+					document.formulario1.opt.options[0].selected = true;
+
+				}
+
+
+
+		</script>
+
+
+	</div>
 					</div>
 				</div>
 			</div>
-
-
-
-
 
 
 <!-- copyright -->
@@ -400,6 +476,14 @@ function activar() {
 			</div>
 		</div>
 	</div>
+
+
+
+
+
+
+
+
 </section>
 <!-- //copyright -->
 
