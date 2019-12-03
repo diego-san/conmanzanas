@@ -13,6 +13,7 @@ class Bienesyservicios(models.Model):
    id_cambio = models.ForeignKey('Tipocambio', on_delete=models.PROTECT)
    idreg = models.ForeignKey('Region',on_delete=models.PROTECT)
    idsubc = models.ForeignKey('Subcategoria', on_delete=models.PROTECT)
+   estado = models.BooleanField('activo/inactivo', default=True)
 
 
    class Meta:
