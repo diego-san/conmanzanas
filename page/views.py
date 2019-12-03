@@ -24,7 +24,6 @@ def index(request):
 
     if request.method == 'POST':
         monto = request.POST.get('monto')
-        numero_a_letras(int(monto))
         categoria = request.POST.get('categoria')
         return HttpResponseRedirect('app/'+monto+'/'+categoria+'/'+'0'+'#monto')
 
@@ -201,7 +200,8 @@ def inicio(request,monto,categoria,titulo):
                     len(monton_ingresado) - 1] == '0':
                     variable = int(variable)
 
-                context = {'form': prueba_form, 'dato': variable, 'consulta': resultado, 'monto': variable, 'historial': histo, 'titulo': titulo}
+
+                context = {'form': prueba_form, 'dato': variable, 'consulta': resultado, 'monto': variable, 'historial': histo, 'titulo': titulo, 'palabra':numero_a_letras(int(monto)) }
 
         return render(request, 'page/app.html', context)
 
@@ -358,6 +358,8 @@ def leer_decenas(variable):
     decena, unidad = divmod(variable, 10)
     if variable <= 19:
         resultado = DECENAS[unidad]
+    elif variable == 20:
+        resultado = 'veinte'
     elif variable <= 29:
         resultado = 'veinti%s' % UNIDADES[unidad]
     else:
