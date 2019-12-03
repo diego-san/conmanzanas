@@ -361,22 +361,31 @@ jQuery(function ($) {
 					<div class="banner-form-w3 ml-lg-5">
 						<div class="padding">
 							<!-- banner form -->
-							  <form method="POST"  name="form">
+
+							  <form method="POST"  name="formulario1" >
 							  	{% csrf_token %}
 								<h5 class="mb-3">¿Cuál es la cifra que deseas comprender?</h5>
 								<div class="form-style-w3ls ">
 									<input placeholder="Ingresar Monto" name="monto" type="text" required="Monto requerid" class="form-control">
 									<h6 class="mb-3">Categoría</h6>
-									<select name="categoria" required="" class="form-control">
-									  <option value="supermercado">Supermercado</option>
-									  <option value="salud">Salud</option>
-									  <option value="educacion">Educación</option>
-									  <option value="transporte">Transporte</option>
-									  <option value="restaurant y Hoteles">Restaurant y Hoteles</option>
-									  <option value="vivienda">Vivienda</option>
-									  <option value="otros">Otros</option>
-									</select>
-									
+
+
+								<select name="cosa" onchange="cambia()" class="form-control">
+									<option value="0">Selecionar
+									<option value="1">Salud
+									<option value="2">Supermercado
+									<option value="3">Educacion
+									<option value="4">Vivienda
+									<option value="5">Otros
+									<option value="6">Transporte
+									<option value="7">Restaurant y hoteles
+								</select>
+
+									<select  name="opt" class="form-control">
+									<option value="-">-
+								</select>
+
+
 									<input type="submit" name="" Class="btn btn-primary btn-lg btn-block" value="Calcular">
 									
 								</div>
@@ -390,6 +399,59 @@ jQuery(function ($) {
 	</div>
 </div>
 <!-- //banner -->
+
+<!-- script select on select-->
+<script type="text/javascript">
+			//1) Definir Las Variables Correspondintes
+
+			var opt_1 = new Array ("Seleccionar Todo", "Medicamento", "Infraestructura salud", "Servicios","Insumos");
+			var opt_2 = new Array ("Precio en supermercados");
+			var opt_3 = new Array ("Seleccionar Todo", "Infraestructura educación", "Costo educación");
+			var opt_4 = new Array ("Seleccionar Todo", "Vivienda y salario", "Articulos para el hogar", "Gastos de vivienda");
+			var opt_5 = new Array ("Seleccionar Todo", "Ropa y calazado", "Ocio y deportes", "Recreacion y cultura");
+			var opt_6 = new Array ("Seleccionar Todo", "Transprte y servicio", "Medios de transporte");
+			var opt_7 = new Array ("Seleccionar Todo", "Precio restaurant", "Precio hoteles");
+
+
+
+			// 2) crear una funcion que permita ejecutar el cambio dinamico
+
+			function cambia(){
+				var cosa;
+				//Se toma el vamor de la "cosa seleccionada"
+				cosa = document.formulario1.cosa[document.formulario1.cosa.selectedIndex].value;
+				//se chequea si la "cosa" esta definida
+				if(cosa!=0){
+					//selecionamos las cosas Correctas
+					mis_opts=eval("opt_" + cosa);
+					//se calcula el numero de cosas
+					num_opts=mis_opts.length;
+					//marco el numero de opt en el select
+					document.formulario1.opt.length = num_opts;
+					//para cada opt del array, la pongo en el select
+					for(i=0; i<num_opts; i++){
+						document.formulario1.opt.options[i].value=mis_opts[i];
+						document.formulario1.opt.options[i].text=mis_opts[i];
+					}
+					}else{
+						//si no habia ninguna opt seleccionada, elimino las cosas del select
+						document.formulario1.opt.length = 1;
+						//ponemos un guion en la unica opt que he dejado
+						document.formulario1.opt.options[0].value="-";
+						document.formulario1.opt.options[0].text="-";
+					}
+					//hacer un reset de las opts
+					document.formulario1.opt.options[0].selected = true;
+
+				}
+
+		</script>
+<!-- //script select on select-->
+
+
+
+
+
 <section class="services py-5" >
 	<div class="container">
 		<h3 class="heading mb-5">¿Cómo funciona el sistema?</h3>
