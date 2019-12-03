@@ -325,40 +325,58 @@ jQuery(function ($) {
 								<div class="form-style-w3ls ">
 									<input placeholder="Ingresar Monto" name="monto" type="text" required="Monto requerid" class="form-control">
 									<div class="p-3">
-									<div class="form-check form-check-inline" >
-              							<input class="form-check-input" type="radio" name="categoria" id="inlineRadio1" value="salud" required>
-              							<label class="form-check-label" for="inlineRadio1">Salud</label>
-            						</div>
+										<input type="radio" name="rad" onclick="activar('supermercado')" /> Supermercado
+									<input type="radio" name="rad" onclick="activar('educacion')" /> Educación
+									<input type="radio" name="rad" onclick="activar('transporte')" /> Transporte
+									<input type="radio" name="rad" onclick="activar('restaurant')" /> Restaurant y Hoteles
+									<input type="radio" name="rad" onclick="activar('vivienda')" /> Vivienda
+									<input type="radio" name="rad" onclick="activar('otros')" /> Otros
+									<input type="radio" name="rad" onclick="activar('salud')" /> Salud
 
-                                    <div class="form-check form-check-inline">
-                                      	<input class="form-check-input" type="radio" name="categoria" id="inlineRadio2" value="supermercado">
-                                      	<label class="form-check-label" for="inlineRadio2">Supermercado</label>
-                                    </div>
 
-                                     <div class="form-check form-check-inline">
-                                      	<input class="form-check-input" type="radio" name="categoria" id="inlineRadio2" value="educacion">
-                                      	<label class="form-check-label" for="inlineRadio2">educacion</label>
-                                    </div>
+									<select name="supermercado" required="" class="form-control" style="display:none">
+									<option>Precio en supermercados</option>
+									</select>
 
-                                     <div class="form-check form-check-inline">
-                                      	<input class="form-check-input" type="radio" name="categoria" id="inlineRadio2" value="vivienda">
-                                      	<label class="form-check-label" for="inlineRadio2">vivienda</label>
-                                    </div>
+									<select name="educacion" required="" class="form-control" style="display:none">
+									<option>Seleccionar Todo</option>
+									<option>Infraestructura educación</option>
+									<option>Costo educación</option>
+									</select>
 
-                                     <div class="form-check form-check-inline">
-                                      	<input class="form-check-input" type="radio" name="categoria" id="inlineRadio2" value="transporte">
-                                      	<label class="form-check-label" for="inlineRadio2">transporte</label>
-                                    </div>
+									<select name="transporte" required="" class="form-control" style="display:none">
+									<option>Seleccionar Todo</option>
+									<option>Transprte y servicio</option>
+									<option>Medios de transporte</option>
+									</select>
 
-                                     <div class="form-check form-check-inline">
-                                      	<input class="form-check-input" type="radio" name="categoria" id="inlineRadio2" value="restaurant y hoteles">
-                                      	<label class="form-check-label" for="inlineRadio2">restaurant y hoteles</label>
-                                    </div>
+									<select name="restaurant" required="" class="form-control" style="display:none">
+									<option>Seleccionar Todo</option>
+									<option>Precio restaurant</option>
+									<option>Precio hoteles</option>
+									</select>
 
-                                     <div class="form-check form-check-inline">
-                                      	<input class="form-check-input" type="radio" name="categoria" id="inlineRadio2" value="otros">
-                                      	<label class="form-check-label" for="inlineRadio2">otros</label>
-                                    </div>
+									<select name="vivienda" required="" class="form-control" style="display:none">
+									<option>Seleccionar Todo</option>
+									<option>Vivienda y salario</option>
+									<option>Articulos para el hogar</option>
+									<option>Gastos de vivienda</option>
+									</select>
+
+									<select name="otros" required="" class="form-control" style="display:none">
+									<option>Seleccionar Todo</option>
+									<option>Ropa y calazado</option>
+									<option>Ocio y deportes</option>
+									<option>Recreacion y cultura</option>
+									</select>
+
+										<select name="salud" required="" class="form-control" style="display:none">
+									<option>Medicamento</option>
+									<option>Infraestructura salud</option>
+									<option>Servicios</option>
+									<option>Insumos</option>
+									</select>
+
 									</div>
 
 									<input type="checkbox" id="spoiler1"></input>
@@ -381,6 +399,22 @@ jQuery(function ($) {
 	</div>
 </div>
 <!-- //banner -->
+
+
+		<!-- script para select on input -->
+<script type="text/javascript">
+function activar() {
+  frm = document.forms[0];
+  for (i=0; ele = frm.getElementsByTagName('select')[i]; i++)
+    ele.style.display = 'none';
+  for (i=0; ele = arguments[i]; i++)
+    frm[ele].style.display = 'block';
+}
+</script>
+<!-- //script para select on input -->
+
+
+
 <!-- stats section -->
 {% if monto > 0 %}
 <section id="monto">
