@@ -58,18 +58,21 @@ def index(request):
         elegido = random.randint(0, cantidad_noticias - 1)
         if len(lista) == 0:
             lista.append(noticias[elegido])
+            lista[0]['cifra'] = int(lista[0]['cifra'])
             con = con + 1
         elif (len(lista) == 1):
             if lista[0]['id'] != noticias[elegido]['id']:
                 lista.append(noticias[elegido])
+                lista[1]['cifra'] = int(lista[1]['cifra'])
                 con = con + 1
         elif (len(lista) == 2):
             if lista[0]['id'] != noticias[elegido]['id'] and lista[1]['id'] != noticias[elegido]['id']:
                 lista.append(noticias[elegido])
                 con = con + 1
+                lista[2]['cifra'] = int(lista[2]['cifra'])
 
-
-    context = {'datos': datos}
+    print(lista)
+    context = {'datos': datos, 'noticias': lista}
     return render(request, 'page/inicio.html', context)
 
 
