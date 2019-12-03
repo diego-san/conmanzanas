@@ -71,7 +71,7 @@ def index(request):
                 con = con + 1
                 lista[2]['cifra'] = int(lista[2]['cifra'])
 
-    print(lista)
+
     context = {'datos': datos, 'noticias': lista}
     return render(request, 'page/inicio.html', context)
 
@@ -235,7 +235,7 @@ def inicio(request,monto,categoria,titulo):
 
 
                 resultado = algoritmo.inicio(c, float(variable), cantidad_productos)
-
+                histo = 'a'
                 if len(resultado)!=0:
                     insertar(resultado, variable, titulo)
                     histo = Historial.objects.order_by('idh').values().last()['idh']
