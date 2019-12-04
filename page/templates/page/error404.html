@@ -1,178 +1,149 @@
-{% load static %}
-
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
+ <head>
+  <meta charset="utf-8" />
+  <title>Error 404</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" />
+  <link href="css/style.css" type="text/css" rel="stylesheet" media="all" />
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="https://cdn.bootcss.com/particles.js/2.0.0/particles.min.js"></script>
+ </head>
+ <body>
 
 
-    <title>Error 404</title>
-
-   <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel='stylesheet' type='text/css' id="bootstrap-css"/><!-- bootstrap css -->
-    <link href="{% static 'vendor/style.css' %} " rel='stylesheet' type='text/css' /><!-- custom css -->
-	<link href="{% static 'vendor/css_slider.css' %} " type="text/css" rel="stylesheet" media="all">
-    <link href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet"><!-- fontawesome css -->
-	<!-- //css files -->
-	<script src="{% static 'vendor/jquery/jquery.min.js' %}"></script>
-	<script src="{% static 'vendor/bootstrap/js/bootstrap.js' %}"></script>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-
-
-
-
-
-
-
-  </head>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  <body class="text-center">
-
-
-
-  <div class="container-fluid align-content-end" >
- <!-- Bootstrap core CSS -->
-
-    <!-- Custom styles for this template -->
-
-      <img class="mb-4" src="{% static 'img/apple.png'%}" alt="" width="100" height="100">
-      <h1 class="h3 mb-3 font-weight-normal">ERROR 404</h1>
-
-      <a class="btn btn-primary" href="#" role="button">volver</a>
-	  </div>
-
-
-
-
-
-
-  <!-- Button trigger modal -->
-
-
-
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-  Compartir
-</button>
-
-<!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Copia este link y compartelo en tus redes sociales</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
+  <div id="particles-js">
+   <div class="page-404">
+    <div class="outer">
+     <div class="middle">
+      <div class="inner">
+       <!--BEGIN CONTENT-->
+       <div class="inner-circle">
+        <i class="fa fa-home"></i>
+        <span>404</span>
+       </div>
+       <span class="inner-status">Oops! Error 404</span>
+       <span class="inner-detail" style="color:#fff;"> No podemos encontrar la página que estás buscando.. <a href="inicio.html" class="btn btn-info mtl"><i class="fa fa-home"></i>&nbsp; Retornar a inicio </a> </span>
       </div>
-      <div class="modal-body" >
-
-                  <pre id="textoACopiar" class="shadow p-3 mb-5 bg-white rounded"><code> link del texto  </code></pre>
-
-
-
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-
-             <button id="btnCopiar" class="btn btn-primary">COPIAR LINK</button>
-        <div id="alerta" class="alert invisible"></div>
-
-
-      </div>
+     </div>
     </div>
+   </div>
   </div>
-</div>
+  <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script type="text/javascript">
 
-
-
-
-<script>
-    //Asigno el evento "click" del botón para provoar el copiado
-    document.getElementById('btnCopiar').addEventListener('click', copiarAlPortapapeles);
-
-    //Función que lanza el copiado del código
-    function copiarAlPortapapeles(ev){
-        var codigoACopiar = document.getElementById('textoACopiar');    //Elemento a copiar
-        //Debe estar seleccionado en la página para que surta efecto, así que...
-        var seleccion = document.createRange(); //Creo una nueva selección vacía
-        seleccion.selectNodeContents(codigoACopiar);    //incluyo el nodo en la selección
-        //Antes de añadir el intervalo de selección a la selección actual, elimino otros que pudieran existir (sino no funciona en Edge)
-        window.getSelection().removeAllRanges();
-        window.getSelection().addRange(seleccion);  //Y la añado a lo seleccionado actualmente
-        try {
-            var res = document.execCommand('copy'); //Intento el copiado
-            if (res)
-                exito();
-            else
-                fracaso();
-
-            mostrarAlerta();
-        }
-        catch(ex) {
-            excepcion();
-        }
-        window.getSelection().removeRange(seleccion);
-    }
-
-    //Detectar pegado (se puede hacer para toda la página interceptándolo en el documento o solo en elementos concretos, como es el caso)
-    document.getElementById('ParaPegar').addEventListener('paste', interceptarPegado);
-
-    function interceptarPegado(ev) {
-        alert('Has pegado el texto:' + ev.clipboardData.getData('text/plain'));
-    }
-
-///////
-// Auxiliares para mostrar y ocultar mensajes
-///////
-    var divAlerta = document.getElementById('alerta');
-
-    function exito() {
-        divAlerta.innerText = '¡¡Código copiado al portapapeles!!';
-        divAlerta.classList.add('alert-success');
-    }
-
-    function fracaso() {
-        divAlerta.innerText = '¡¡Ha fallado el copiado al portapapeles!!';
-        divAlerta.classList.add('alert-warning');
-    }
-
-    function excepcion() {
-        divAlerta.innerText = 'Se ha producido un error al copiar al portapaples';
-        divAlerta.classList.add('alert-danger');
-    }
-
-    function mostrarAlerta() {
-        divAlerta.classList.remove('invisible');
-        divAlerta.classList.add('visible');
-        setTimeout(ocultarAlerta, 1500);
-    }
-
-    function ocultarAlerta() {
-        divAlerta.innerText = '';
-        divAlerta.classList.remove('alert-success', 'alert-warning', 'alert-danger', 'visible');
-        divAlerta.classList.add('invisible');
-    }
+particlesJS("particles-js", {
+    "particles": {
+		"number": {
+			"value": 80,
+			"density": {
+				"enable": true,
+				"value_area": 800
+			}
+		},
+		"color": {
+			"value": "#ffffff"
+		},
+		"shape": {
+			"type": "circle",
+			"stroke": {
+				"width": 0,
+				"color": "#000000"
+			},
+			"polygon": {
+				"nb_sides": 5
+			},
+			"image": {
+				"src": "img/github.svg",
+				"width": 100,
+				"height": 100
+			}
+		},
+		"opacity": {
+			"value": 0.5,
+			"random": false,
+			"anim": {
+				"enable": false,
+				"speed": 1,
+				"opacity_min": 0.1,
+				"sync": false
+			}
+		},
+		"size": {
+			"value": 3,
+			"random": true,
+			"anim": {
+				"enable": false,
+				"speed": 40,
+				"size_min": 0.1,
+				"sync": false
+			}
+		},
+		"line_linked": {
+			"enable": true,
+			"distance": 150,
+			"color": "#ffffff",
+			"opacity": 0.4,
+			"width": 1
+		},
+		"move": {
+			"enable": true,
+			"speed": 6,
+			"direction": "none",
+			"random": false,
+			"straight": false,
+			"out_mode": "out",
+			"bounce": false,
+			"attract": {
+				"enable": false,
+				"rotateX": 600,
+				"rotateY": 1200
+			}
+		}
+	},
+	"interactivity": {
+		"detect_on": "canvas",
+		"events": {
+			"onhover": {
+				"enable": true,
+				"mode": "grab"
+			},
+			"onclick": {
+				"enable": true,
+				"mode": "push"
+			},
+			"resize": true
+		},
+		"modes": {
+			"grab": {
+				"distance": 140,
+				"line_linked": {
+					"opacity": 1
+				}
+			},
+			"bubble": {
+				"distance": 400,
+				"size": 40,
+				"duration": 2,
+				"opacity": 8,
+				"speed": 3
+			},
+			"repulse": {
+				"distance": 200,
+				"duration": 0.4
+			},
+			"push": {
+				"particles_nb": 4
+			},
+			"remove": {
+				"particles_nb": 2
+			}
+		}
+	},
+	"retina_detect": true
+});
 </script>
-
-
-
-
-
-
-  </body>
+ </body>
 </html>
