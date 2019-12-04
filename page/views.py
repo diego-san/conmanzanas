@@ -6,7 +6,7 @@ from .algoritmo import algoritmo
 from datetime import datetime
 from django.urls import reverse
 import random
-
+from noticias.models import Noticia
 
 
 def acerca_de(request):
@@ -24,8 +24,11 @@ def index(request):
 
     if request.method == 'POST':
         monto = request.POST.get('monto')
-        categoria = request.POST.get('categoria')
+        categoria = request.POST.get('opt')
+
         return HttpResponseRedirect('app/'+monto+'/'+categoria+'/'+'0'+'#monto')
+
+
 
 
     histo = select()
@@ -46,9 +49,30 @@ def index(request):
 
         contador= 1+ contador
 
+    #noticias
+    cantidad_noticias = Noticia.objects.count()
+    noticias = Noticia.objects.all().values()
+    con = 0
+    lista = []
+    while (con < 3):
+        elegido = random.randint(0, cantidad_noticias - 1)
+        if len(lista) == 0:
+            lista.append(noticias[elegido])
+            lista[0]['cifra'] = int(lista[0]['cifra'])
+            con = con + 1
+        elif (len(lista) == 1):
+            if lista[0]['id'] != noticias[elegido]['id']:
+                lista.append(noticias[elegido])
+                lista[1]['cifra'] = int(lista[1]['cifra'])
+                con = con + 1
+        elif (len(lista) == 2):
+            if lista[0]['id'] != noticias[elegido]['id'] and lista[1]['id'] != noticias[elegido]['id']:
+                lista.append(noticias[elegido])
+                con = con + 1
+                lista[2]['cifra'] = int(lista[2]['cifra'])
 
 
-    context = {'datos': datos}
+    context = {'datos': datos, 'noticias': lista}
     return render(request, 'page/inicio.html', context)
 
 
@@ -59,7 +83,7 @@ def historial(request,id):
 
     if request.method =='POST':
         variable = request.POST.get('monto')
-        seleccion = request.POST.get('categoria').lower()
+        seleccion = request.POST.get('opt').lower()
         titulo = request.POST.get('titulo')
         if titulo == '':
             titulo = '0'
@@ -118,8 +142,10 @@ def vista(request):
     context = {'form': prueba_form}
     if request.method =='POST':
         variable = request.POST.get('monto')
-
-        seleccion = request.POST.get('categoria').lower()
+        seleccion = request.POST.get('opt').lower()
+        titulo = request.POST.get('titulo')
+        if titulo == '':
+            titulo = '0'
 
         if str(str(variable).replace('.', '').isdigit()) == 'True' and str(variable).count(".") <= 1:
             variable = float(variable)
@@ -130,7 +156,7 @@ def vista(request):
                     len(monton_ingresado) - 1] == '0':
                     variable = int(variable)
 
-                return HttpResponseRedirect(reverse('index')+'app/'+str(variable) + '/' + seleccion+'/'+'0'+'#monto')
+                return HttpResponseRedirect(reverse('index')+'app/'+str(variable) + '/' + seleccion+'/'+ titulo +'#monto')
 
                 pass
 
@@ -147,7 +173,7 @@ def inicio(request,monto,categoria,titulo):
     context = {'form': prueba_form}
     if request.method =='POST':
         monto = request.POST.get('monto')
-        categoria = request.POST.get('categoria')
+        categoria = request.POST.get('opt')
         titulo = request.POST.get('titulo')
         if titulo == '':
             titulo = '0'
@@ -170,26 +196,46 @@ def inicio(request,monto,categoria,titulo):
                         lista_id_region.append(int(id_r['idreg']))
 
 
-                listasubc = []
-                cat = Categoria.objects.all()
-                sub = Subcategoria.objects.all()
+                seleccion  = categoria.lower().replace('seleccionar todo ','').lower().strip()
 
-                for categ in cat:
-                    nomcat = categ.nomcat
-                    idca = categ.idcat
+                comprueba_c = len(Categoria.objects.filter(nomcat= seleccion).values())
+                comprueba_cs = len(Subcategoria.objects.filter(nomsc = seleccion).values())
 
-                    if nomcat == seleccion:
-                        for subcategoria in sub:
-                            subcategorias = subcategoria.idcat_id
-                            subcategoriass = subcategoria.idsubc
+                if comprueba_cs == 1 or comprueba_c ==1:
+                    if comprueba_c == 1:
+                        listasubc = []
+                        cat = Categoria.objects.all()
+                        sub = Subcategoria.objects.all()
 
-                            if idca == subcategorias:
-                                listasubc.append(subcategoriass)
-                cantidad_productos = algoritmo.monto_dividir(float(variable))
-                c = Bienesyservicios.objects.filter(precio__lte=float(variable)/cantidad_productos, idreg_id__in=lista_id_region, idsubc_id__in = listasubc).values()
+                        for categ in cat:
+                            nomcat = categ.nomcat
+                            idca = categ.idcat
+
+                            if nomcat == seleccion:
+                                for subcategoria in sub:
+                                    subcategorias = subcategoria.idcat_id
+                                    subcategoriass = subcategoria.idsubc
+
+                                    if idca == subcategorias:
+                                        listasubc.append(subcategoriass)
+                        cantidad_productos = algoritmo.monto_dividir(float(variable))
+                        c = Bienesyservicios.objects.filter(precio__lte=float(variable) / cantidad_productos,
+                                                            idreg_id__in=lista_id_region, idsubc_id__in=listasubc,
+                                                            estado=True).values()
+                    if comprueba_cs == 1:
+                        id_s = Subcategoria.objects.filter(nomsc = seleccion).values()[0]['idsubc']
+                        cantidad_productos = algoritmo.monto_dividir(float(variable))
+                        c = Bienesyservicios.objects.filter(precio__lte=float(variable) / cantidad_productos,
+                                                            idreg_id__in=lista_id_region, idsubc_id= int(id_s),
+                                                            estado=True).values()
+
+                else:
+                    context = {}
+                    return render(request, 'page/error404.html', context)
+
 
                 resultado = algoritmo.inicio(c, float(variable), cantidad_productos)
-
+                histo = 'a'
                 if len(resultado)!=0:
                     insertar(resultado, variable, titulo)
                     histo = Historial.objects.order_by('idh').values().last()['idh']
