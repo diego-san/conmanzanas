@@ -6,26 +6,31 @@ class BienesyserviciosAdmin(admin.ModelAdmin):
     #readonly_fields = ('idpais', 'nombrep')
     list_display = ('idbs', 'nombrebs','precio','imgc','fuente','fechas','fechapub','id_cambio','idreg','idsubc')
     list_filter = ('nombrebs',)
+    search_fields = ['nombrebs','precio']
 
 class RegionAdmin(admin.ModelAdmin):
     #readonly_fields = ('idpais', 'nombrep')
     list_display = ('idreg', 'nombreg','idpais')
     list_filter = ('nombreg',)
+    search_fields = ['nombreg']
 
 class PaisAdmin(admin.ModelAdmin):
     #readonly_fields = ('idpais', 'nombrep')
     list_display = ('idpais', 'nombrep')
     list_filter = ('nombrep',)
+    search_fields = ['nombrep']
 
 class SubcategoriaAdmin(admin.ModelAdmin):
     #readonly_fields = ('idpais', 'nombrep')
     list_display = ('idsubc', 'nomsc','idcat')
     list_filter = ('nomsc',)
+    search_fields = ['nomsc']
 
 class CategoriaAdmin(admin.ModelAdmin):
     #readonly_fields = ('idpais', 'nombrep')
     list_display = ('idcat', 'nomcat')
     list_filter = ('nomcat',)
+    search_fields = ['nomcat']
 
 
 
