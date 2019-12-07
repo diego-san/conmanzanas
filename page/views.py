@@ -118,21 +118,41 @@ def historial(request,id):
                                             'fuente': producto[0]['fuente'],
                                             'fechas': producto[0]['fechas'],
                                             'fechapub': producto[0]['fechapub'],
-                                            'suma_aproximada': int(suma_apro),
-                                            'cantidad_veces': cant_veces*int(producto[0]['cant_u']),
+                                            'suma_aproximada':int(suma_apro),
+                                            'cantidad_veces': '{:,}'.format(cant_veces*int(producto[0]['cant_u'])),
                                             'img': producto[0]['imgc'],
                                             'unidad':producto[0]['umed'],
-                                            'nomcate':nom_c}})
+                                            'nomcate':nom_c,
+                                            'suma':'{:,}'.format(int(suma_apro)),}})
+
+
+    resto = 0
+    for res in lista_elegidos:
+        resto = resto + res['producto']['suma_aproximada']
+        ser = histo[0]['monto'] - resto
 
 
 
-
-
-
-    context = {'form': prueba_form, 'monto': histo[0]['monto'], 'consulta': lista_elegidos, 'historial': id, 'titulo': histo[0]['titulo']}
+    context = {'form': prueba_form, 'monto': histo[0]['monto'], 'consulta': lista_elegidos, 'historial': id, 'titulo': histo[0]['titulo'], 'contador': len(lista_elegidos), 'resto': int(ser)}
 
     return render(request, 'page/app.html', context)
 
+def monto_titulo(request, monto,titulo):
+
+    if (monto < 1000000):
+        lista_categoria = ['salud', 'supermercado']
+        eleccion = random.randint(0, 1)
+    elif (monto > 5000000):
+        lista_categoria = ['salud', 'supermercado', 'educacion', 'vivienda', 'otros', 'transporte',
+                           'restaurant y hoteles']
+        eleccion = random.randint(0, 6)
+    else:
+        lista_categoria = ['salud', 'supermercado',  'vivienda', 'otros', 'transporte',
+                           'restaurant y hoteles']
+        eleccion = random.randint(0, 6)
+
+
+    return HttpResponseRedirect(reverse('index') + 'app/' + str(monto) + '/' + lista_categoria[eleccion] +'/'+titulo+'#monto')
 
 
 
@@ -236,9 +256,15 @@ def inicio(request,monto,categoria,titulo):
 
                 resultado = algoritmo.inicio(c, float(variable), cantidad_productos)
                 histo = 'a'
+
                 if len(resultado)!=0:
                     insertar(resultado, variable, titulo)
                     histo = Historial.objects.order_by('idh').values().last()['idh']
+                    resto= 0
+                    for res in resultado:
+                        resto = resto + res['producto']['suma_aproximada']
+                    resto = variable - resto
+
 
 
                 monton_ingresado = str(variable)
@@ -247,7 +273,8 @@ def inicio(request,monto,categoria,titulo):
                     variable = int(variable)
 
 
-                context = {'form': prueba_form, 'dato': variable, 'consulta': resultado, 'monto': variable, 'historial': histo, 'titulo': titulo, 'palabra':numero_a_letras(int(monto)) }
+
+                context = {'form': prueba_form, 'dato': variable, 'consulta': resultado, 'monto': variable, 'historial': histo, 'titulo': titulo, 'palabra':numero_a_letras(int(monto)), 'contador': len(resultado) , 'resto':int(resto)}
 
         return render(request, 'page/app.html', context)
 
@@ -280,7 +307,7 @@ def insertar(h, variable, titulo):
         guardar(dat,id)
 
 def guardar(dat, id):
-    registro = Registro(None, float(dat['producto']['suma_aproximada']), dat['producto']['cantidad_veces'], float(dat['producto']['idbs']), id['idh'])
+    registro = Registro(None, float(dat['producto']['suma_aproximada']), str(dat['producto']['cantidad_veces']).replace(',',''), float(dat['producto']['idbs']), id['idh'])
     registro.save()
 
 
@@ -394,7 +421,7 @@ def numero_a_letras(variable):
     resultado = resultado.replace('  ', ' ')
     if parte_decimal > 0:
         resultado = '%s %s' % (resultado, letras_decimal)
-    print(resultado)
+
     return resultado
 
 

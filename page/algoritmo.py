@@ -110,25 +110,27 @@ class algoritmo:
         if cantidad == 1:
             contador = float(monto)/float(data[0]['producto']['precio'])
             suma = float(data[0]['producto']['precio'])* int(contador)
-            resto= float(monto)%float(data[0]['producto']['precio'])
+            resto=  float(monto) - suma
 
-            data[0]['producto']['precio'] = int(data[0]['producto']['precio'])
+            data[0]['producto']['precio'] = '{:,}'.format(int(data[0]['producto']['precio']))
             data[0]['producto']['suma_aproximada'] = int(suma)
-            data[0]['producto']['cantidad_veces'] = int(int(contador)*float(data[0]['producto']['cantidad']))
+            data[0]['producto']['cantidad_veces'] = '{:,}'.format(int(int(contador)*float(data[0]['producto']['cantidad'])))
             data[0]['producto']['nomcate'] = Subcategoria.objects.filter(idsubc=data[0]['producto']['subcate']).values()[0]['nomsc'].capitalize()
-
+            data[0]['producto']['suma'] = '{:,}'.format(int(suma))
             return algoritmo.calcula_resto(data, resto)
         elif cantidad > 1 :
 
             for x in range(0, cantidad):
                 contador = (float(monto)/cantidad) / float(data[x]['producto']['precio'])
                 suma = data[x]['producto']['precio'] * int(contador)
-                resto = resto+(float(monto) % float(data[x]['producto']['precio']))
-                data[x]['producto']['precio'] = int(data[x]['producto']['precio'])
+                ser = ser = float(monto)/cantidad - suma
+                resto = resto + ser
+                print(ser)
+                data[x]['producto']['precio'] = '{:,}'.format(int(data[x]['producto']['precio']))
                 data[x]['producto']['suma_aproximada'] = int(suma)
-                data[x]['producto']['cantidad_veces'] = int(contador*float(data[x]['producto']['cantidad']))
+                data[x]['producto']['cantidad_veces'] = '{:,}'.format(int(int(contador)*float(data[x]['producto']['cantidad'])))
                 data[x]['producto']['nomcate'] = Subcategoria.objects.filter(idsubc = data[0]['producto']['subcate']).values()[0]['nomsc'].capitalize()
-
+                data[x]['producto']['suma'] = '{:,}'.format(int(suma))
 
 
             return algoritmo.calcula_resto(data, resto)
@@ -149,13 +151,13 @@ class algoritmo:
                                                 'fuente': 'https://www.google.com/search?client=firefox-b-d&q=precio+manzana+chile',
                                                 'fechas': datetime.date(2019, 9, 1),
                                                 'fechapub': datetime.date(2019, 9, 1),
-                                                'suma_aproximada': int(suma),
+                                                'suma_aproximada': int(suma) ,
                                                 'cantidad_veces': int(veces),
                                                 'img':'apple.png',
                                                 'nomcate': 'Precios en supermercados',
                                       'unidad': 'unidad',
                                       'cantidad': 1,
-                                      }})
+                                      'suma': '{:,}'.format(int(suma)),}})
 
             return data
 

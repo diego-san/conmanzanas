@@ -7,8 +7,7 @@
 <!-- for-mobile-apps -->
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="keywords" content="Child Learn Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
-Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+<meta name="keywords" content="conmanzanas" />
 
     
 	<style>
@@ -57,7 +56,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	padding:19px 0;
 	text-align:center;
 	color:#59687f;
-	font-size:600;
+
 	font-size:19px;	
 	position:relative;
 }
@@ -346,7 +345,7 @@ jQuery(function ($) {
 												<h3 class="b-w3ltxt text-capitalize ">Cifras <small class="h3">que oyes en</small></h3>
 												<h3 class="b-w3ltxt text-capitalize">Cosas <small class="h3">que conoces.</small></h3>
 												<p class="w3ls_pvt-title my-3">Plataforma Web de apoyo a la Educación Cívico-Económica para niñas, niños y público general</p>
-												<a href="#about" class="btn btn-banner my-3">Más</a>
+												<a href="#mas" class="btn btn-banner my-3">Más</a>
 											</div>
 										</div>
 									</div>
@@ -448,59 +447,50 @@ jQuery(function ($) {
 
 		</script>
 <!-- //script select on select-->
+<!-- other services -->
+<section class="other_services py-5" id="why">
 
+	<div class="container py-lg-5 py-3">
+		<h3 class="heading mb-5">Cifras conocidas</h3>
+		<h3 class="heading mb-sm-5 mb-4"></h3>
+		<div class="row">
+			<div class="col-lg-4 col-md-6" >
+				<div class="grid" >
+					<img src="{% static 'img/iconos/5000.jpg' %}" alt="" class="img-fluid" />
+					<div class="info p-4" style="min-height: 200px;">
+						<h4 class="text-center">Billete de cinco mil pesos</h4>
+						<a href="app/5000/Billete de cinco mil pesos" Class="btn btn-primary btn-lg btn-block mt-2" target="_blank">Calcular</a>
 
-
-
-
-<section class="services py-5" >
-	<div class="container">
-		<h3 class="heading mb-5">¿Cómo funciona el sistema?</h3>
-		<div class="row ml-sm-5">
-			<div class="col-xl-4 col-lg-4 col-md-6 col-sm-12">
-				<div class="our-services-wrapper mb-60">
-					<div class="services-inner">
-						<div class="our-services-img">
-							<img src="{% static 'img/computer.png'%}" alt="">
-						</div>
-						<div class="our-services-text">
-							<h4>Obtencíon de datos</h4>
-							<p>Algoritmos de WebScrapping capturan y descargan información de productos o bienes públicos.</p>
-						</div>
 					</div>
 				</div>
 			</div>
-			<div class="col-xl-4 col-lg-4 col-md-6 col-sm-12">
-				<div class="our-services-wrapper mb-60">
-					<div class="services-inner">
-						<div class="our-services-img">
-							<img src="{% static 'img/database.png'%}" alt="">
-						</div>
-						<div class="our-services-text">
-							<h4>Almacenamos los datos</h4>
-							<p>Los datos son procesado y almacenados para utilizarlos posteriormente.</p>
-						</div>
+			<div class="col-lg-4 col-md-6 mt-md-0 mt-4">
+				<div class="grid">
+					<img src="{% static 'img/iconos/10000.jpg' %}" alt="" class="img-fluid" />
+					<div class="info p-4" style="min-height: 200px;">
+						<h4 class="text-center"> Billete  de  diez  mil  <br> pesos</h4>
+						<a href="app/10000/Billete  de  diez  mil pesos" Class="btn btn-primary btn-lg btn-block mt-2" target="_blank">Calcular</a>
+
 					</div>
 				</div>
 			</div>
-			<div class="col-xl-4 col-lg-4 col-md-6 col-sm-12">
-				<div class="our-services-wrapper mb-60">
-					<div class="services-inner">
-						<div class="our-services-img">
-							<img src="{% static 'img/page.png'%}" alt="">
-						</div>
-						<div class="our-services-text">
-							<h4>Obtención de resultados</h4>
-							<p>Se muestran los resultados según la cifra ingresada con promedios de valores reales.</p>
-						</div>
+			<div class="col-lg-4 col-md-6 mt-lg-0 mt-4">
+				<div class="grid">
+					<img src="{% static 'img/iconos/20000.jpg' %}" alt="" class="img-fluid" />
+					<div class="info p-4" style="min-height: 200px;">
+						<h4 class="text-center">Billete de veinte mil pesos </h4>
+						<a href="app/20000/Billete de veinte mil pesos" Class="btn btn-primary btn-lg btn-block mt-2" target="_blank">Calcular</a>
 					</div>
 				</div>
 			</div>
-			
-			
 		</div>
 	</div>
 </section>
+<!-- //other services -->
+
+
+
+
 
 <section class="" style=" background: #003366;">
 	<div class="container" style="position: relative;">
@@ -528,12 +518,12 @@ jQuery(function ($) {
 	<div class="container py-lg-5 py-3">
 		<div class="row">
 			{% for n in noticias %}
-			<div class="col-lg-4 col-md-6 mt-1">
-				<div class="grid  bg-white ">
-					<div class="info p-4">
-						<h4 class=""><img src="{{n.imagen}}" class="img-fluid mr-1" alt="">{{n.titulo}}</h4>
+			<div class="col-lg-4 col-md-6 mt-1" s>
+				<div class="grid  bg-white " >
+					<div class="info p-4" style="min-height: 300px;">
+						<h4 class=""><img src="{% static 'img/iconos/periodico.png' %}" class="img-fluid mr-1 mt-1" alt="">{{n.titulo}}</h4>
 						<h5 class="mt-3">$ {{n.cifra}}</h5>
-						<a href="app/{{n.cifra}}" Class="btn btn-primary btn-lg btn-block mt-2" target="_blank">Calcular</a>
+						<a href="app/{{n.cifra}}/{{n.titulo}}" Class="btn btn-primary btn-lg btn-block mt-2" target="_blank">Calcular</a>
 						
 					</div>
 				</div>
@@ -549,7 +539,7 @@ jQuery(function ($) {
 	<!-- other services -->
 <section class="other_services " style="background: #003366;">
 	<div class="container" >
-		<h3 class="heading mb-sm-5  text-white ">Ultimas cifras</h3>
+		<h3 class="heading mb-sm-5  text-white p-2 ">Ultimas cifras</h3>
         <div class="row">
         	{% for dato in datos%}
             <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12" >
@@ -596,7 +586,7 @@ jQuery(function ($) {
             </div>
 
             {% endfor %}
-           
+
 
             
         </div>
@@ -605,46 +595,56 @@ jQuery(function ($) {
 </section>
 <!-- //other services -->
 
-<!-- other services -->
-<section class="other_services py-5" id="why">
 
-	<div class="container py-lg-5 py-3">
-		<h3 class="heading mb-5">Cifras conocidas</h3>
-		<h3 class="heading mb-sm-5 mb-4"></h3>
-		<div class="row">
-			<div class="col-lg-4 col-md-6" >
-				<div class="grid" >
-					<img src="{% static 'img/iconos/5000.jpg' %}" alt="" class="img-fluid" />
-					<div class="info p-4" style="min-height: 200px;">
-						<h4 class="text-center">Billete de cinco mil pesos</h4>
-						<a href="app/5000" Class="btn btn-primary btn-lg btn-block mt-2" target="_blank">Calcular</a>	
-						
+<section class="services py-5"  id="mas">
+	<div class="container">
+		<h3 class="heading mb-5">¿Cómo funciona el sistema?</h3>
+		<div class="row ml-sm-5">
+			<div class="col-xl-4 col-lg-4 col-md-6 col-sm-12">
+				<div class="our-services-wrapper mb-60">
+					<div class="services-inner">
+						<div class="our-services-img">
+							<img src="{% static 'img/computer.png'%}" alt="">
+						</div>
+						<div class="our-services-text">
+							<h4>Obtencíon de datos</h4>
+							<p>Algoritmos de WebScrapping capturan y descargan información de productos o bienes públicos.</p>
+						</div>
 					</div>
 				</div>
 			</div>
-			<div class="col-lg-4 col-md-6 mt-md-0 mt-4">
-				<div class="grid">
-					<img src="{% static 'img/iconos/10000.jpg' %}" alt="" class="img-fluid" />
-					<div class="info p-4" style="min-height: 200px;">
-						<h4 class="text-center"> Billete  de  diez  mil  <br> pesos</h4>
-						<a href="app/10000" Class="btn btn-primary btn-lg btn-block mt-2" target="_blank">Calcular</a>	
-						
+			<div class="col-xl-4 col-lg-4 col-md-6 col-sm-12">
+				<div class="our-services-wrapper mb-60">
+					<div class="services-inner">
+						<div class="our-services-img">
+							<img src="{% static 'img/database.png'%}" alt="">
+						</div>
+						<div class="our-services-text">
+							<h4>Almacenamos los datos</h4>
+							<p>Los datos son procesado y almacenados para utilizarlos posteriormente.</p>
+						</div>
 					</div>
 				</div>
 			</div>
-			<div class="col-lg-4 col-md-6 mt-lg-0 mt-4">
-				<div class="grid">
-					<img src="{% static 'img/iconos/20000.jpg' %}" alt="" class="img-fluid" />
-					<div class="info p-4" style="min-height: 200px;">
-						<h4 class="text-center">Billete de veinte mil pesos </h4>
-						<a href="app/20000" Class="btn btn-primary btn-lg btn-block mt-2" target="_blank">Calcular</a>						
+			<div class="col-xl-4 col-lg-4 col-md-6 col-sm-12">
+				<div class="our-services-wrapper mb-60">
+					<div class="services-inner">
+						<div class="our-services-img">
+							<img src="{% static 'img/page.png'%}" alt="">
+						</div>
+						<div class="our-services-text">
+							<h4>Obtención de resultados</h4>
+							<p>Se muestran los resultados según la cifra ingresada con promedios de valores reales.</p>
+						</div>
 					</div>
 				</div>
 			</div>
+
+
 		</div>
 	</div>
 </section>
-<!-- //other services -->
+
 
 <!-- footer -->
 <footer>
