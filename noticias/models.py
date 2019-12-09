@@ -15,7 +15,7 @@ class Noticia(models.Model):
     idreg = models.ForeignKey(basedatos.models.Region, on_delete=models.PROTECT, null=True)
     id_t = models.ForeignKey('Tema', on_delete=models.PROTECT)
     id_m = models.ForeignKey(basedatos.models.Tipocambio, on_delete=models.PROTECT)
-    imagen= models.ImageField(upload_to='imagen_noticias', null=True, default=None)
+    imagen = models.ImageField(upload_to='imagen_noticias', null=True, default=None)
 
     class Meta:
         verbose_name = "Noticias"
