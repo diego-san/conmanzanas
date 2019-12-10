@@ -13,7 +13,7 @@ nombres_list= ['cerveza importada ','Cerveza nacional','Botella de Vino','Agua',
               ]
 
 
-unidades_list= ['litros','boleto','unidad','hora','mes','tiket','cl','paquete','kg','minuto','metro','centimetro','lata','docena','par']
+unidades_list= ['litros','boleto','unidad','hora','mes','tiket','latas','paquete','kg','minuto','metro','centimetro','lata','docena','par']
 
 
 datarec='Cerveza nacional (0,5 litros)'
@@ -133,8 +133,8 @@ def imagen(nombrescr):
 
 def palabra(frase):
     # presios supermecados listos
-    if frase== 'La cerveza importada (33 cl)':
-        return (['cerveza importada','33','cl'])
+    if frase== 'La cerveza importada (33 latas)':
+        return (['cerveza importada','33','latas'])
     elif frase== 'Cerveza nacional (0,5 litros)':
         return (['cerveza nacional','0,5','litros'])
     elif frase== 'Botella de Vino (Calidad media)':
@@ -170,14 +170,14 @@ def palabra(frase):
     elif frase=='Leche (1 litro)':
         return (['leche','1','kg'])
     # precios restaurante
-    elif frase=='Agua (botella de 33 cl)':
-        return (['botella de agua','33', 'cl'])
-    elif frase=='Coca-Cola / Pepsi (botella de 33cl)':
-        return (['coca cola o pepsi','33','cl'])
+    elif frase=='Agua (botella de 33 latas)':
+        return (['botella de agua','33', 'latas'])
+    elif frase=='Coca-Cola / Pepsi (botella de 33latas)':
+        return (['coca cola o pepsi','33','latas'])
     elif frase=='Café Cappuccino':
         return (['café cappuccino','1','unidad'])
-    elif frase== 'Cerveza importada (botella de 33cl)':
-        return (['cervesa importada','33','cl'])
+    elif frase== 'Cerveza importada (botella de 33latas)':
+        return (['cervesa importada','33','latas'])
     elif frase=='Cerveza nacional (0,5 litros)':
         return (['cerveza nacional','0,5','litros'])
     elif frase=='Menú de McDonalds, Burger King o similar':

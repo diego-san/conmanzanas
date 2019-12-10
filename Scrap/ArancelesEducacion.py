@@ -39,7 +39,7 @@ for links in link:
             IdRegion = consulta.get_id_reg("santiago")
             IdSub = consulta.get_id_sub_nombre('costo educacion')
             Unidad = "unidad"
-            img = insertar.iconos(IdSub[0][0])
+
             Cantidad = 1
             insertar.in_datos_productos(Arancel, Fuente, Fecha_hoy, fecha, Idtipocambio[0][0], IdRegion[0][0], IdSub[0][0], Nombre, Unidad, Cantidad,img)
 
@@ -72,7 +72,7 @@ for links in link:
                 Idtipocambio = consulta.get_id_tipocambio_nombre("peso chileno")
                 IdSub = consulta.get_id_sub_nombre('costo educacion')
                 Unidad ="unidad"
-                img = insertar.iconos(IdSub[0][0])
+
                 Cantidad = 1
                 if Nombre_sede[0:12] == "casa central" and Nombre_sede[14:19] == "temuc":
                     IdRegion = consulta.get_id_reg("la araucania")
@@ -104,4 +104,4 @@ for links in link:
                     IdRegion = consulta.get_id_reg("la araucania")
                 elif Nombre_sede[0:6] == "campus":
                     IdRegion = consulta.get_id_reg("santiago")
-                insertar.in_datos_productos(Arancel, Fuente, Fecha_hoy, fecha, Idtipocambio[0][0], IdRegion[0][0], IdSub[0][0], Nombre, Unidad, Cantidad, img)
+                insertar.in_datos_productos(Arancel, Fuente, Fecha_hoy, fecha, Idtipocambio[0][0], IdRegion[0][0], IdSub[0][0], Nombre, Unidad, Cantidad)

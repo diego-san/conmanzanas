@@ -14,6 +14,11 @@ validador = 0
 
 #remueve los acentos de los string
 def ac(name):
+    name = name.replace('á', 'a')
+    name = name.replace('é', 'e')
+    name = name.replace('í', 'i')
+    name = name.replace('ó', 'o')
+    name = name.replace('ú', 'u')
     return (name)
 #funcion que obtiene el tipo de moneda
 def tipo_moneda(tipo_precio):
@@ -108,14 +113,14 @@ for pais in paises:
                 fecha_obtencion_dato = date.today()
                 fuente = ur
                 name = filtro.palabra(nombre)
-                img = insertar.iconos(id_subcategoria)
+
 
                 if name == 0:
                     print("name")
                 else:
                     cantidad = float(name[1].replace(',', '.'))
                     if nombre != 'hipoteca: tasa de interes anual (%)':
-                        insertar.in_datos_productos(str(precio), fuente, fecha_obtencion_dato, fecha_actualizacion_final, tipo_cambio_id, id_region, id_subcategoria, ac(name[0].lower()), ac(name[2].lower()), cantidad, img)
+                        insertar.in_datos_productos(str(precio), fuente, fecha_obtencion_dato, fecha_actualizacion_final, tipo_cambio_id, id_region, id_subcategoria, ac(name[0].lower()), ac(name[2].lower()), cantidad)
                         print(precio)
 
         sub_categoria = sub_categoria + 1

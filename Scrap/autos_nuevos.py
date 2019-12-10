@@ -30,5 +30,5 @@ for marcas in product:
             unidad = 'unidad'
             cant = 1
             print(str(tr_tabla) + "| |" + str(nombre)+"| |"+str(url))
-            insertar.in_datos_productos(precio, url, fecha_obtencion, fecha_obtencion,tipo_cambio_id[0][0],id_region[0][0], id_sub[0][0], str(ac(nombre).lower()), unidad, cant,img)
+            insertar.in_datos_productos(precio, url, fecha_obtencion, fecha_obtencion,tipo_cambio_id[0][0],id_region[0][0], id_sub[0][0], str(ac(nombre).lower()), unidad, cant)
 

@@ -4,7 +4,6 @@ class Bienesyservicios(models.Model):
    idbs = models.AutoField(primary_key=True,verbose_name="ID bien y servicio")
    nombrebs = models.TextField(max_length=250,verbose_name="Nombre servicio")
    precio = models.DecimalField(max_digits=40, decimal_places=3)
-   imgc = models.ImageField(upload_to='bysimg', null=True, default=None)
    umed = models.TextField(max_length=250, verbose_name="Unidad de medida")
    cant_u=models.DecimalField(max_digits=15, decimal_places=3)
    fuente = models.URLField(max_length=200)
@@ -54,6 +53,7 @@ class Subcategoria(models.Model):
    idsubc = models.AutoField(primary_key=True)
    nomsc = models.TextField(max_length=200,verbose_name="Subcategoria")
    idcat = models.ForeignKey('Categoria', on_delete=models.PROTECT)
+   img =  models.ImageField(upload_to='bysimg', null=True, default=None)
 
    class Meta:
        verbose_name = "Subcategoria"

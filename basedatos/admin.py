@@ -4,7 +4,7 @@ from .models import Bienesyservicios,Region, Pais, Subcategoria,Categoria,Tipoca
 
 class BienesyserviciosAdmin(admin.ModelAdmin):
     #readonly_fields = ('idpais', 'nombrep')
-    list_display = ('idbs', 'nombrebs','precio','imgc','fuente','fechas','fechapub','id_cambio','idreg','idsubc')
+    list_display = ('idbs', 'nombrebs','precio','fuente','fechas','fechapub','id_cambio','idreg','idsubc')
     list_filter = ('nombrebs',)
     search_fields = ['nombrebs','precio']
 
@@ -22,7 +22,7 @@ class PaisAdmin(admin.ModelAdmin):
 
 class SubcategoriaAdmin(admin.ModelAdmin):
     #readonly_fields = ('idpais', 'nombrep')
-    list_display = ('idsubc', 'nomsc','idcat')
+    list_display = ('idsubc', 'nomsc','idcat','img')
     list_filter = ('nomsc',)
     search_fields = ['nomsc']
 

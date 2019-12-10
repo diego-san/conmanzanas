@@ -71,6 +71,55 @@ def in_tipocambio():
         conn.close()
         pass
     pass
+def iconos(id):
+    if id == 'medicamento':
+        return 'medicamento.png'
+    elif id == 'infraestructura salud':
+        return 'infraestructura.png'
+    elif id == 'servicios':
+        return 'servicio.png'
+    elif id == 'insumos':
+        return 'insumo.png'
+    elif id == 'precios en supermercados':
+        return 'supermercado.png'
+    elif id == 'infraestructura educacion':
+        return 'infraestructura_educacion.png'
+    elif id == 'costo educacion':
+        return 'costoeducacion.png'
+    elif id == 'vivienda y salario':
+        return 'vivienda_y_salario.png'
+    elif id == 'articulos para el hogar':
+        return 'articulos_para_el_hogar.png'
+    elif id == 'gastos de vivienda':
+        return 'gasto_de_vivienda.png'
+    elif id == 'ropa y calazado':
+        return 'ropa_y_calzado.png'
+    elif id == 'ocio y deportes':
+        return 'ocio_y_deporte.png'
+    elif id == 'recreacion y cultura':
+        return 'recreacion_y_cultura.png'
+    elif id == 'transporte y servicio':
+        return 'transporte_y_servicio.png'
+    elif id == 'medios de transporte':
+        return 'medio_de_trasnporte.png'
+    elif id == 'precio restaurant':
+        return 'precio_restaurant.png'
+    elif id == 'precio hoteles':
+        return 'preciohoteles.png'
+    elif id == 'investigacion':
+        return 'investigacion.png'
+    elif id == 'innovacion':
+        return 'innovacion.png'
+    elif id == 'emprendimiento':
+        return 'emprendimiento.png'
+    elif id == 'formacion personal':
+        return 'formacion_personal.png'
+    elif id == 'puentes y caminos':
+        return 'puentes_y_caminos.png'
+    elif id == 'hospitales y consultorios':
+        return 'hospitales_y_consultorios.png'
+    elif id == 'transporte y telecomunicaciones':
+        return 'transporte_y_telecomunicaciones.png'
 
 def in_categoria():
     lista_categoria=dict()
@@ -82,9 +131,10 @@ def in_categoria():
     for categorias in lista_categoria:
         c.execute('''INSERT INTO  basedatos_categoria VALUES(?,?)''', (None, categorias))
         id= c.lastrowid
+
         subcategoria=lista_categoria[categorias]
         for sub in subcategoria:
-            c.execute('''INSERT INTO  basedatos_subcategoria VALUES(?,?,?)''', (None,sub, id ))
+            c.execute('''INSERT INTO  basedatos_subcategoria VALUES(?,?,?,?)''', (None,sub, id, iconos(sub)))
 
 
 

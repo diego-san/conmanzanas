@@ -4,11 +4,11 @@ import os
 dir = str(os.path.dirname(os.path.abspath(__file__)))
 
 
-def in_datos_productos(precio, fuente, fechas, fechapub, id_cambio_id, id_reg_id, id_sub, nombre, unidad, cant, img):
+def in_datos_productos(precio, fuente, fechas, fechapub, id_cambio_id, id_reg_id, id_sub, nombre, unidad, cant):
 
     conn = sqlite3.connect(dir+'/../db.sqlite3')
     c = conn.cursor()
-    c.execute('''INSERT INTO  basedatos_bienesyservicios VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?)''', (None, str(nombre), float(precio), img, unidad,float(cant),fuente, fechas,fechapub,id_cambio_id,id_reg_id,id_sub, True))
+    c.execute('''INSERT INTO  basedatos_bienesyservicios VALUES(?,?,?,?,?,?,?,?,?,?,?,?)''', (None, str(nombre), float(precio),  unidad,float(cant),fuente, fechas,fechapub,True,id_reg_id,id_cambio_id,id_sub))
     conn.commit()
     conn.close()
 

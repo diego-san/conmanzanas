@@ -55,115 +55,115 @@ while validador == 0:
             tipo_cambio = consulta.get_id_tipocambio_nombre("peso chileno")
             id_Reg = consulta.get_id_reg("santiago")
             subc = consulta.get_id_sub_nombre("medicamento")
-            img = insertar.iconos(1)
+
             insertar.in_datos_productos(precio, fuente, fecha_hoy, fecha_publicacion, tipo_cambio[0][0],
-                                    id_Reg[0][0], subc[0][0], ac(nombre.lower()), Unidad, Cantidad, img)
+                                    id_Reg[0][0], subc[0][0], ac(nombre.lower()), Unidad, Cantidad)
 
         elif ac(region.lower()) == "aysen del gral. carlos ibanez del campo":
             tipo_cambio = consulta.get_id_tipocambio_nombre("peso chileno")
             id_Reg = consulta.get_id_reg("aisen")
             subc = consulta.get_id_sub_nombre("medicamento")
-            img = insertar.iconos(1)
+
             insertar.in_datos_productos(precio, fuente, fecha_hoy, fecha_publicacion, tipo_cambio[0][0],
-                                        id_Reg[0][0], subc[0][0], ac(nombre.lower()), Unidad, Cantidad, img)
+                                        id_Reg[0][0], subc[0][0], ac(nombre.lower()), Unidad, Cantidad)
         elif ac(region.lower()) == "valparaiso":
             tipo_cambio = consulta.get_id_tipocambio_nombre("peso chileno")
             id_Reg = consulta.get_id_reg("valparaiso")
             subc = consulta.get_id_sub_nombre("medicamento")
-            img = insertar.iconos(1)
+
             insertar.in_datos_productos(precio, fuente, fecha_hoy, fecha_publicacion, tipo_cambio[0][0],
-                                        id_Reg[0][0], subc[0][0], ac(nombre.lower()), Unidad, Cantidad, img)
+                                        id_Reg[0][0], subc[0][0], ac(nombre.lower()), Unidad, Cantidad)
         elif ac(region.lower()) == "tarapaca":
             tipo_cambio = consulta.get_id_tipocambio_nombre("peso chileno")
             id_Reg = consulta.get_id_reg("tarapaca")
             subc = consulta.get_id_sub_nombre("medicamento")
-            img = insertar.iconos(1)
+
             insertar.in_datos_productos(precio, fuente, fecha_hoy, fecha_publicacion, tipo_cambio[0][0],
-                                        id_Reg[0][0], subc[0][0], ac(nombre.lower()), Unidad, Cantidad, img)
+                                        id_Reg[0][0], subc[0][0], ac(nombre.lower()), Unidad, Cantidad)
         elif ac(region.lower()) == "del libertador general bernardo ohiggins":
             tipo_cambio = consulta.get_id_tipocambio_nombre("peso chileno")
             id_Reg = consulta.get_id_reg("libertador general bernardo ohiggins")
             subc = consulta.get_id_sub_nombre("medicamento")
-            img = insertar.iconos(1)
+
             insertar.in_datos_productos(precio, fuente, fecha_hoy, fecha_publicacion, tipo_cambio[0][0],
-                                        id_Reg[0][0], subc[0][0], ac(nombre.lower()), Unidad, Cantidad, img)
+                                        id_Reg[0][0], subc[0][0], ac(nombre.lower()), Unidad, Cantidad)
         elif ac(region.lower()) == "de los rios":
             tipo_cambio = consulta.get_id_tipocambio_nombre("peso chileno")
             id_Reg = consulta.get_id_reg("los rios")
             subc = consulta.get_id_sub_nombre("medicamento")
-            img = insertar.iconos(1)
+
             insertar.in_datos_productos(precio, fuente, fecha_hoy, fecha_publicacion, tipo_cambio[0][0],
-                                        id_Reg[0][0], subc[0][0], ac(nombre.lower()), Unidad, Cantidad, img)
+                                        id_Reg[0][0], subc[0][0], ac(nombre.lower()), Unidad, Cantidad)
         elif ac(region.lower()) == "de la araucania":
             tipo_cambio = consulta.get_id_tipocambio_nombre("peso chileno")
             id_Reg = consulta.get_id_reg("la araucania")
             subc = consulta.get_id_sub_nombre("medicamento")
-            img = insertar.iconos(1)
+
             insertar.in_datos_productos(precio, fuente, fecha_hoy, fecha_publicacion, tipo_cambio[0][0],
-                                        id_Reg[0][0], subc[0][0], ac(nombre.lower()), Unidad, Cantidad, img)
+                                        id_Reg[0][0], subc[0][0], ac(nombre.lower()), Unidad, Cantidad)
         elif ac(region.lower()) == "del maule":
             tipo_cambio = consulta.get_id_tipocambio_nombre("peso chileno")
             id_Reg = consulta.get_id_reg("maule")
             subc = consulta.get_id_sub_nombre("medicamento")
-            img = insertar.iconos(1)
+
             insertar.in_datos_productos(precio, fuente, fecha_hoy, fecha_publicacion, tipo_cambio[0][0],
-                                        id_Reg[0][0], subc[0][0], ac(nombre.lower()), Unidad, Cantidad, img)
+                                        id_Reg[0][0], subc[0][0], ac(nombre.lower()), Unidad, Cantidad)
         elif ac(region.lower()) == "ñuble":
             tipo_cambio = consulta.get_id_tipocambio_nombre("peso chileno")
             id_Reg = consulta.get_id_reg("ñunle")
             subc = consulta.get_id_sub_nombre("medicamento")
-            img = insertar.iconos(1)
+
             insertar.in_datos_productos(precio, fuente, fecha_hoy, fecha_publicacion, tipo_cambio[0][0],
-                                        id_Reg[0][0], subc[0][0], ac(nombre.lower()), Unidad, Cantidad, img)
+                                        id_Reg[0][0], subc[0][0], ac(nombre.lower()), Unidad, Cantidad)
         elif ac(region.lower()) == "coquimbo":
             tipo_cambio = consulta.get_id_tipocambio_nombre("peso chileno")
             id_Reg = consulta.get_id_reg("coquimbo")
             subc = consulta.get_id_sub_nombre("medicamento")
-            img = insertar.iconos(1)
+
             insertar.in_datos_productos(precio, fuente, fecha_hoy, fecha_publicacion, tipo_cambio[0][0],
-                                        id_Reg[0][0], subc[0][0], ac(nombre.lower()), Unidad, Cantidad, img)
+                                        id_Reg[0][0], subc[0][0], ac(nombre.lower()), Unidad, Cantidad)
         elif ac(region.lower()) == "del bio bio":
             tipo_cambio = consulta.get_id_tipocambio_nombre("peso chileno")
             id_Reg = consulta.get_id_reg("biobio")
             subc = consulta.get_id_sub_nombre("medicamento")
-            img = insertar.iconos(1)
+
             insertar.in_datos_productos(precio, fuente, fecha_hoy, fecha_publicacion, tipo_cambio[0][0],
-                                        id_Reg[0][0], subc[0][0], ac(nombre.lower()), Unidad, Cantidad, img)
+                                        id_Reg[0][0], subc[0][0], ac(nombre.lower()), Unidad, Cantidad)
         elif ac(region.lower()) == "de magallanes y de la antartica chilena":
             tipo_cambio = consulta.get_id_tipocambio_nombre("peso chileno")
             id_Reg = consulta.get_id_reg("magallanes")
             subc = consulta.get_id_sub_nombre("medicamento")
-            img = insertar.iconos(1)
+
             insertar.in_datos_productos(precio, fuente, fecha_hoy, fecha_publicacion, tipo_cambio[0][0],
-                                        id_Reg[0][0], subc[0][0], ac(nombre.lower()), Unidad, Cantidad, img)
+                                        id_Reg[0][0], subc[0][0], ac(nombre.lower()), Unidad, Cantidad)
         elif ac(region.lower()) == "atacama":
             tipo_cambio = consulta.get_id_tipocambio_nombre("peso chileno")
             id_Reg = consulta.get_id_reg("atacama")
             subc = consulta.get_id_sub_nombre("medicamento")
-            img = insertar.iconos(1)
+
             insertar.in_datos_productos(precio, fuente, fecha_hoy, fecha_publicacion, tipo_cambio[0][0],
-                                        id_Reg[0][0], subc[0][0], ac(nombre.lower()), Unidad, Cantidad, img)
+                                        id_Reg[0][0], subc[0][0], ac(nombre.lower()), Unidad, Cantidad)
         elif ac(region.lower()) == "antofagasta":
             tipo_cambio = consulta.get_id_tipocambio_nombre("peso chileno")
             id_Reg = consulta.get_id_reg("antofagasta")
             subc = consulta.get_id_sub_nombre("medicamento")
-            img = insertar.iconos(1)
+
             insertar.in_datos_productos(precio, fuente, fecha_hoy, fecha_publicacion, tipo_cambio[0][0],
-                                        id_Reg[0][0], subc[0][0], ac(nombre.lower()), Unidad, Cantidad, img)
+                                        id_Reg[0][0], subc[0][0], ac(nombre.lower()), Unidad, Cantidad)
         elif ac(region.lower()) == "arica y parinacota":
             tipo_cambio = consulta.get_id_tipocambio_nombre("peso chileno")
             id_Reg = consulta.get_id_reg("arica y parinacota")
             subc = consulta.get_id_sub_nombre("medicamento")
-            img = insertar.iconos(1)
+
             insertar.in_datos_productos(precio, fuente, fecha_hoy, fecha_publicacion, tipo_cambio[0][0],
-                                        id_Reg[0][0], subc[0][0], ac(nombre.lower()), Unidad, Cantidad, img)
+                                        id_Reg[0][0], subc[0][0], ac(nombre.lower()), Unidad, Cantidad)
         elif ac(region.lower()) == "de los lagos":
             tipo_cambio = consulta.get_id_tipocambio_nombre("peso chileno")
             id_Reg = consulta.get_id_reg("los lagos")
             subc = consulta.get_id_sub_nombre("medicamento")
-            img = insertar.iconos(1)
+
             insertar.in_datos_productos(precio, fuente, fecha_hoy, fecha_publicacion, tipo_cambio[0][0],
-                                        id_Reg[0][0], subc[0][0], ac(nombre.lower()), Unidad, Cantidad, img)
+                                        id_Reg[0][0], subc[0][0], ac(nombre.lower()), Unidad, Cantidad)
         contador = contador + 1
         print(str(contador)+') '+nombre+'| pagina: '+str(page))
 

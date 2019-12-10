@@ -35,7 +35,6 @@ def index(request):
     contador = 0
 
     for h in histo:
-        lista_r = []
         datos.append({'historial':{'monto': int(h['monto']), 'titulo': h['titulo'], 'fecha': h['fechh']}})
         regi = Registro.objects.filter(idh_id = h['idh'] ).values()
         canti_producto = len(regi)
@@ -44,7 +43,7 @@ def index(request):
         datos[contador]['historial']['link'] = 'historial/'+str(h['idh'])+'#monto'
         datos[contador]['historial']['categoria'] = nom_categoria
         datos[contador]['historial']['cantidad'] = canti_producto
-        datos[contador]['historial']['img'] = bien[0]['imgc']
+        datos[contador]['historial']['img'] = Subcategoria.objects.filter(idsubc = bien[0]['idsubc_id'] ).values()[0]['img']
 
 
         contador= 1+ contador
@@ -120,7 +119,7 @@ def historial(request,id):
                                             'fechapub': producto[0]['fechapub'],
                                             'suma_aproximada':int(suma_apro),
                                             'cantidad_veces': '{:,}'.format(cant_veces*int(producto[0]['cant_u'])),
-                                            'img': producto[0]['imgc'],
+                                            'img': Subcategoria.objects.filter(idsubc = producto[0]['idsubc_id'] ).values()[0]['img'],
                                             'unidad':producto[0]['umed'],
                                             'nomcate':nom_c,
                                             'suma':'{:,}'.format(int(suma_apro)),}})
