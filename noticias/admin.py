@@ -3,7 +3,7 @@ from .models import Noticia, Tema
 
 # Register your models here.
 class NoticiaAdmin(admin.ModelAdmin):
-    list_display = ('titulo', 'descrip','cifra', 'cifra_abrev', 'link', 'fec_even', 'fec_moneda', 'id_t', 'id_m', 'idreg', 'imagen')
+    list_display = ('titulo', 'descrip','cifra', 'cifra_abrev', 'link', 'fec_even', 'fec_moneda', 'id_t', 'id_m', 'idreg')
     list_filter = ('titulo',  )
     search_fields = ['titulo', 'cifra']
 
