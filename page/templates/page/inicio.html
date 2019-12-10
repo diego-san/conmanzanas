@@ -366,7 +366,7 @@ jQuery(function ($) {
 							  	{% csrf_token %}
 								<h5 class="mb-3">¿Cuál es la cifra que deseas comprender?</h5>
 								<div class="form-style-w3ls ">
-									<input placeholder="Ingresar Monto" name="monto" type="text" required="Monto requerid" class="form-control">
+									<input placeholder="Ingresar Monto" name="monto" type="number" required="Monto requerid" class="form-control">
 									<h6 class="mb-3">Categoría</h6>
 
 
@@ -379,6 +379,8 @@ jQuery(function ($) {
 									<option value="5">Otros
 									<option value="6">Transporte
 									<option value="7">Restaurant y hoteles
+									<option value="8">ciencia y tecnologia
+									<option value="9">obras publicas
 								</select>
 
 									<select  name="opt" class="form-control">
@@ -411,7 +413,8 @@ jQuery(function ($) {
 			var opt_5 = new Array ("Seleccionar Todo Otros", "Ropa y calazado", "Ocio y deportes", "Recreacion y cultura");
 			var opt_6 = new Array ("Seleccionar Todo Transporte", "Transporte y servicio", "Medios de transporte");
 			var opt_7 = new Array ("Seleccionar Todo Restaurant y hoteles", "Precio restaurant", "Precio hoteles");
-
+			var opt_8 = new Array("Seleccionar Todo ciencia y tecnologia", "investigacion", "innovacion", "emprendimiento", "formacion personal");
+			var opt_9 = new Array("Seleccionar Todos obras publicas", "puentes y caminos", "hospitales y consultorios", "transporte y telecomunicaciones" );
 
 
 			// 2) crear una funcion que permita ejecutar el cambio dinamico
@@ -652,7 +655,7 @@ jQuery(function ($) {
 		<div class="container py-md-3">
 			<div class="footer-grid_section text-center">
 				<div class="footer-title mb-3">
-					<a href="#"><img src="{% static 'img/apple.png'%}" alt="">Con Manzanas</a>
+					<a href="#"><img src="{% static 'img/col-3-logo-conManzanas.png'%}" alt="">Con Manzanas</a>
 				</div>
 				<div class="footer-text">
 					<p></p>
@@ -675,22 +678,22 @@ jQuery(function ($) {
     <div class="row">
 
       <!-- Grid column -->
-      <div class="col-md-4 mt-md-0 mt-3">
+      <div class="col-md-4 mt-md-0 mt-3 p-2">
 
         <!-- Content -->
-        <center><h5 class="text-uppercase">Financiado por:</h5></center>
+        <center><h5 class="text-uppercase text-light mb-2">Financiado por:</h5></center>
          <p><center><img src="{% static 'img/vincula.png'%}" style="max-width:100%;width:auto;height:auto;"></center></p>
 
       </div>
       <!-- Grid column -->
 
-      <hr class="clearfix w-100 d-md-none pb-3">
+      <hr class="clearfix w-100 d-md-none ">
 
       <!-- Grid column -->
-      <div class=" col-md-4 mb-md-0 mb-3"style="center">
+      <div class=" col-md-4 mb-md-0 mb-3 p-2">
 
         <!-- Links -->
-		  <center><h5 class="text-uppercase">Facultad:</h5></center>
+		  <center><h5 class="text-uppercase text-light mb-2">Facultad:</h5></center>
 		   <p><center><img src="{% static 'img/facultading.png'%}" style="max-width:40%;width:auto;height:auto;"></center></p>
 
 
@@ -698,12 +701,12 @@ jQuery(function ($) {
       <!-- Grid column -->
 
       <!-- Grid column -->
-      <div class="col-md-4 mb-md-0 mb-3">
+      <div class="col-md-4 mb-md-0 mb-3 text-center p-2">
 
         <!-- Links -->
-        <center><h5 class="text-uppercase">Laboratorio:</h5></center>
+        <h5 class="text-uppercase text-light mb-2">Laboratorio:</h5>
 
-			<hr><p><center><a href="https://datoslab.cl/"> DataScience</a></center></p>
+			<hr><p><a href="https://datoslab.cl/"> DataScience</a></p>
 
 
 

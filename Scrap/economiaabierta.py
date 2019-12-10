@@ -5,11 +5,6 @@ from datetime import date
 import consulta
 import insertar
 def ac(name):
-    name = name.replace('á', 'a')
-    name = name.replace('é', 'e')
-    name = name.replace('í', 'i')
-    name = name.replace('ó', 'o')
-    name = name.replace('ú', 'u')
     return (name)
 def modifica_fecha_publicacion(fecha_old):
     dia = fecha_old[0:2]

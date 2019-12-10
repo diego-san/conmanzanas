@@ -1,36 +1,41 @@
 {% load static %}
 
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
 
-
-    <title>Error 404</title>
-
-   <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel='stylesheet' type='text/css' id="bootstrap-css"/><!-- bootstrap css -->
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+      <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel='stylesheet' type='text/css' id="bootstrap-css"/><!-- bootstrap css -->
     <link href="{% static 'vendor/style.css' %} " rel='stylesheet' type='text/css' /><!-- custom css -->
 	<link href="{% static 'vendor/css_slider.css' %} " type="text/css" rel="stylesheet" media="all">
     <link href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet"><!-- fontawesome css -->
 	<!-- //css files -->
 	<script src="{% static 'vendor/jquery/jquery.min.js' %}"></script>
 	<script src="{% static 'vendor/bootstrap/js/bootstrap.js' %}"></script>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <title>Manzanas perdidas</title>
+    <style>
+        body {
+    background: #336699;
+}
+.page-wrap {
+    min-height: 100vh;
+}
+    </style>
+</head>
+<body>
+<div class="page-wrap d-flex flex-row align-items-center">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-12 text-center">
+                <img src="{% static 'img/col-3-logo-conManzanas.png'%}" class="img-fluid" alt="Responsive image">
+                <h1 class="text-light text-center mb-2">Manzanas perdidas</h1>
+                <a href="/" class="btn btn-danger btn-lg">Ir al Inicio</a>
+            </div>
+        </div>
+    </div>
+</div>
 
-  </head>
-
- <div class="container" style="text-align: center">
-
-	  <hr>
-      <h1 class="h3 mb-3 font-weight-normal">Unexpecting Error
-	  <h2>500</h2>
-	  </h1>
-
-      <a href="{% url 'index'%}" role="button">volver</a>
-
-	  <hr>
-	  </div>
-
+</body>
 </html>

@@ -74,7 +74,7 @@ def in_tipocambio():
 
 def in_categoria():
     lista_categoria=dict()
-    lista_categoria = {'salud':['medicamento', 'infraestructura salud','servicios','insumos'],'supermercado':['precios en supermercados'],'educacion':['infraestructura educacion','costo educacion'],'vivienda':['vivienda y salario','articulos para el hogar','gastos de vivienda'],'otros':['ropa y calazado','ocio y deportes','recreacion y cultura'],'transporte':['transporte y servicio','medios de transporte'],'restaurant y hoteles':['precio restaurant','precio hoteles']}
+    lista_categoria = {'salud':['medicamento', 'infraestructura salud','servicios','insumos'],'supermercado':['precios en supermercados'],'educacion':['infraestructura educacion','costo educacion'],'vivienda':['vivienda y salario','articulos para el hogar','gastos de vivienda'],'otros':['ropa y calazado','ocio y deportes','recreacion y cultura'],'transporte':['transporte y servicio','medios de transporte'],'restaurant y hoteles':['precio restaurant','precio hoteles'],'ciencia y tecnologia':['investigacion','innovacion','emprendimiento','formacion personal'],'obras publicas':['puentes y caminos','hospitales y consultorios','transporte y telecomunicaciones']}
     conn = sqlite3.connect('../db.sqlite3')
     c = conn.cursor()
 

@@ -14,11 +14,6 @@ validador = 0
 
 #remueve los acentos de los string
 def ac(name):
-    name = name.replace('á', 'a')
-    name = name.replace('é', 'e')
-    name = name.replace('í', 'i')
-    name = name.replace('ó', 'o')
-    name = name.replace('ú', 'u')
     return (name)
 #funcion que obtiene el tipo de moneda
 def tipo_moneda(tipo_precio):
