@@ -8,7 +8,7 @@ def in_datos_productos(precio, fuente, fechas, fechapub, id_cambio_id, id_reg_id
 
     conn = sqlite3.connect(dir+'/../db.sqlite3')
     c = conn.cursor()
-    c.execute('''INSERT INTO  basedatos_bienesyservicios VALUES(?,?,?,?,?,?,?,?,?,?,?,?)''', (None, str(nombre), float(precio),  unidad,float(cant),fuente, fechas,fechapub,True,id_reg_id,id_cambio_id,id_sub))
+    c.execute('''INSERT INTO  basedatos_bienesyservicios VALUES(?,?,?,?,?,?,?,?,?,?,?,?)''', (None, str(nombre), float(precio),  unidad,float(cant),fuente, fechas,fechapub,id_cambio_id,id_reg_id,id_sub, True))
     conn.commit()
     conn.close()
 
