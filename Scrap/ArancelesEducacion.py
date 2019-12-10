@@ -6,11 +6,6 @@ from datetime import  date
 import consulta
 #saca acento
 def ac(name):
-    name = name.replace('á', 'a')
-    name = name.replace('é', 'e')
-    name = name.replace('í', 'i')
-    name = name.replace('ó', 'o')
-    name = name.replace('ú', 'u')
     return (name)
 link = []
 link = ['ARANC-DE-REFER-EDUCA-79081', 'ARANC-DE-REFER-EDUCA-30961', 'ARANC-DE-REFER-EDUCA-46146', 'ARANC-DE-REFER-EDUCA-SUPER']

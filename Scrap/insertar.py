@@ -52,6 +52,20 @@ def iconos(ids):
         return 'precio_restaurant.png'
     elif id == 'precio hoteles':
         return 'preciohoteles.png'
+    elif id == 'investigacion':
+        return 'investigacion.png'
+    elif id == 'innovacion':
+        return 'innovacion.png'
+    elif id == 'emprendimiento':
+        return 'emprendimiento.png'
+    elif id == 'formacion personal':
+        return 'formacion_personal.png'
+    elif id == 'puentes y caminos':
+        return 'puentes_y_caminos.png'
+    elif id == 'hospitales y consultorios':
+        return 'hospitales_y_consultorios.png'
+    elif id == 'transporte y telecomunicaciones':
+        return 'transporte_y_telecomunicaciones.png'
 
 def nombre_subc(id):
     conn = sqlite3.connect(dir+'/../db.sqlite3')

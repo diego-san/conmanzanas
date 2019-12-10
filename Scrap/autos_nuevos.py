@@ -4,11 +4,6 @@ import consulta
 import insertar
 from datetime import datetime
 def ac(name):
-    name = name.replace('á', 'a')
-    name = name.replace('é', 'e')
-    name = name.replace('í', 'i')
-    name = name.replace('ó', 'o')
-    name = name.replace('ú', 'u')
     return (name)
 product = ['alfa-romeo', 'audi', 'baic', 'bmw', 'brilliance', 'changan', 'chery', 'chevrolet', 'chrysler', 'citroen','toyota','volkswagen','volvo','seat','skoda','ssangyong','subaru','suzuki','ram','renault','peugeot','proton','mahindra','maxus','mazda','mg','mini','mitsubishi','nissan','opel','lada','lexus','lifan','kia','jac-motors','jeep','jmc','honda','iveco','hyundai','ford','fiat','dodge']
 #product = ['audi']

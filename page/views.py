@@ -251,16 +251,15 @@ def inicio(request,monto,categoria,titulo):
 
                 else:
                     context = {}
-                    return render(request, 'page/error404.html', context)
+                    return render(request, 'page/error500.html', context)
 
 
                 resultado = algoritmo.inicio(c, float(variable), cantidad_productos)
                 histo = 'a'
-
+                resto = 0
                 if len(resultado)!=0:
                     insertar(resultado, variable, titulo)
                     histo = Historial.objects.order_by('idh').values().last()['idh']
-                    resto= 0
                     for res in resultado:
                         resto = resto + res['producto']['suma_aproximada']
                     resto = variable - resto
@@ -328,7 +327,7 @@ def select():
 
 def error_404_view(request, exception):
     data = {}
-    return render(request,'page/error404.html', data)
+    return render(request,'page/error500.html', data)
 
 
 def error_500_view(request):
