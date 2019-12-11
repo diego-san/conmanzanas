@@ -524,10 +524,27 @@ jQuery(function ($) {
 			<div class="col-lg-4 col-md-6 mt-1" s>
 				<div class="grid  bg-white " >
 					<div class="info p-4" style="min-height: 300px;">
-						<h4 class=""><img src="{% static 'img/iconos/periodico.png' %}" class="img-fluid mr-1 mt-1" alt="">{{n.titulo}}</h4>
-						<h5 class="mt-3">$ {{n.cifra}}</h5>
-						<a href="app/{{n.cifra}}/{{n.titulo}}" Class="btn btn-primary btn-lg btn-block mt-2" target="_blank">Calcular</a>
+						<div class="row">
+							<div class="col-md-4"><img src="{% static 'img/iconos/periodico.png' %}" class="img-fluid " alt=""></div>
+							<div class="col-md-8 p-2">
+								<h4 class="d-inline">{{n.titulo}}</h4>
+									<a class="btn  badge badge-pill badge-primary sup small align-top" href="{{n.link}}" target="_blank">
+                                        <i class="fa fa-rss align-middle"></i>
+                                    </a>
+							</div>
+
+
+
+						</div>
+						<p class="text-center p-2">{{n.descrip}}</p>
+						<h2 class="mt-3 text-center">$ {{n.cifra}}</h2>
+						<h4 class="text-center">Pesos chilenos</h4>
+						<p class="text-center h6">{{n.fec_moneda}}</p>
+
 						
+					</div>
+					<div class="p-2">
+						<a href="app/{{n.monto}}/{{n.titulo}}" Class="btn btn-primary btn-lg btn-block mt-2" target="_blank" >Calcular</a>
 					</div>
 				</div>
 			</div>

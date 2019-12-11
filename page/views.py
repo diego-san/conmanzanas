@@ -57,18 +57,24 @@ def index(request):
         elegido = random.randint(0, cantidad_noticias - 1)
         if len(lista) == 0:
             lista.append(noticias[elegido])
-            lista[0]['cifra'] = int(lista[0]['cifra'])
+
+            lista[0]['monto'] = int(lista[0]['cifra'])
+            lista[0]['cifra'] = '{:,}'.format(int(lista[0]['cifra']))
             con = con + 1
         elif (len(lista) == 1):
             if lista[0]['id'] != noticias[elegido]['id']:
                 lista.append(noticias[elegido])
-                lista[1]['cifra'] = int(lista[1]['cifra'])
+
+                lista[1]['monto'] = int(lista[1]['cifra'])
+                lista[1]['cifra'] = '{:,}'.format(int(lista[1]['cifra']))
                 con = con + 1
         elif (len(lista) == 2):
             if lista[0]['id'] != noticias[elegido]['id'] and lista[1]['id'] != noticias[elegido]['id']:
                 lista.append(noticias[elegido])
                 con = con + 1
-                lista[2]['cifra'] = int(lista[2]['cifra'])
+
+                lista[2]['monto'] = int(lista[2]['cifra'])
+                lista[2]['cifra'] = '{:,}'.format(int(lista[2]['cifra']))
 
 
     context = {'datos': datos, 'noticias': lista}
@@ -105,7 +111,7 @@ def historial(request,id):
 
     cant_regi = len(regi)
     lista_elegidos = []
-    print(id)
+
     for x in range(0, cant_regi):
         suma_apro = regi[x]['momp']
         cant_veces = regi[x]['cant']
@@ -132,7 +138,7 @@ def historial(request,id):
 
 
 
-    context = {'form': prueba_form, 'monto': histo[0]['monto'], 'consulta': lista_elegidos, 'historial': id, 'titulo': histo[0]['titulo'], 'contador': len(lista_elegidos), 'resto': int(ser)}
+    context = {'form': prueba_form, 'monto': int(histo[0]['monto']), 'consulta': lista_elegidos, 'historial': id, 'titulo': histo[0]['titulo'].capitalize(), 'contador': len(lista_elegidos), 'resto': int(ser), 'palabra':numero_a_letras(int(histo[0]['monto'])).capitalize()}
 
     return render(request, 'page/app.html', context)
 
@@ -272,7 +278,7 @@ def inicio(request,monto,categoria,titulo):
 
 
 
-                context = {'form': prueba_form, 'dato': variable, 'consulta': resultado, 'monto': variable, 'historial': histo, 'titulo': titulo, 'palabra':numero_a_letras(int(monto)), 'contador': len(resultado) , 'resto':int(resto)}
+                context = {'form': prueba_form, 'dato': variable, 'consulta': resultado, 'monto': variable, 'historial': histo, 'titulo': titulo.capitalize(), 'palabra':numero_a_letras(int(monto)).capitalize(), 'contador': len(resultado) , 'resto':int(resto)}
 
         return render(request, 'page/app.html', context)
 

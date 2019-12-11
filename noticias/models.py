@@ -12,9 +12,9 @@ class Noticia(models.Model):
     link = models.CharField(max_length=200)
     fec_even = models.DateField(verbose_name='Fecha del evento')
     fec_moneda = models.DateField(verbose_name='Fecha de moneda')
-    idreg = models.ForeignKey(basedatos.models.Region, on_delete=models.PROTECT, null=True)
-    id_t = models.ForeignKey('Tema', on_delete=models.PROTECT)
-    id_m = models.ForeignKey(basedatos.models.Tipocambio, on_delete=models.PROTECT)
+    idreg = models.ForeignKey(basedatos.models.Region, on_delete=models.PROTECT, null=True, verbose_name="Capitales del mundo, para chile todas la regiones")
+    id_t = models.ForeignKey('Tema', on_delete=models.PROTECT, verbose_name="Tema de noticia")
+    id_m = models.ForeignKey(basedatos.models.Tipocambio, on_delete=models.PROTECT, verbose_name="Tipo de moneda")
 
 
     class Meta:
