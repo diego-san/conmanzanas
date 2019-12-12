@@ -345,7 +345,7 @@ jQuery(function ($) {
 												<h3 class="b-w3ltxt text-capitalize ">Cifras <small class="h3">que oyes en</small></h3>
 												<h3 class="b-w3ltxt text-capitalize">Cosas <small class="h3">que conoces.</small></h3>
 												<p class="w3ls_pvt-title my-3">Plataforma Web de apoyo a la Educación Cívico-Económica para niñas, niños y público general</p>
-												<a href="#mas" class="btn btn-banner my-3">Más</a>
+												<a href="#why" class="btn btn-banner my-3">Más</a>
 											</div>
 										</div>
 									</div>
@@ -372,15 +372,10 @@ jQuery(function ($) {
 
 								<select name="cosa" onchange="cambia()" class="form-control">
 									<option value="0">Selecionar
-									<option value="1">Salud
-									<option value="2">Supermercado
-									<option value="3">Educacion
-									<option value="4">Vivienda
-									<option value="5">Otros
-									<option value="6">Transporte
-									<option value="7">Restaurant y hoteles
-									<option value="8">ciencia y tecnologia
-									<option value="9">obras publicas
+									{% for c in categoria %}
+									<option value="{{c.idcat}}">{{c.nomcat}}
+									{% endfor%}
+
 								</select>
 
 									<select  name="opt" class="form-control">
@@ -402,19 +397,22 @@ jQuery(function ($) {
 </div>
 <!-- //banner -->
 
+
+
 <!-- script select on select-->
 <script type="text/javascript">
 			//1) Definir Las Variables Correspondintes
+			{% for c_s in categoria %}
+				var opt_{{c_s.idcat}} = new Array(
+						"Seleccionar Todo {{c_s.nomcat}}",
+					{% for c_ss in c_s.sub%}
+						"{{c_ss}}",
+					{% endfor%}
+			);
+			{% endfor%}
 
-			var opt_1 = new Array ("Seleccionar Todo Salud", "Medicamento", "Infraestructura salud", "Servicios","Insumos");
-			var opt_2 = new Array ("Seleccionar Todo Supermercado","Precios en supermercados");
-			var opt_3 = new Array ("Seleccionar Todo Educacion", "Infraestructura educación", "Costo educación");
-			var opt_4 = new Array ("Seleccionar Todo Vivienda", "Vivienda y salario", "Articulos para el hogar", "Gastos de vivienda");
-			var opt_5 = new Array ("Seleccionar Todo Otros", "Ropa y calazado", "Ocio y deportes", "Recreacion y cultura");
-			var opt_6 = new Array ("Seleccionar Todo Transporte", "Transporte y servicio", "Medios de transporte");
-			var opt_7 = new Array ("Seleccionar Todo Restaurant y hoteles", "Precio restaurant", "Precio hoteles");
-			var opt_8 = new Array("Seleccionar Todo ciencia y tecnologia", "investigacion", "innovacion", "emprendimiento", "formacion personal");
-			var opt_9 = new Array("Seleccionar Todos obras publicas", "puentes y caminos", "hospitales y consultorios", "transporte y telecomunicaciones" );
+
+
 
 
 			// 2) crear una funcion que permita ejecutar el cambio dinamico
@@ -570,7 +568,7 @@ jQuery(function ($) {
                     </div>
 
                         <div class="banner-img">
-                            <img src="{% static 'img/iconos/' %}{{dato.historial.img}}" alt="">
+                            <img src="{% static '' %}{{dato.historial.img}}" alt="">
                         </div>
 
                         <div class="dates">

@@ -76,8 +76,25 @@ def index(request):
                 lista[2]['monto'] = int(lista[2]['cifra'])
                 lista[2]['cifra'] = '{:,}'.format(int(lista[2]['cifra']))
 
+    lista_c = []
+    cat = Categoria.objects.all().values()
+    cant_c = len(cat)
 
-    context = {'datos': datos, 'noticias': lista}
+    for x in range(0,cant_c):
+        lista_c = []
+        sub_c = Subcategoria.objects.filter(idcat_id = cat[x]['idcat']).values()
+        for sc in sub_c:
+            lista_c.append(sc['nomsc'])
+
+        cat[x]['sub'] = lista_c
+
+
+
+
+
+
+
+    context = {'datos': datos, 'noticias': lista, 'categoria': cat}
     return render(request, 'page/inicio.html', context)
 
 
@@ -85,6 +102,15 @@ def index(request):
 
 def historial(request,id):
     prueba_form = PruebaForm()
+    cat_m = Categoria.objects.all().values()
+    cant_c = len(cat_m)
+    for x in range(0, cant_c):
+        lista_c = []
+        sub_c = Subcategoria.objects.filter(idcat_id=cat_m[x]['idcat']).values()
+        for sc in sub_c:
+            lista_c.append(sc['nomsc'])
+
+        cat_m[x]['sub'] = lista_c
 
     if request.method =='POST':
         variable = request.POST.get('monto')
@@ -138,7 +164,7 @@ def historial(request,id):
 
 
 
-    context = {'form': prueba_form, 'monto': int(histo[0]['monto']), 'consulta': lista_elegidos, 'historial': id, 'titulo': histo[0]['titulo'].capitalize(), 'contador': len(lista_elegidos), 'resto': int(ser), 'palabra':numero_a_letras(int(histo[0]['monto'])).capitalize()}
+    context = {'form': prueba_form, 'monto': int(histo[0]['monto']), 'consulta': lista_elegidos, 'historial': id, 'titulo': histo[0]['titulo'].capitalize(), 'contador': len(lista_elegidos), 'resto': int(ser), 'palabra':numero_a_letras(int(histo[0]['monto'])).capitalize(),'categoria': cat_m}
 
     return render(request, 'page/app.html', context)
 
@@ -164,7 +190,16 @@ def monto_titulo(request, monto,titulo):
 def vista(request):
     prueba_form= PruebaForm()
     variable = ''
-    context = {'form': prueba_form}
+    cat_m = Categoria.objects.all().values()
+    cant_c = len(cat_m)
+    for x in range(0, cant_c):
+        lista_c = []
+        sub_c = Subcategoria.objects.filter(idcat_id=cat_m[x]['idcat']).values()
+        for sc in sub_c:
+            lista_c.append(sc['nomsc'])
+
+        cat_m[x]['sub'] = lista_c
+    context = {'form': prueba_form, 'categoria': cat_m}
     if request.method =='POST':
         variable = request.POST.get('monto')
         seleccion = request.POST.get('opt').lower()
@@ -196,6 +231,20 @@ def inicio(request,monto,categoria,titulo):
     prueba_form = PruebaForm()
     variable = ''
     context = {'form': prueba_form}
+
+
+    cat_m = Categoria.objects.all().values()
+    cant_c = len(cat_m)
+    for x in range(0, cant_c):
+        lista_c = []
+        sub_c = Subcategoria.objects.filter(idcat_id=cat_m[x]['idcat']).values()
+        for sc in sub_c:
+            lista_c.append(sc['nomsc'])
+
+        cat_m[x]['sub'] = lista_c
+
+
+
     if request.method =='POST':
         monto = request.POST.get('monto')
         categoria = request.POST.get('opt')
@@ -223,8 +272,8 @@ def inicio(request,monto,categoria,titulo):
 
                 seleccion  = categoria.lower().replace('seleccionar todo ','').lower().strip()
 
-                comprueba_c = len(Categoria.objects.filter(nomcat= seleccion).values())
-                comprueba_cs = len(Subcategoria.objects.filter(nomsc = seleccion).values())
+                comprueba_c = len(Categoria.objects.filter(nomcat= seleccion.lower()).values())
+                comprueba_cs = len(Subcategoria.objects.filter(nomsc = seleccion.lower()).values())
 
                 if comprueba_cs == 1 or comprueba_c ==1:
                     if comprueba_c == 1:
@@ -263,8 +312,11 @@ def inicio(request,monto,categoria,titulo):
                 histo = 'a'
                 resto = 0
                 if len(resultado)!=0:
-                    insertar(resultado, variable, titulo)
-                    histo = Historial.objects.order_by('idh').values().last()['idh']
+                    c_re = 0
+                    if variable < 10000000000000000000000:
+                        insertar(resultado, variable, titulo)
+                        histo = Historial.objects.order_by('idh').values().last()['idh']
+                        c_re = len(resultado)
                     for res in resultado:
                         resto = resto + res['producto']['suma_aproximada']
                     resto = variable - resto
@@ -278,9 +330,9 @@ def inicio(request,monto,categoria,titulo):
 
 
 
-                context = {'form': prueba_form, 'dato': variable, 'consulta': resultado, 'monto': variable, 'historial': histo, 'titulo': titulo.capitalize(), 'palabra':numero_a_letras(int(monto)).capitalize(), 'contador': len(resultado) , 'resto':int(resto)}
+                context = {'form': prueba_form, 'dato': variable, 'consulta': resultado, 'monto': variable, 'historial': histo, 'titulo': titulo.capitalize(), 'palabra':numero_a_letras(int(monto)).capitalize(), 'contador': c_re , 'resto':int(resto), 'categoria': cat_m}
 
-        return render(request, 'page/app.html', context)
+        return render(request, 'page/app.html', context, )
 
 
 def categoria_random(request,monto):
@@ -400,7 +452,7 @@ CIENTOS = (
 def numero_a_letras(variable):
     numero_entero = int(variable)
     if numero_entero > MAX_NUMERO:
-        raise OverflowError('Número demasiado alto')
+        return ""
     if numero_entero < 0:
         return 'menos %s' % numero_a_letras(abs(variable))
     letras_decimal = ''

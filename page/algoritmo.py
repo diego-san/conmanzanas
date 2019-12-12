@@ -153,7 +153,7 @@ class algoritmo:
                                                 'fechapub': datetime.date(2019, 9, 1),
                                                 'suma_aproximada': int(suma) ,
                                                 'cantidad_veces': int(veces),
-                                                'img':'supermercado.png',
+                                                'img':'img/iconos/supermercado.png',
                                                 'nomcate': 'Precios en supermercados',
                                       'unidad': 'unidad',
                                       'cantidad': 1,
