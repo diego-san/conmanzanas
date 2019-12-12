@@ -53,7 +53,7 @@ class Subcategoria(models.Model):
    idsubc = models.AutoField(primary_key=True)
    nomsc = models.TextField(max_length=200,verbose_name="Subcategoria")
    idcat = models.ForeignKey('Categoria', on_delete=models.PROTECT)
-   img =  models.ImageField(upload_to='bysimg', null=True, default=None)
+   img =  models.ImageField(upload_to='img/iconos', null=True, default=None)
 
    class Meta:
        verbose_name = "Subcategoria"
