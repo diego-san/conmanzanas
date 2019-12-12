@@ -320,15 +320,9 @@ jQuery(function ($) {
 
 								<select name="cosa" onchange="cambia()" class="form-control">
 									<option value="0">Selecionar
-									<option value="1">Salud
-									<option value="2">Supermercado
-									<option value="3">Educacion
-									<option value="4">Vivienda
-									<option value="5">Otros
-									<option value="6">Transporte
-									<option value="7">Restaurant y hoteles
-									<option value="8">ciencia y tecnologia
-									<option value="9">obras publicas
+									{% for c in categoria %}
+									<option value="{{c.idcat}}">{{c.nomcat}}
+									{% endfor%}
 								</select>
 
 									<select  name="opt" class="form-control">
@@ -363,15 +357,14 @@ jQuery(function ($) {
 <script type="text/javascript">
 			//1) Definir Las Variables Correspondintes
 
-			var opt_1 = new Array ("Seleccionar Todo Salud", "Medicamento", "Infraestructura salud", "Servicios","Insumos");
-			var opt_2 = new Array ("Seleccionar Todo Supermercado","Precios en supermercados");
-			var opt_3 = new Array ("Seleccionar Todo Educacion", "Infraestructura educación", "Costo educación");
-			var opt_4 = new Array ("Seleccionar Todo Vivienda", "Vivienda y salario", "Articulos para el hogar", "Gastos de vivienda");
-			var opt_5 = new Array ("Seleccionar Todo Otros", "Ropa y calazado", "Ocio y deportes", "Recreacion y cultura");
-			var opt_6 = new Array ("Seleccionar Todo Transporte", "Transporte y servicio", "Medios de transporte");
-			var opt_7 = new Array ("Seleccionar Todo Restaurant y hoteles", "Precio restaurant", "Precio hoteles");
-			var opt_8 = new Array("Seleccionar Todo ciencia y tecnologia", "investigacion", "innovacion", "emprendimiento", "formacion personal");
-			var opt_9 = new Array("Seleccionar Todos obras publicas", "puentes y caminos", "hospitales y consultorios", "transporte y telecomunicaciones" );
+			{% for c_s in categoria %}
+				var opt_{{c_s.idcat}} = new Array(
+						"Seleccionar Todo {{c_s.nomcat}}",
+					{% for c_ss in c_s.sub%}
+						"{{c_ss}}",
+					{% endfor%}
+			);
+			{% endfor%}
 
 
 			// 2) crear una funcion que permita ejecutar el cambio dinamico
@@ -418,9 +411,8 @@ jQuery(function ($) {
 			<div class="row text-center">
 				<div class="col-lg-12 col-12">
 					<div class="w3layouts_stats_left bg-light ">
-                        {% if titulo != '0' %}
-						<h1>{{ titulo }}</h1>
-                        {%  endif %}
+
+
 
 
 						<ul class="list-inline">
@@ -446,7 +438,9 @@ jQuery(function ($) {
 				<img src="{% static 'img/col-3-logo-conManzanas.png'%}" alt="" class="" style="height: 110px; width: 150px; ">
 			</div>
 			<div class="col-md-4 text-center p-3">
-				<h1 class="text-light">Resultados</h1>
+				<h1 class="text-light">{% if titulo != '0' %}
+						{{ titulo }}
+                        {%  endif %}</h1>
 			</div>
 			<div class="col-md-4"></div>
 
@@ -469,7 +463,7 @@ jQuery(function ($) {
                     <div class="row align-items-center">
                         <div class="col-lg-2 col-4 mx-auto text-nowrap text-center px-2">
                             <a href="">
-                                <img class="d-block mx-auto  img-fluid" src="{% static 'img/iconos/' %}{{producto.producto.img}}">
+                                <img class="d-block mx-auto  img-fluid" src="{% static '' %}{{producto.producto.img}}">
 								<span class="badge badge-pill badge-primary sup small align-top">{{ producto.producto.nomcate}}</span>
                             </a>
                         </div>
@@ -488,9 +482,15 @@ jQuery(function ($) {
                         </div>
                         <div class="col-lg-4 col-6 mx-auto">
                             <div class="row no-gutters text-center justify-content-end align-items-end">
+								<div class="col-md-12">
+									<span class="badge badge-pill badge-dark font-weight-normal">Precio Unitario</span>
+								</div>
                                 <div class="col-md-12">
-                                    <span class="badge badge-pill badge-dark font-weight-normal">Precio Unitario</span>
-                                   	 <h4>${{ producto.producto.precio}}</h4>
+                                    <h4 class="d-inline">${{ producto.producto.precio}}</h4>
+									<a class="btn  badge badge-pill badge-primary sup small align-top" href="{{ producto.producto.fuente }}" target="_blank">
+                                        <i class="fa fa-rss align-middle"></i>
+                                    </a>
+
                                 </div>
 								<div class="col-md-12">
 									<span class="badge badge-pill badge-dark font-weight-normal">Precio Total</span>
@@ -498,9 +498,6 @@ jQuery(function ($) {
                                 <div class="col-md-12">
 
                                    <h1 class="d-inline">${{ producto.producto.suma }}</h1>
-									<a class="btn  badge badge-pill badge-primary sup small align-top" href="{{ producto.producto.fuente }}" target="_blank">
-                                        <i class="fa fa-rss align-middle"></i>
-                                    </a>
                                      
                                 </div>
                             </div>

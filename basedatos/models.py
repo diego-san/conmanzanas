@@ -51,7 +51,7 @@ class Pais(models.Model):
 
 class Subcategoria(models.Model):
    idsubc = models.AutoField(primary_key=True)
-   nomsc = models.TextField(max_length=200,verbose_name="Subcategoria")
+   nomsc = models.TextField(max_length=200,verbose_name="Nombre subcategoria  (utilizar minúsculas)")
    idcat = models.ForeignKey('Categoria', on_delete=models.PROTECT)
    img =  models.ImageField(upload_to='img/iconos', null=True, default=None)
 
@@ -65,7 +65,7 @@ class Subcategoria(models.Model):
 
 class Categoria(models.Model):
    idcat = models.AutoField(primary_key=True)
-   nomcat = models.TextField(max_length=200,verbose_name="Categoria")
+   nomcat = models.TextField(max_length=200,verbose_name="Nombre categoria  (utilizar minúsculas)")
 
    class Meta:
        verbose_name = "Categoria"
