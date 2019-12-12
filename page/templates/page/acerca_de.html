@@ -259,7 +259,7 @@ jQuery(function ($) {
 	<!-- header -->
 
 	
-	<div class="container" style="background: #003366;"id="home">
+	<div class="container-fluid" style="background: #003366;"id="home">
 		<!-- nav -->
 		<nav class="py-3 d-lg-flex">
 			<div id="logo">
@@ -276,28 +276,49 @@ jQuery(function ($) {
 		<!-- //nav -->
 	</div>
 
+
+
+
+
+
 	<!-- INFO ACERCA DE-->
 <div class="container">
 <div class="row">
 
-<div class="col-md-12" style="padding: 20px">
+<div class="col-md-12" style="margin-top: 30px">
 
-	<div class="container">
+	<div class="container-fluid">
 		<div class="row">
-			<div class="col-6">
+			<div class="col col-md-6">
 				<p> <h4>Qué es ConManzanas:</h4>
 ConManzanas es una aplicación que tiene por objetivo servir como  herramienta de apoyo a la educación cívico -económica de niños, niñas y público general.
-	<a href="http://uplatv.cl/2019/10/01/autodeterminacion-civica-para-ninos-as-explicada-con-manzanas/" target="_blank">Ver</a>
+
 	</p>
+				<hr>
+		<iframe width="500" height="315" src="https://www.youtube.com/embed/u2BTWOFRvjY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 
 			</div>
-			<div class="col-6">
+			<div class="col col-md-6">
 
 					<p>
 <h4>Origen de los Datos: </h4>
 ConManzanas obtiene sus datos de diversas fuentes de información, de manera automática y también de forma manual. Se consultan principalmente sitios del Gobierno de Chile o sitios que monitorean los precios promedio en varios países, como PreciosMundi.
 Cada dato, indica su fuente al ser utilizado.
 </p>
+				<hr>
+
+				<img src="{% static 'images/ordenador.png'%}" style="width:100px; height: 100px; ">
+
+				<img src="{% static 'images/flecha.png'%}" style="width:80px; height: 70px; ">
+
+		<img src="{% static 'images/informatica.png'%}" style="width:100px; height: 100px; " >
+				<img src="{% static 'images/flecha.png'%}" style="width:80px; height: 70px; " >
+
+	<img src="{% static 'images/navegador.png'%}" style="width:100px; height: 100px; " >
+
+
+
 			</div>
 		</div>
 	</div>
@@ -309,11 +330,31 @@ Cada dato, indica su fuente al ser utilizado.
 
 
 
+</div>
+</div>
 
 
-	<div class="col-12" style="padding: 20px">
-<p>
-<h4> Cómo se desarrolló: </h4>
+
+
+
+<div class="container-fluid" style="background: #003366; margin-top: 40px">
+			<div class="row" >
+				<div class="col col-md-3"><img src="{% static 'img/mini-ico-manzanas.png'%}" style="width: 300px; height: 81px" ></div>
+				<div class="col col-md-9">
+						<h3 style="color:#ffffff; margin-top: 20px">Como se desarrolló</h3>
+				</div>
+			</div>
+			</div>
+
+
+
+
+
+
+<div class="container-fluid">
+<div class="row">
+	<div class="col col-md-12" style="padding: 20px">
+
 La idea surje en el ramo de Taller Integrado de la Carrera de Ingeniería Informática, de la <a href="https://www.upla.cl/facultad/ingenieria/" target="_blank">Facultad de Ingeniería</a>,
 		en la  <a href="" target="_blank">Universidad de Playa Ancha UPLA</a>. Son desarrolladores principales, y estudiantes del ramo, Diego Sánchez, Marcelo Ibarra y Jaime Morales.
 		Bajo el alero del laboratorio de <a href="https://datoslab.cl/" target="_blank">DataScience (datosLab.cl)</a> , dirigido por
@@ -326,9 +367,76 @@ Se incorporan al equipo, el diseñador Cristián Parra, de la Facultad de Arte U
 		También colaboraron con el proyecto, Melanie Suárez, estudiante de periodismo UPLA y los estudiantes del Campus San Felipe, Mario Tapia y Joaquín Salinas.
 </p>
 
-		<div class="container" style="padding: 20px">
-			<p>Equipo </p> <br>
+		</div>
+		</div>
+		</div>
 
+
+
+<section class="services py-5"  id="mas">
+	<div class="container-fluid">
+
+		<div class="row ml-sm-5">
+			<div class="col-xl-4 col-lg-4 col-md-6 col-sm-12">
+				<div class="our-services-wrapper mb-60">
+					<div class="services-inner">
+						<div class="our-services-img">
+							<img src="{% static 'img/computer.png'%}" alt="">
+						</div>
+						<div class="our-services-text">
+							<h4>Obtencíon de datos</h4>
+							<p>Algoritmos de WebScrapping capturan y descargan información de productos o bienes públicos.</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-xl-4 col-lg-4 col-md-6 col-sm-12">
+				<div class="our-services-wrapper mb-60">
+					<div class="services-inner">
+						<div class="our-services-img">
+							<img src="{% static 'img/database.png'%}" alt="">
+						</div>
+						<div class="our-services-text">
+							<h4>Almacenamos los datos</h4>
+							<p>Los datos son procesado y almacenados para utilizarlos posteriormente.</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-xl-4 col-lg-4 col-md-6 col-sm-12">
+				<div class="our-services-wrapper mb-60">
+					<div class="services-inner">
+						<div class="our-services-img">
+							<img src="{% static 'img/page.png'%}" alt="">
+						</div>
+						<div class="our-services-text">
+							<h4>Obtención de resultados</h4>
+							<p>Se muestran los resultados según la cifra ingresada con promedios de valores reales.</p>
+						</div>
+					</div>
+				</div>
+			</div>
+
+
+		</div>
+	</div>
+</section>
+
+
+	<div class="container-fluid" style="background: #003366; margin-top: 10px">
+
+			<div class="row" >
+				<div class="col col-md-3"><img src="{% static 'img/mini-ico-manzanas.png'%}" style="width: 300px; height: 81px" ></div>
+				<div class="col col-md-9">
+						<h3 style="color:#ffffff; margin-top: 20px">Equipo de trabajo</h3>
+				</div>
+			</div>
+
+			</div>
+
+
+
+	<div class="container-fluid" style="padding: 50px">
 
 			<div class="row">
 		<div class=" col-md-3"><b>Miguel Guevara</b> <br> <hr>
@@ -384,13 +492,7 @@ Se incorporan al equipo, el diseñador Cristián Parra, de la Facultad de Arte U
 			</div>
 
 
-		<hr>
-</div>
 
-
-
-</div>
-</div>
 
 
 
