@@ -311,8 +311,9 @@ def inicio(request,monto,categoria,titulo):
                 resultado = algoritmo.inicio(c, float(variable), cantidad_productos)
                 histo = 'a'
                 resto = 0
+                c_re = 0
                 if len(resultado)!=0:
-                    c_re = 0
+
                     if variable < 10000000000000000000000:
                         insertar(resultado, variable, titulo)
                         histo = Historial.objects.order_by('idh').values().last()['idh']
